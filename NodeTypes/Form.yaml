@@ -1,0 +1,27 @@
+Sitegeist.PaperTiger:Form:
+  ui:
+    label: "Formular (redaktionell)"
+    icon: 'icon-list-alt'
+    inlineEditable: true
+    inspector:
+      groups:
+        'form':
+          label: "Form"
+          position: 30
+          icon: 'icon-list-alt'
+  superTypes:
+    Neos.Neos:Content: true
+  childNodes:
+    content:
+      type: Sitegeist.PaperTrail:Collection.Content
+    actions:
+      type: Sitegeist.PaperTrail:Collection.Action
+  properties:
+    'title':
+      type: string
+      ui:
+        label: "Title"
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: "Bitte Formulartitel eingeben"

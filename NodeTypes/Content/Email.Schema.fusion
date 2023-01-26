@@ -1,0 +1,5 @@
+prototype(Sitegeist.PaperTiger:Content.Email.Schema) < prototype(Neos.Fusion:Value) {
+  value = ${Form.Schema.string().validator('Neos\Flow\Validation\Validator\EmailAddressValidator')}
+  value.@process.addIsRequired.@if.isDefined = ${q(node).property('isRequired')}
+  value.@process.addIsRequired = ${value.required}
+}

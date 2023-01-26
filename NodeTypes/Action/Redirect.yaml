@@ -1,0 +1,18 @@
+Sitegeist.PaperTiger:Action.Redirect:
+  ui:
+      label: 'Weiterleiten'
+      icon: 'icon-arrow-right'
+  superTypes:
+    'Sitegeist.PaperTiger:Action': true
+  properties:
+    uri:
+      type: string
+      ui:
+        label: "Weiterleitungs Ziel"
+        reloadIfChanged: true
+        inspector:
+          group: 'form'
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
+          editorOptions:
+            assets: false
+

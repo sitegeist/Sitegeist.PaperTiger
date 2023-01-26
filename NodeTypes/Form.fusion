@@ -1,0 +1,46 @@
+prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
+
+  renderer = Neos.Fusion:Join {
+    title = Neos.Fusion:Tag {
+      tagName = 'h2'
+      content = Neos.Neos:Editable {
+        property = 'title'
+      }
+    }
+
+    form = Neos.Fusion:Case {
+      inBackend {
+        condition = ${node.context.inBackend}
+        renderer = afx`
+            <fieldset>
+              <legend>content</legend>
+              <Neos.Neos:ContentCollection nodePath="content" />
+            </fieldset>
+            <fieldset>
+              <legend>actions</legend>
+              <Neos.Neos:ContentCollection nodePath="actions" />
+            </fieldset>
+        `
+      }
+
+      default {
+        condition = true
+        renderer = Neos.Fusion.Form:Runtime.RuntimeForm {
+          namespace = ${q(node).property('_identifier')}
+          process = Neos.Fusion.Form:Runtime.SingleStepProcess {
+            content = Neos.Neos:ContentCollection {
+              nodePath = 'content'
+            }
+            schema = Sitegeist.PaperTiger:SchemaCollection {
+              nodePath = 'content'
+            }
+          }
+          action = Sitegeist.PaperTiger:ActionCollection {
+            nodePath = 'actions'
+          }
+        }
+      }
+    }
+  }
+}
+

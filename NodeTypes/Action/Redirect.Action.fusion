@@ -1,0 +1,10 @@
+prototype(Sitegeist.PaperTiger:Action.Redirect.Action) < prototype(Neos.Fusion:Component) {
+
+  uri = ${q(node).property('uri')}
+
+  renderer = Neos.Fusion.Form:Runtime.Action {
+    type = 'Neos.Fusion.Form.Runtime:Redirect'
+    options.uri = ${props.uri}
+    options.uri.@process.convertUris = Neos.Neos:ConvertUris
+  }
+}

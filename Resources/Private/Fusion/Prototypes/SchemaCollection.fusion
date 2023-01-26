@@ -1,0 +1,21 @@
+prototype(Sitegeist.PaperTiger:SchemaCollection) < prototype(Neos.Fusion:Component) {
+  nodePath = null
+
+  renderer = Sitegeist.PaperTiger:SchemaCollectionInternal {
+    schemaMap = Neos.Fusion:Reduce {
+      items = ${q(node).children(props.nodePath).children('[instanceof Sitegeist.PaperTiger:Content]').get()}
+      itemName = 'node'
+      carryName = 'carry'
+      itemReducer = Neos.Fusion:Value {
+          name =  ${q(node).property('name')}
+          schema = Sitegeist.PaperTiger:SchemaCase
+          value = ${(this.name && this.schema) ? Array.set(carry, this.name, this.schema) : value}
+      }
+      initialValue = ${{}}
+    }
+  }
+}
+
+prototype(Sitegeist.PaperTiger:SchemaCollectionInternal) {
+  @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\SchemaCollectionImplementation'
+}

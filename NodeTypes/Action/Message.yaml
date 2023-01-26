@@ -1,0 +1,16 @@
+Sitegeist.PaperTiger:Action.Message:
+  ui:
+      label: 'Nachricht anzeigen'
+      icon: 'icon-comment'
+  superTypes:
+    'Sitegeist.PaperTiger:Action': true
+  properties:
+    message:
+      type: string
+      ui:
+        label: "Nachricht"
+        reloadIfChanged: true
+        inspector:
+          group: 'form'
+          editor: 'Neos.Neos/Inspector/Editors/RichTextEditor'
+

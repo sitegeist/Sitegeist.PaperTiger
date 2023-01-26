@@ -1,0 +1,15 @@
+prototype(Sitegeist.PaperTiger:Action.Message) < prototype(Neos.Neos:ContentComponent) {
+
+  uri = ${q(node).property('uri')}
+
+  renderer = afx`
+    <dl>
+      <dt>
+        Redirect Action
+      </dt>
+      <dd>
+        {props.uri}
+      </dd>
+    </dl>
+  `
+}

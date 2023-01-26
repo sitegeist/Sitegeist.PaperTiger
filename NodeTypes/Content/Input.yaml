@@ -1,0 +1,8 @@
+Sitegeist.PaperTiger:Content.Input:
+  abstract: false
+  ui:
+    label: "Textfeld"
+    icon: icon-pencil-square-o
+  superTypes:
+    'Sitegeist.PaperTiger:Content': true
+

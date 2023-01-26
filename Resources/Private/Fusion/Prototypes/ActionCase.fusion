@@ -1,0 +1,9 @@
+prototype(Sitegeist.PaperTiger:ActionCase) < prototype(Neos.Fusion:Case) {
+  default {
+    @position = 'end'
+    condition = Neos.Fusion:CanRender {
+      type = ${node.nodeType.name + '.Action'}
+    }
+    type = ${node.nodeType.name + '.Action'}
+  }
+}

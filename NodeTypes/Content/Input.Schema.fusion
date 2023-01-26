@@ -1,0 +1,5 @@
+prototype(Sitegeist.PaperTiger:Content.Input.Schema) < prototype(Neos.Fusion:Value) {
+  value = ${Form.Schema.string()}
+  value.@process.addIsRequired.@if.isSet = ${q(node).property('isRequired')}
+  value.@process.addIsRequired = ${value.required}
+}

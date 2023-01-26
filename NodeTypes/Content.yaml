@@ -1,0 +1,51 @@
+Sitegeist.PaperTiger:Content:
+  abstract: true
+  label: "${(q(node).property('isRequired') ? '*' : '') + Neos.Node.labelForNode(node).properties('label', 'name')}"
+  superTypes:
+    'Neos.Neos:Content': true
+    'Sitegeist.PaperTrail:Constraint.Content': true
+  ui:
+    inspector:
+      groups:
+        'form':
+          label: "Form"
+          position: 30
+          icon: 'icon-list-alt'
+  properties:
+    name:
+      type: string
+      ui:
+        label: "Name"
+        showInCreationDialog: true
+        reloadIfChanged: true
+        inspector:
+          group: form
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+        'Neos.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '/^[a-z0-9\-]+$/i'
+    label:
+      type: string
+      ui:
+        label: "Label"
+        reloadIfChanged: true
+        inspector:
+          group: form
+    placeholder:
+      type: string
+      ui:
+        label: "Platzhalter"
+        reloadIfChanged: true
+        inspector:
+          group: form
+    isRequired:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: "Required"
+        reloadIfChanged: true
+        inspector:
+          group: form
