@@ -2,6 +2,7 @@
     "description": "Editable forms for Neos CMS",
     "type": "neos-package",
     "name": "sitegeist/papertiger",
+    "license": "GPL-3.0+",
     "require": {
         "neos/neos": "~8.2 || dev-master",
         "neos/fusion-form": ">2.0 || dev-master"
