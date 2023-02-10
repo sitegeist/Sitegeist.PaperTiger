@@ -1,10 +1,11 @@
 prototype(Sitegeist.PaperTiger:Action.Email.Preview) < prototype(Neos.Neos:ContentComponent) {
 
   subject = ${q(node).property('subject')}
-  text = ${q(node).property('plaintext')}
-  text.@if.isPlaintextOrMultipart = ${q(node).property('format') == 'plaintext' || q(node).property('format') == 'multipart'}
+  format = ${q(node).property('format')}
+  plaintext = ${q(node).property('plaintext')}
+  plaintext.@if.isPlaintextOrMultipart = ${this.format != 'html'}
   html = ${q(node).property('html')}
-  html.@if.isHtmlOrMultipart = ${q(node).property('format') == 'html' || q(node).property('format') == 'multipart'}
+  html.@if.isHtmlOrMultipart = ${this.format != 'plaintext'}
   recipientAddress = ${q(node).property('recipientAddress')}
   recipientName = ${q(node).property('recipientName')}
   senderAddress = ${q(node).property('senderAddress')}
@@ -12,6 +13,7 @@ prototype(Sitegeist.PaperTiger:Action.Email.Preview) < prototype(Neos.Neos:Conte
   replyToAddress = ${q(node).property('replyToAddress')}
   carbonCopyAddress = ${q(node).property('carbonCopyAddress')}
   blindCarbonCopyAddress = ${q(node).property('blindCarbonCopyAddress')}
+  attachUploads = ${q(node).property('attachUploads')}
   testMode = ${q(node).property('testMode')}
 
   renderer = afx`
@@ -27,9 +29,9 @@ prototype(Sitegeist.PaperTiger:Action.Email.Preview) < prototype(Neos.Neos:Conte
             <dt>Html</dt>
             <dd>{props.html}</dd>
           </Neos.Fusion:Fragment>
-          <Neos.Fusion:Fragment @if={props.text}>
+          <Neos.Fusion:Fragment @if={props.plaintext}>
             <dt>Plaintext</dt>
-            <dd>{props.text}</dd>
+            <dd>{props.plaintext}</dd>
           </Neos.Fusion:Fragment>
           <Neos.Fusion:Fragment @if={props.recipientAddress}>
             <dt>Recipient</dt>

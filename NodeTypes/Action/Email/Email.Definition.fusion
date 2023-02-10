@@ -1,32 +1,46 @@
 prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:Component) {
 
+  subject = ${q(node).property('subject')}
+  format = ${q(node).property('format')}
+  plaintext = ${q(node).property('plaintext')}
+  plaintext.@if.isPlaintextOrMultipart = ${this.format != 'html'}
+  html = ${q(node).property('html')}
+  html.@if.isHtmlOrMultipart = ${this.format != 'plaintext'}
+  recipientAddress = ${q(node).property('recipientAddress')}
+  recipientName = ${q(node).property('recipientName')}
+  senderAddress = ${q(node).property('senderAddress')}
+  senderName = ${q(node).property('senderName')}
+  replyToAddress = ${q(node).property('replyToAddress')}
+  carbonCopyAddress = ${q(node).property('carbonCopyAddress')}
+  blindCarbonCopyAddress = ${q(node).property('blindCarbonCopyAddress')}
+  attachUploads = ${q(node).property('attachUploads')}
+  testMode = ${q(node).property('testMode')}
+
   renderer = Sitegeist.PaperTiger:Action {
     type = 'Neos.Fusion.Form.Runtime:Email'
     options {
-        subject = ${q(node).property('subject')}
+        subject = ${props.subject}
         subject.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
-        text = ${q(node).property('plaintext')}
+        text = ${props.plaintext}
         text.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
-        text.@if.isPlaintextOrMultipart = ${q(node).property('format') == 'plaintext' || q(node).property('format') == 'multipart'}
-        html = ${q(node).property('html')}
+        html = ${props.html}
         html.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
-        html.@if.isHtmlOrMultipart = ${q(node).property('format') == 'html' || q(node).property('format') == 'multipart'}
-        recipientAddress = ${q(node).property('recipientAddress')}
-        recipientName = ${q(node).property('recipientName')}
-        senderAddress = ${q(node).property('senderAddress')}
-        senderName = ${q(node).property('senderName')}
-        replyToAddress = ${q(node).property('replyToAddress')}
-        carbonCopyAddress = ${q(node).property('carbonCopyAddress')}
-        blindCarbonCopyAddress = ${q(node).property('blindCarbonCopyAddress')}
+        recipientAddress = ${props.recipientAddress}
+        recipientName =  ${props.recipientName}
+        senderAddress =  ${props.senderAddress}
+        senderName =  ${props.senderName}
+        replyToAddress = ${props.replyToAddress}
+        carbonCopyAddress =  ${props.carbonCopyAddress}
+        blindCarbonCopyAddress =  ${props.blindCarbonCopyAddress}
         attachments = Neos.Fusion:Map {
-          @if.isEnabled = ${q(node).property('attachUploads')}
+          @if.isEnabled = ${props.attachUploads}
           items = ${data}
           itemName = "item"
           itemRenderer = ${item}
           itemRenderer.@if.isUpload = ${Type.instance(value, 'Neos\Flow\ResourceManagement\PersistentResource') || Type.instance(value, 'Psr\Http\Message\UploadedFileInterface')}
           @process.filterEmpty = ${Array.filter(value)}
         }
-        testMode = ${q(node).property('testMode')}
+        testMode = ${props.textMode}
     }
   }
 }
