@@ -1,7 +1,7 @@
-Sitegeist.PaperTrail:Collection.Content:
+Sitegeist.PaperTrail:Content.Collection:
   superTypes:
     Neos.Neos:ContentCollection: true
   constraints:
     nodeTypes:
       '*': false
-      'Sitegeist.PaperTrail:Constraint.Content': true
+      'Sitegeist.PaperTrail:Content.Constraint': true

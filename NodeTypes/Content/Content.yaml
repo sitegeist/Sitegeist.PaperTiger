@@ -3,7 +3,7 @@ Sitegeist.PaperTiger:Content:
   label: "${(q(node).property('isRequired') ? '*' : '') + Neos.Node.labelForNode(node).properties('label', 'name')}"
   superTypes:
     'Neos.Neos:Content': true
-    'Sitegeist.PaperTrail:Constraint.Content': true
+    'Sitegeist.PaperTrail:Content.Constraint': true
   ui:
     inspector:
       groups:

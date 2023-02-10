@@ -2,7 +2,7 @@ Sitegeist.PaperTiger:Action:
   abstract: true
   superTypes:
     'Neos.Neos:Content': true
-    'Sitegeist.PaperTrail:Constraint.Action': true
+    'Sitegeist.PaperTrail:Action.Constraint': true
   ui:
     inspector:
       groups:

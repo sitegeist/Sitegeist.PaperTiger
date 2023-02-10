@@ -1,45 +1,36 @@
 prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
 
-  renderer = Neos.Fusion:Join {
-    title = Neos.Fusion:Tag {
-      tagName = 'h2'
-      content = Neos.Neos:Editable {
-        property = 'title'
+  renderer = Neos.Fusion:Case {
+    runtimeForm {
+      condition = ${node.context.live}
+      renderer = Neos.Fusion.Form:Runtime.RuntimeForm {
+        namespace = ${q(node).property('_identifier')}
+        process = Neos.Fusion.Form:Runtime.SingleStepProcess {
+          content = Sitegeist.PaperTiger:ContentCollection.ContentRenderer {
+            nodePath = 'content'
+          }
+          schema = Sitegeist.PaperTiger:ContentCollection.SchemaRenderer {
+            nodePath = 'content'
+          }
+        }
+        action = Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer {
+          nodePath = 'actions'
+        }
       }
     }
 
-    form = Neos.Fusion:Case {
-      inBackend {
-        condition = ${node.context.inBackend}
-        renderer = afx`
-            <fieldset>
-              <legend>content</legend>
-              <Sitegeist.PaperTiger:ContentCollection.ContentRenderer nodePath="content" />
-            </fieldset>
-            <fieldset>
-              <legend>actions</legend>
-              <Sitegeist.PaperTiger:ActionCollection.PreviewRenderer nodePath="actions" />
-            </fieldset>
-        `
-      }
-
-      default {
-        condition = true
-        renderer = Neos.Fusion.Form:Runtime.RuntimeForm {
-          namespace = ${q(node).property('_identifier')}
-          process = Neos.Fusion.Form:Runtime.SingleStepProcess {
-            content = Sitegeist.PaperTiger:ContentCollection.ContentRenderer {
-              nodePath = 'content'
-            }
-            schema = Sitegeist.PaperTiger:ContentCollection.SchemaRenderer {
-              nodePath = 'content'
-            }
-          }
-          action = Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer {
-            nodePath = 'actions'
-          }
-        }
-      }
+    backend {
+      condition = ${node.context.inBackend}
+      renderer = afx`
+          <fieldset>
+            <legend>content</legend>
+            <Sitegeist.PaperTiger:ContentCollection.ContentRenderer nodePath="content" />
+          </fieldset>
+          <fieldset>
+            <legend>actions</legend>
+            <Sitegeist.PaperTiger:ActionCollection.PreviewRenderer nodePath="actions" />
+          </fieldset>
+      `
     }
   }
 }

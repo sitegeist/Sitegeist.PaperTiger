@@ -8,7 +8,7 @@ prototype(Sitegeist.PaperTiger:ActionCollection.PreviewRenderer) < prototype(Neo
 prototype(Sitegeist.PaperTiger:ActionCollection.PreviewRenderer.ContentCase) < prototype(Neos.Fusion:Case) {
 
   override {
-    @position = 'before Preview'
+    @position = 'before preview'
     condition = Neos.Fusion:CanRender {
       type = ${node.nodeType.name + '.Preview.Override'}
     }
