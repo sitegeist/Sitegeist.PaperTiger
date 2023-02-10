@@ -1,11 +1,11 @@
-prototype(Sitegeist.PaperTiger:ContentCollection.ContentRenderer) < prototype(Neos.Neos:ContentCollection) {
+prototype(Sitegeist.PaperTiger:FieldCollection.ContentRenderer) < prototype(Neos.Neos:ContentCollection) {
   nodePath = null
   prototype(Neos.Neos:ContentCollectionRenderer) {
-    itemRenderer = Sitegeist.PaperTiger:ContentCollection.ContentCase
+    itemRenderer = Sitegeist.PaperTiger:FieldCollection.ContentCase
   }
 }
 
-prototype(Sitegeist.PaperTiger:ContentCollection.ContentCase) < prototype(Neos.Fusion:Case) {
+prototype(Sitegeist.PaperTiger:FieldCollection.ContentCase) < prototype(Neos.Fusion:Case) {
   override {
     @position = 'before content'
     condition = Neos.Fusion:CanRender {

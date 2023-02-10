@@ -1,0 +1,13 @@
+Sitegeist.PaperTiger:Field.Mixin.Label:
+  abstract: true
+  properties:
+    label:
+      type: string
+      ui:
+        label: "Label"
+        reloadIfChanged: true
+        showInCreationDialog: true
+        inspector:
+          group: form
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []

@@ -1,0 +1,12 @@
+Sitegeist.PaperTiger:Field.Mixin.IsRequired:
+  abstract: true
+  properties:
+    isRequired:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: "Required"
+        reloadIfChanged: true
+        showInCreationDialog: true
+        inspector:
+          group: validation

@@ -6,11 +6,11 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
       renderer = Neos.Fusion.Form:Runtime.RuntimeForm {
         namespace = ${q(node).property('_identifier')}
         process = Neos.Fusion.Form:Runtime.SingleStepProcess {
-          content = Sitegeist.PaperTiger:ContentCollection.ContentRenderer {
-            nodePath = 'content'
+          content = Sitegeist.PaperTiger:FieldCollection.ContentRenderer {
+            nodePath = 'fields'
           }
-          schema = Sitegeist.PaperTiger:ContentCollection.SchemaRenderer {
-            nodePath = 'content'
+          schema = Sitegeist.PaperTiger:FieldCollection.SchemaRenderer {
+            nodePath = 'fields'
           }
         }
         action = Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer {
@@ -24,7 +24,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
       renderer = afx`
           <fieldset>
             <legend>content</legend>
-            <Sitegeist.PaperTiger:ContentCollection.ContentRenderer nodePath="content" />
+            <Sitegeist.PaperTiger:FieldCollection.ContentRenderer nodePath="fields" />
           </fieldset>
           <fieldset>
             <legend>actions</legend>

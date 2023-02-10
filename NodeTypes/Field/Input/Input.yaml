@@ -1,9 +1,12 @@
-Sitegeist.PaperTiger:Content.Input:
+Sitegeist.PaperTiger:Field.Input:
   ui:
     label: "Textfeld"
     icon: icon-pencil-square-o
   superTypes:
-    'Sitegeist.PaperTiger:Content': true
+    'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Field.Mixin.Label': true
+    'Sitegeist.PaperTiger:Field.Mixin.Placeholder': true
+    'Sitegeist.PaperTiger:Field.Mixin.IsRequired': true
   properties:
     minimumLength:
       type: integer

@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Content.Email.Content) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Field.Email.Content) < prototype(Neos.Neos:ContentComponent) {
 
   name = ${q(node).property('name')}
   label = ${q(node).property('label')}

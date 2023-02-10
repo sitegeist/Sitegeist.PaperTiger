@@ -1,7 +1,0 @@
-Sitegeist.PaperTiger:Content.Email:
-  ui:
-    label: "EMail Feld"
-    icon: icon-envelope-o
-  superTypes:
-    'Sitegeist.PaperTiger:Content': true
-

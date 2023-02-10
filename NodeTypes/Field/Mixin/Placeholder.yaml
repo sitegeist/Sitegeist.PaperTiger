@@ -1,0 +1,10 @@
+Sitegeist.PaperTiger:Field.Mixin.Placeholder:
+  abstract: true
+  properties:
+    placeholder:
+      type: string
+      ui:
+        label: "Platzhalter"
+        reloadIfChanged: true
+        inspector:
+          group: form

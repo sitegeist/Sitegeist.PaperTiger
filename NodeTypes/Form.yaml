@@ -12,7 +12,7 @@ Sitegeist.PaperTiger:Form:
   superTypes:
     Neos.Neos:Content: true
   childNodes:
-    content:
-      type: Sitegeist.PaperTrail:Content.Collection
+    fields:
+      type: Sitegeist.PaperTiger:Field.Collection
     actions:
-      type: Sitegeist.PaperTrail:Action.Collection
+      type: Sitegeist.PaperTiger:Action.Collection

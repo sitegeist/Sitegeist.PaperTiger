@@ -1,9 +1,9 @@
-Sitegeist.PaperTiger:Content:
+Sitegeist.PaperTiger:Field:
   abstract: true
   label: "${(q(node).property('isRequired') ? '*' : '') + Neos.Node.labelForNode(node).properties('label', 'name')}"
   superTypes:
     'Neos.Neos:Content': true
-    'Sitegeist.PaperTrail:Content.Constraint': true
+    'Sitegeist.PaperTiger:Field.Constraint': true
   ui:
     inspector:
       groups:
@@ -31,25 +31,3 @@ Sitegeist.PaperTiger:Content:
           maximum: 255
         'Neos.Neos/Validation/RegularExpressionValidator':
           regularExpression: '/^[a-z0-9\-]+$/i'
-    label:
-      type: string
-      ui:
-        label: "Label"
-        reloadIfChanged: true
-        inspector:
-          group: form
-    placeholder:
-      type: string
-      ui:
-        label: "Platzhalter"
-        reloadIfChanged: true
-        inspector:
-          group: form
-    isRequired:
-      type: boolean
-      defaultValue: false
-      ui:
-        label: "Required"
-        reloadIfChanged: true
-        inspector:
-          group: validation

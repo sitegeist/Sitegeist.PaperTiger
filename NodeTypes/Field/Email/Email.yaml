@@ -1,0 +1,9 @@
+Sitegeist.PaperTiger:Field.Email:
+  ui:
+    label: "EMail Feld"
+    icon: icon-envelope-o
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Field.Mixin.Label': true
+    'Sitegeist.PaperTiger:Field.Mixin.Placeholder': true
+    'Sitegeist.PaperTiger:Field.Mixin.IsRequired': true
