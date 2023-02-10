@@ -1,16 +1,22 @@
-prototype(Sitegeist.PaperTiger:ActionCollection.PreviewRenderer) < prototype(Neos.Fusion:Loop) {
-  @context.nodeAvailable = ${node && String.length(node.context.workspace.name)}
-  # Set context removedContentShown to get removed nodes too.
-  # Needed for publish function to be able to publish removed nodes.
-  items = ${nodeAvailable ? q(node).children() : []}
+prototype(Sitegeist.PaperTiger:ActionCollection.PreviewRenderer) < prototype(Neos.Neos:ContentCollection) {
+  nodePath = null
+  prototype(Neos.Neos:ContentCollectionRenderer) {
+    itemRenderer = Sitegeist.PaperTiger:ActionCollection.PreviewRenderer.ContentCase
+  }
+}
 
-  # Render every item by its own Fusion object
-  itemRenderer = Neos.Fusion:Renderer {
+prototype(Sitegeist.PaperTiger:ActionCollection.PreviewRenderer.ContentCase) < prototype(Neos.Neos:ContentCase) {
+  content {
+    @position = 'before default'
+    condition = Neos.Fusion:CanRender {
+      type = ${node.nodeType.name + '.Preview'}
+    }
     type = ${node.nodeType.name + '.Preview'}
   }
 
-  itemName = 'node'
-  iterationName = 'iterator'
-
-  @exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\BubblingHandler'
+  default {
+    @position = 'end'
+    condition = true
+    type = ${node.nodeType.name}
+  }
 }

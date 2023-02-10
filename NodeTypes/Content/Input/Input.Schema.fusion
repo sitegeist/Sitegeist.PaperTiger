@@ -8,5 +8,5 @@ prototype(Sitegeist.PaperTiger:Content.Input.Schema) < prototype(Neos.Fusion:Val
   value.@process.addStringLengthValidator = ${value.validator('StringLength', Array.concat(q(node).property('minimumLength') ? {minimum: q(node).property('minimumLength')} : {}, q(node).property('maximumLength') ? {maximum: q(node).property('maximumLength')} : {}))}
 
   value.@process.addRegularExpressionValidator.@if.isSet = ${q(node).property('regularExpression')}
-  value.@process.addRegularExpressionValidator = ${value.validator('RegularExpression', {regularExpression: q(node).property('regularExpression')})}
+  value.@process.addRegularExpressionValidator = ${value.validator('RegularExpression', {regularExpression: '/' + q(node).property('regularExpression') + '/'})}
 }

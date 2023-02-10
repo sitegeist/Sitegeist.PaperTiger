@@ -14,13 +14,11 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
         renderer = afx`
             <fieldset>
               <legend>content</legend>
-              <Neos.Neos:ContentCollection nodePath="content" />
+              <Sitegeist.PaperTiger:ContentCollection.ContentRenderer nodePath="content" />
             </fieldset>
             <fieldset>
               <legend>actions</legend>
-              <Neos.Neos:ContentCollection nodePath="actions">
-                <Sitegeist.PaperTiger:ActionCollection.PreviewRenderer />
-              </Neos.Neos:ContentCollection>
+              <Sitegeist.PaperTiger:ActionCollection.PreviewRenderer nodePath="actions" />
             </fieldset>
         `
       }
@@ -30,10 +28,10 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
         renderer = Neos.Fusion.Form:Runtime.RuntimeForm {
           namespace = ${q(node).property('_identifier')}
           process = Neos.Fusion.Form:Runtime.SingleStepProcess {
-            content = Neos.Neos:ContentCollection {
+            content = Sitegeist.PaperTiger:ContentCollection.ContentRenderer {
               nodePath = 'content'
             }
-            schema = Sitegeist.PaperTiger:SchemaCollection {
+            schema = Sitegeist.PaperTiger:ContentCollection.SchemaRenderer {
               nodePath = 'content'
             }
           }

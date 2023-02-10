@@ -1,0 +1,30 @@
+prototype(Sitegeist.PaperTiger:ContentCollection.ContentRenderer) < prototype(Neos.Neos:ContentCollection) {
+  nodePath = null
+  prototype(Neos.Neos:ContentCollectionRenderer) {
+    itemRenderer = Sitegeist.PaperTiger:ContentCollection.ContentCase
+  }
+}
+
+prototype(Sitegeist.PaperTiger:ContentCollection.ContentCase) < prototype(Neos.Neos:ContentCase) {
+  override {
+    @position = 'before content'
+    condition = Neos.Fusion:CanRender {
+      type = ${node.nodeType.name + '.Override'}
+    }
+    type = ${node.nodeType.name + '.Override'}
+  }
+
+  content {
+    @position = 'before default'
+    condition = Neos.Fusion:CanRender {
+      type = ${node.nodeType.name + '.Content'}
+    }
+    type = ${node.nodeType.name + '.Content'}
+  }
+
+  default {
+    @position = 'end'
+    condition = true
+    type = ${node.nodeType.name}
+  }
+}

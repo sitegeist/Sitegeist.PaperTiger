@@ -1,7 +1,7 @@
-prototype(Sitegeist.PaperTiger:SchemaCollection) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:ContentCollection.SchemaRenderer) < prototype(Neos.Fusion:Component) {
   nodePath = null
 
-  renderer = Sitegeist.PaperTiger:SchemaCollectionInternal {
+  renderer = Sitegeist.PaperTiger:ContentCollection.SchemaRenderer.Internal {
     schemaMap = Neos.Fusion:Reduce {
       items = ${q(node).children(props.nodePath).children('[instanceof Sitegeist.PaperTiger:Content]').get()}
       itemName = 'node'
@@ -21,6 +21,6 @@ prototype(Sitegeist.PaperTiger:SchemaCollection) < prototype(Neos.Fusion:Compone
   }
 }
 
-prototype(Sitegeist.PaperTiger:SchemaCollectionInternal) {
+prototype(Sitegeist.PaperTiger:ContentCollection.SchemaRenderer.Internal) {
   @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\SchemaCollectionImplementation'
 }
