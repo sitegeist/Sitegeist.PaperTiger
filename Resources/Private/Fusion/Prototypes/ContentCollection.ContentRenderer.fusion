@@ -5,13 +5,13 @@ prototype(Sitegeist.PaperTiger:ContentCollection.ContentRenderer) < prototype(Ne
   }
 }
 
-prototype(Sitegeist.PaperTiger:ContentCollection.ContentCase) < prototype(Neos.Neos:ContentCase) {
+prototype(Sitegeist.PaperTiger:ContentCollection.ContentCase) < prototype(Neos.Fusion:Case) {
   override {
     @position = 'before content'
     condition = Neos.Fusion:CanRender {
-      type = ${node.nodeType.name + '.Override'}
+      type = ${node.nodeType.name + '.Content.Override'}
     }
-    type = ${node.nodeType.name + '.Override'}
+    type = ${node.nodeType.name + '.Content.Override'}
   }
 
   content {

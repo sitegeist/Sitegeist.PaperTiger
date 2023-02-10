@@ -5,18 +5,19 @@ prototype(Sitegeist.PaperTiger:ActionCollection.PreviewRenderer) < prototype(Neo
   }
 }
 
-prototype(Sitegeist.PaperTiger:ActionCollection.PreviewRenderer.ContentCase) < prototype(Neos.Neos:ContentCase) {
-  content {
-    @position = 'before default'
+prototype(Sitegeist.PaperTiger:ActionCollection.PreviewRenderer.ContentCase) < prototype(Neos.Fusion:Case) {
+
+  override {
+    @position = 'before Preview'
     condition = Neos.Fusion:CanRender {
-      type = ${node.nodeType.name + '.Preview'}
+      type = ${node.nodeType.name + '.Preview.Override'}
     }
-    type = ${node.nodeType.name + '.Preview'}
+    type = ${node.nodeType.name + '.Preview.Override'}
   }
 
-  default {
+  preview {
     @position = 'end'
     condition = true
-    type = ${node.nodeType.name}
+    type = ${node.nodeType.name + '.Preview'}
   }
 }

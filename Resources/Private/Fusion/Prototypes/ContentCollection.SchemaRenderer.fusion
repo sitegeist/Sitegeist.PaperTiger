@@ -24,3 +24,24 @@ prototype(Sitegeist.PaperTiger:ContentCollection.SchemaRenderer) < prototype(Neo
 prototype(Sitegeist.PaperTiger:ContentCollection.SchemaRenderer.Internal) {
   @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\SchemaCollectionImplementation'
 }
+
+
+
+prototype(Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer.ContentCase) < prototype(Neos.Fusion:Case) {
+
+  override {
+    @position = 'before schema'
+    condition = Neos.Fusion:CanRender {
+      type = ${node.nodeType.name + '.Schema.Override'}
+    }
+    type = ${node.nodeType.name + '.Schema.Override'}
+  }
+
+  schema {
+    @position = 'end'
+    condition = Neos.Fusion:CanRender {
+      type = ${node.nodeType.name + '.Schema'}
+    }
+    type = ${node.nodeType.name + '.Schema'}
+  }
+}

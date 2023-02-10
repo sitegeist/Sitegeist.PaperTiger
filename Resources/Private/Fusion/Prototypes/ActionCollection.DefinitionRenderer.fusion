@@ -5,13 +5,28 @@ prototype(Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer) < prototype(
     actionMap = Neos.Fusion:Map {
       items = ${q(node).children(props.nodePath).children('[instanceof Sitegeist.PaperTiger:Action]').get()}
       itemName = 'node'
-      itemRenderer =  Neos.Fusion:Renderer {
-        type = ${node.nodeType.name + '.Definition'}
-      }
+      itemRenderer = Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer.ContentCase
     }
   }
 }
 
 prototype(Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer.Internal) {
   @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\ActionCollectionImplementation'
+}
+
+prototype(Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer.ContentCase) < prototype(Neos.Fusion:Case) {
+
+  override {
+    @position = 'before definition'
+    condition = Neos.Fusion:CanRender {
+      type = ${node.nodeType.name + '.Definition.Override'}
+    }
+    type = ${node.nodeType.name + '.Definition.Override'}
+  }
+
+  definition {
+    @position = 'end'
+    condition = true
+    type = ${node.nodeType.name + '.Definition'}
+  }
 }
