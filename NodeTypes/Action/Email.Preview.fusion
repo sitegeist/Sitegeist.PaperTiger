@@ -1,0 +1,58 @@
+prototype(Sitegeist.PaperTiger:Action.Email.Preview) < prototype(Neos.Neos:ContentComponent) {
+
+  subject = ${q(node).property('subject')}
+  text = ${q(node).property('plaintext')}
+  text.@if.isPlaintextOrMultipart = ${q(node).property('format') == 'plaintext' || q(node).property('format') == 'multipart'}
+  html = ${q(node).property('html')}
+  html.@if.isHtmlOrMultipart = ${q(node).property('format') == 'html' || q(node).property('format') == 'multipart'}
+  recipientAddress = ${q(node).property('recipientAddress')}
+  recipientName = ${q(node).property('recipientName')}
+  senderAddress = ${q(node).property('senderAddress')}
+  senderName = ${q(node).property('senderName')}
+  replyToAddress = ${q(node).property('replyToAddress')}
+  carbonCopyAddress = ${q(node).property('carbonCopyAddress')}
+  blindCarbonCopyAddress = ${q(node).property('blindCarbonCopyAddress')}
+  testMode = ${q(node).property('testMode')}
+
+  renderer = afx`
+    <dl>
+      <dt>
+        Email Action
+      </dt>
+      <dd>
+        <dl>
+          <dt>Subject</dt>
+          <dd>{props.subject}</dd>
+          <Neos.Fusion:Fragment @if={props.html}>
+            <dt>Html</dt>
+            <dd>{props.html}</dd>
+          </Neos.Fusion:Fragment>
+          <Neos.Fusion:Fragment @if={props.text}>
+            <dt>Plaintext</dt>
+            <dd>{props.text}</dd>
+          </Neos.Fusion:Fragment>
+          <Neos.Fusion:Fragment @if={props.recipientAddress}>
+            <dt>Recipient</dt>
+            <dd>{props.recipientName} {props.recipientAddress}</dd>
+          </Neos.Fusion:Fragment>
+          <Neos.Fusion:Fragment @if={props.senderAddress}>
+            <dt>Sender</dt>
+            <dd>{props.senderName} {props.senderAddress}</dd>
+          </Neos.Fusion:Fragment>
+          <Neos.Fusion:Fragment @if={props.replyToAddress}>
+            <dt>Reply to</dt>
+            <dd>{props.replyToAddress}</dd>
+          </Neos.Fusion:Fragment>
+          <Neos.Fusion:Fragment @if={props.carbonCopyAddress}>
+            <dt>Carbon copy</dt>
+            <dd>{props.carbonCopyAddress}</dd>
+          </Neos.Fusion:Fragment>
+          <Neos.Fusion:Fragment @if={props.blindCarbonCopyAddress}>
+            <dt>Blind carbon copy</dt>
+            <dd>{props.blindCarbonCopyAddress}</dd>
+          </Neos.Fusion:Fragment>
+        </dl>
+      </dd>
+    </dl>
+  `
+}

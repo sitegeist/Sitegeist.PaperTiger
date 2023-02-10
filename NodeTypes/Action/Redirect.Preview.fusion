@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Action.Redirect) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Action.Redirect.Preview) < prototype(Neos.Neos:ContentComponent) {
 
   uri = ${q(node).property('uri')}
 

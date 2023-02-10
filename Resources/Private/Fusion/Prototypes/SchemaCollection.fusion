@@ -8,7 +8,12 @@ prototype(Sitegeist.PaperTiger:SchemaCollection) < prototype(Neos.Fusion:Compone
       carryName = 'carry'
       itemReducer = Neos.Fusion:Value {
           name =  ${q(node).property('name')}
-          schema = Sitegeist.PaperTiger:SchemaCase
+          schema = Neos.Fusion:Renderer {
+            @if.canRender = Neos.Fusion:CanRender {
+              type = ${node.nodeType.name + '.Schema'}
+            }
+            type = ${node.nodeType.name + '.Schema'}
+          }
           value = ${(this.name && this.schema) ? Array.set(carry, this.name, this.schema) : value}
       }
       initialValue = ${{}}

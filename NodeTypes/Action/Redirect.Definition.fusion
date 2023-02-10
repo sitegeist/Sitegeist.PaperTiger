@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Action.Redirect.Action) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:Action.Redirect.Definition) < prototype(Neos.Fusion:Component) {
 
   uri = ${q(node).property('uri')}
 

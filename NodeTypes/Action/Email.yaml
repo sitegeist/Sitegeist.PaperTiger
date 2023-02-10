@@ -1,0 +1,121 @@
+Sitegeist.PaperTiger:Action.Email:
+  superTypes:
+    'Sitegeist.PaperTiger:Action': true
+  ui:
+    label: 'Email Action'
+    icon: 'icon-envelope-o'
+  properties:
+    'subject':
+      type: string
+      ui:
+        label: 'Subject'
+        inspector:
+          group: 'form'
+          editorOptions:
+            required: true
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'format':
+      type: string
+      defaultValue: plaintext
+      ui:
+        label: "Format"
+        inspector:
+          group: 'form'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'html':
+                label: "HTML"
+                icon: 'icon-code'
+              'plaintext':
+                label: "Plaintext"
+                icon: 'icon-font'
+              'multipart':
+                label: "Multipart"
+                icon: 'icon-puzzle-piece'
+    'plaintext':
+      type: string
+      ui:
+        label: 'Plaintext'
+        reloadIfChanged: true
+        inspector:
+          group: 'form'
+          editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
+          hidden: 'ClientEval:node.properties.format == "html"'
+          editorOptions:
+            buttonLabel: "Plaintext"
+    'html':
+      type: string
+      ui:
+        label: 'Html'
+        reloadIfChanged: true
+        inspector:
+          group: 'form'
+          editor: 'Neos.Neos/Inspector/Editors/RichTextEditor'
+          hidden: 'ClientEval:node.properties.format == "plaintext"'
+          editorOptions:
+            buttonLabel: "Html"
+    'recipientAddress':
+      type: string
+      ui:
+        label: 'Recipient address'
+        inspector:
+          group: 'form'
+          editorOptions:
+            required: true
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'recipientName':
+      type: string
+      ui:
+        label: 'Recipient name'
+        inspector:
+          group: 'form'
+    'senderAddress':
+      type: string
+      ui:
+        label: 'Sender address'
+        inspector:
+          group: 'form'
+          editorOptions:
+            required: true
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
+    'senderName':
+      type: string
+      ui:
+        label: 'Sender name'
+        inspector:
+          group: 'form'
+    'replyToAddress':
+      type: string
+      ui:
+        label: 'Reply to address'
+        inspector:
+          group: 'form'
+    'carbonCopyAddress':
+      type: string
+      ui:
+        label: 'Carbon copy address'
+        inspector:
+          group: 'form'
+    'blindCarbonCopyAddress':
+      type: string
+      ui:
+        label: 'Blind carbon copy address'
+        inspector:
+          group: 'form'
+    'attachUploads':
+      type: boolean
+      ui:
+        label: "Attach uploads"
+        inspector:
+          group: 'form'
+    'testMode':
+      type: boolean
+      defaultValue: false
+      ui:
+        label: "Test mode"
+        inspector:
+          group: 'form'

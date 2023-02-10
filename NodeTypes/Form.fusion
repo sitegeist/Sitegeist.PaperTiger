@@ -18,7 +18,9 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
             </fieldset>
             <fieldset>
               <legend>actions</legend>
-              <Neos.Neos:ContentCollection nodePath="actions" />
+              <Neos.Neos:ContentCollection nodePath="actions">
+                <Sitegeist.PaperTiger:ActionCollection.PreviewRenderer />
+              </Neos.Neos:ContentCollection>
             </fieldset>
         `
       }
@@ -35,7 +37,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
               nodePath = 'content'
             }
           }
-          action = Sitegeist.PaperTiger:ActionCollection {
+          action = Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer {
             nodePath = 'actions'
           }
         }

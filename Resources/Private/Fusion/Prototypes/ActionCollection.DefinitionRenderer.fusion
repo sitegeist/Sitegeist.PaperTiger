@@ -1,11 +1,13 @@
-prototype(Sitegeist.PaperTiger:ActionCollection) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer) < prototype(Neos.Fusion:Component) {
   nodePath = null
 
   renderer = Sitegeist.PaperTiger:ActionCollectionInternal {
     actionMap = Neos.Fusion:Map {
       items = ${q(node).children(props.nodePath).children('[instanceof Sitegeist.PaperTiger:Action]').get()}
       itemName = 'node'
-      itemRenderer = Sitegeist.PaperTiger:ActionCase
+      itemRenderer =  Neos.Fusion:Renderer {
+        type = ${node.nodeType.name + '.Definition'}
+      }
     }
   }
 }

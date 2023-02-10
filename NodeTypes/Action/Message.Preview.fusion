@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Action.Message) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Action.Message.Preview) < prototype(Neos.Neos:ContentComponent) {
 
   message = ${q(node).property('message')}
 

@@ -1,0 +1,5 @@
+prototype(Sitegeist.PaperTiger:Action.DataTemplate) < prototype(Neos.Fusion:Value) {
+  @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\DataTemplateImplementation'
+  template = ${value}
+  data = ${data}
+}

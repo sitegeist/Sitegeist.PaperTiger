@@ -11,6 +11,10 @@ Sitegeist.PaperTiger:Content:
           label: "Form"
           position: 30
           icon: 'icon-list-alt'
+        'validation':
+          label: "Validation"
+          position: 30
+          icon: 'check-double'
   properties:
     name:
       type: string
@@ -48,4 +52,4 @@ Sitegeist.PaperTiger:Content:
         label: "Required"
         reloadIfChanged: true
         inspector:
-          group: form
+          group: validation
