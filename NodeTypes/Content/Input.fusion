@@ -4,10 +4,20 @@ prototype(Sitegeist.PaperTiger:Content.Input) < prototype(Neos.Neos:ContentCompo
   label = ${q(node).property('label')}
   placeholder = ${q(node).property('placeholder')}
   isRequired = ${q(node).property('isRequired')}
+  isRequired = ${q(node).property('isRequired')}
+  minimumLength = ${q(node).property('minimumLength')}
+  maximumLength = ${q(node).property('maximumLength')}
+  regularExpression = ${q(node).property('regularExpression')}
 
   renderer = afx`
     <Neos.Fusion.Form:FieldContainer field.name={props.name} label={(props.isRequired ? '*' : '') + props.label}>
-      <Neos.Fusion.Form:Input attributes.required={props.isRequired} attributes.placeholder={props.placeholder}  />
+      <Neos.Fusion.Form:Input
+        attributes.required={props.isRequired || false}
+        attributes.minlength={props.minimumLength || false}
+        attributes.maxlength={props.maximumLength || false}
+        attributes.pattern={props.regularExpression || false}
+        attributes.placeholder={props.placeholder || false}
+      />
     </Neos.Fusion.Form:FieldContainer>
   `
 }

@@ -4,4 +4,25 @@ Sitegeist.PaperTiger:Content.Input:
     icon: icon-pencil-square-o
   superTypes:
     'Sitegeist.PaperTiger:Content': true
-
+  properties:
+    minimumLength:
+      type: integer
+      defaultValue: null
+      ui:
+        label: "Min Length"
+        inspector:
+          group: validation
+    maximumLength:
+      type: integer
+      defaultValue: null
+      ui:
+        label: "Max Length"
+        inspector:
+          group: validation
+    regularExpression:
+      type: string
+      defaultValue: null
+      ui:
+        label: "Regular Expression"
+        inspector:
+          group: validation
