@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Form:
   ui:
-    label: "Form"
+    label: "Form - FFRT"
     icon: 'icon-list-alt'
     inlineEditable: true
     inspector:

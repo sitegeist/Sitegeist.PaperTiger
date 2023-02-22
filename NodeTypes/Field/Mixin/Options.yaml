@@ -1,0 +1,31 @@
+Sitegeist.PaperTiger:Field.Mixin.Options:
+  abstract: true
+  properties:
+    options:
+      type: \Sitegeist\PaperTiger\Domain\OptionSpecificationCollection
+      ui:
+        label: "Options"
+        reloadIfChanged: true
+        showInCreationDialog: true
+        inspector:
+          group: form
+          editor: Sitegeist.InspectorGadget/Inspector/Editor
+          editorOptions:
+            isCollection: true
+            isSortable: true
+            itemType: Sitegeist\PaperTiger\Domain\OptionSpecification
+            labels:
+              create: 'Create options'
+    option:
+      type: \Sitegeist\PaperTiger\Domain\OptionSpecification
+      ui:
+        label: "Option"
+        reloadIfChanged: true
+        showInCreationDialog: true
+        inspector:
+          group: form
+          editor: Sitegeist.InspectorGadget/Inspector/Editor
+          editorOptions:
+            isNullable: false
+            labels:
+              create: 'Create options'

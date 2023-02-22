@@ -1,0 +1,11 @@
+Sitegeist.PaperTiger:Field.Mixin.IsMultiple:
+  abstract: true
+  properties:
+    isMultiple:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: "Mehrfachauswahl erlauben"
+        reloadIfChanged: true
+        inspector:
+          group: form

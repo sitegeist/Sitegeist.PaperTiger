@@ -1,0 +1,10 @@
+Sitegeist.PaperTiger:Field.Dropdown:
+  ui:
+    label: "Dropdown Feld"
+    icon: icon-list-ol
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Field.Mixin.Label': true
+    'Sitegeist.PaperTiger:Field.Mixin.IsMultiple': true
+    'Sitegeist.PaperTiger:Field.Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Field.Mixin.Options': true

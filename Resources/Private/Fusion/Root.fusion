@@ -1,2 +1,3 @@
 include: **/*.fusion
-include: nodetypes://Sitegeist.PaperTiger/**/*.fusion
+# @todo after raising min version to >= 8.2 change this to: ìnclude nodetypes://Sitegeist.PaperTiger/**/*.fusion`
+include: resource://Sitegeist.PaperTiger/../NodeTypes/**/*.fusion
