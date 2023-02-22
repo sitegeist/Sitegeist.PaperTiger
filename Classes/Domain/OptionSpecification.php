@@ -10,8 +10,7 @@ class OptionSpecification implements \JsonSerializable
 {
     public function __construct(
         public readonly string  $label,
-        public readonly string $value,
-        public readonly bool $isSelected
+        public readonly string $value
     ) {
     }
 
@@ -19,8 +18,7 @@ class OptionSpecification implements \JsonSerializable
     {
         return new self(
             $array['label'],
-            $array['value'],
-            $array['isSelected']
+            $array['value']
         );
     }
 
@@ -31,8 +29,7 @@ class OptionSpecification implements \JsonSerializable
     {
         return [
             'label' => $this->label,
-            'value' => $this->value,
-            'isSelected' => $this->isSelected
+            'value' => $this->value
         ];
     }
 }

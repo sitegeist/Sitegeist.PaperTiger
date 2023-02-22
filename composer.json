@@ -1,6 +1,6 @@
 {
     "description": "Editable forms for Neos CMS",
-    "type": "neos-package",
+    "type": "neos-plugin",
     "name": "sitegeist/papertiger",
     "license": "GPL-3.0+",
     "require": {

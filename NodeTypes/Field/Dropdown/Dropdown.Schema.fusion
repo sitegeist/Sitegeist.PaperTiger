@@ -2,7 +2,7 @@ prototype(Sitegeist.PaperTiger:Field.Dropdown.Schema) < prototype(Neos.Fusion:Va
   value = Neos.Fusion:Case {
     isMultiple {
       condition = ${q(node).property('isMultiple')}
-      renderer = ${Form.Schema.string().validator('Neos\Flow\Validation\Validator\EmailAddressValidator')}
+      renderer = ${Form.Schema.arrayOf(Form.Schema.string())}
     }
     default {
       condition = true

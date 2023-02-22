@@ -2,24 +2,20 @@ prototype(Sitegeist.PaperTiger:Field.Dropdown.Content) < prototype(Neos.Neos:Con
 
   name = ${q(node).property('name')}
   label = ${q(node).property('label')}
+
   isRequired = ${q(node).property('isRequired')}
   isMultiple = ${q(node).property('isMultiple')}
-  options = Neos.Fusion:DataStructure {
-    0 {
-      label = 'Foo'
-      value = 'foo'
-    }
-    1 {
-      label = 'Bar'
-      value = 'bar'
-    }
-  }
+  options = ${q(node).property('options')}
+
+  emptyLabel = ${q(node).property('emptyLabel')}
+  allowEmpty = ${q(node).property('allowEmpty')}
 
   renderer = afx`
     <Neos.Fusion.Form:FieldContainer field.name={props.name} field.multiple={props.isMultiple} label={(props.isRequired ? '*' : '') + props.label}>
-      <Neos.Fusion.Form:Select>
+      <Neos.Fusion.Form:Select attributes.required={props.isRequired}>
+        <Neos.Fusion.Form:Select.Option option.value="" attributes.label={props.emptyLabel} @if={props.allowEmpty} />
         <Neos.Fusion:Loop items={props.options} itemName="option">
-          <Neos.Fusion.Form:Select.Option option.value={option.value} option.label={option.label} />
+          <Neos.Fusion.Form:Select.Option option.value={option.value} attributes.label={option.label} />
         </Neos.Fusion:Loop>
       </Neos.Fusion.Form:Select>
     </Neos.Fusion.Form:FieldContainer>

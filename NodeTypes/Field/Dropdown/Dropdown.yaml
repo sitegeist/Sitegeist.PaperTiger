@@ -8,3 +8,25 @@ Sitegeist.PaperTiger:Field.Dropdown:
     'Sitegeist.PaperTiger:Field.Mixin.IsMultiple': true
     'Sitegeist.PaperTiger:Field.Mixin.IsRequired': true
     'Sitegeist.PaperTiger:Field.Mixin.Options': true
+  properties:
+    allowEmpty:
+      type: boolean
+      defaultValues: true
+      ui:
+        label: "Leere werte erlauben"
+        reloadIfChanged: true
+        inspector:
+          position: 'before options'
+          group: form
+    emptyLabel:
+      type: string
+      defaultValues: ""
+      ui:
+        label: "Label für leere werte"
+        reloadIfChanged: true
+        inspector:
+          position: 'after allowEmpty'
+          group: form
+          hidden: 'ClientEval:node.properties.allowEmpty ? false : true'
+
+

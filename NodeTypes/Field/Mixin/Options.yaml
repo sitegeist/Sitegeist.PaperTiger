@@ -15,17 +15,4 @@ Sitegeist.PaperTiger:Field.Mixin.Options:
             isSortable: true
             itemType: Sitegeist\PaperTiger\Domain\OptionSpecification
             labels:
-              create: 'Create options'
-    option:
-      type: \Sitegeist\PaperTiger\Domain\OptionSpecification
-      ui:
-        label: "Option"
-        reloadIfChanged: true
-        showInCreationDialog: true
-        inspector:
-          group: form
-          editor: Sitegeist.InspectorGadget/Inspector/Editor
-          editorOptions:
-            isNullable: false
-            labels:
-              create: 'Create options'
+              addItem: 'Create option'

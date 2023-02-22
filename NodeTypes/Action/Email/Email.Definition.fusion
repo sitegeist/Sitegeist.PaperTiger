@@ -16,31 +16,28 @@ prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:
   attachUploads = ${q(node).property('attachUploads')}
   testMode = ${q(node).property('testMode')}
 
-  renderer = Sitegeist.PaperTiger:Action {
-    type = 'Neos.Fusion.Form.Runtime:Email'
-    options {
-        subject = ${props.subject}
-        subject.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
-        text = ${props.plaintext}
-        text.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
-        html = ${props.html}
-        html.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
-        recipientAddress = ${props.recipientAddress}
-        recipientName =  ${props.recipientName}
-        senderAddress =  ${props.senderAddress}
-        senderName =  ${props.senderName}
-        replyToAddress = ${props.replyToAddress}
-        carbonCopyAddress =  ${props.carbonCopyAddress}
-        blindCarbonCopyAddress =  ${props.blindCarbonCopyAddress}
-        attachments = Neos.Fusion:Map {
-          @if.isEnabled = ${props.attachUploads}
-          items = ${data}
-          itemName = "item"
-          itemRenderer = ${item}
-          itemRenderer.@if.isUpload = ${Type.instance(value, 'Neos\Flow\ResourceManagement\PersistentResource') || Type.instance(value, 'Psr\Http\Message\UploadedFileInterface')}
-          @process.filterEmpty = ${Array.filter(value)}
-        }
-        testMode = ${props.textMode}
+  renderer = Sitegeist.Neos.SymfonyMailer:MailAction {
+    subject = ${props.subject}
+    subject.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
+    text = ${props.plaintext}
+    text.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
+    html = ${props.html}
+    html.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
+    recipientAddress = ${props.recipientAddress}
+    recipientName =  ${props.recipientName}
+    senderAddress =  ${props.senderAddress}
+    senderName =  ${props.senderName}
+    replyToAddress = ${props.replyToAddress}
+    carbonCopyAddress =  ${props.carbonCopyAddress}
+    blindCarbonCopyAddress =  ${props.blindCarbonCopyAddress}
+    attachments = Neos.Fusion:Map {
+      @if.isEnabled = ${props.attachUploads}
+      items = ${data}
+      itemName = "item"
+      itemRenderer = ${item}
+      itemRenderer.@if.isUpload = ${Type.instance(value, 'Neos\Flow\ResourceManagement\PersistentResource') || Type.instance(value, 'Psr\Http\Message\UploadedFileInterface')}
+      @process.filterEmpty = ${Array.filter(value)}
     }
+    testMode =  ${props.testMode}
   }
 }
