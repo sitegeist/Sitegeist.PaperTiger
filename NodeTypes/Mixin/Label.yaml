@@ -1,4 +1,4 @@
-Sitegeist.PaperTiger:Field.Mixin.Label:
+Sitegeist.PaperTiger:Mixin.Label:
   abstract: true
   properties:
     label:

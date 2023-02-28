@@ -16,3 +16,18 @@ Sitegeist.PaperTiger:Form:
       type: Sitegeist.PaperTiger:Field.Collection
     actions:
       type: Sitegeist.PaperTiger:Action.Collection
+  properties:
+    customSubmitButtonLabelEnabled:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: "Customize Submit Button Label"
+        inspector:
+          group: form
+    customSubmitButtonLabel:
+      type: string
+      ui:
+        label: "Submit Button Label"
+        inspector:
+          group: form
+          hidden: 'ClientEval:node.properties.customSubmitButtonLabelEnabled ? false : true'

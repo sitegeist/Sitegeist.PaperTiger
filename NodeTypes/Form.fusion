@@ -12,6 +12,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
           schema = Sitegeist.PaperTiger:FieldCollection.SchemaRenderer {
             nodePath = 'fields'
           }
+          footer = Sitegeist.PaperTiger:SubmitButtonRenderer
         }
         action = Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer {
           nodePath = 'actions'

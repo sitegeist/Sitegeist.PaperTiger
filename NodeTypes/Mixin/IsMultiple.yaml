@@ -1,4 +1,4 @@
-Sitegeist.PaperTiger:Field.Mixin.IsMultiple:
+Sitegeist.PaperTiger:Mixin.IsMultiple:
   abstract: true
   properties:
     isMultiple:

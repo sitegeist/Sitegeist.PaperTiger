@@ -1,4 +1,4 @@
-Sitegeist.PaperTiger:Field.Mixin.Placeholder:
+Sitegeist.PaperTiger:Mixin.Placeholder:
   abstract: true
   properties:
     placeholder:

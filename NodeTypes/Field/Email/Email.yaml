@@ -4,7 +4,7 @@ Sitegeist.PaperTiger:Field.Email:
     icon: icon-paper-plane
   superTypes:
     'Sitegeist.PaperTiger:Field': true
-    'Sitegeist.PaperTiger:Field.Mixin.Label': true
-    'Sitegeist.PaperTiger:Field.Mixin.Placeholder': true
-    'Sitegeist.PaperTiger:Field.Mixin.IsRequired': true
-    'Sitegeist.PaperTiger:Field.Mixin.ErrorMessage': true
+    'Sitegeist.PaperTiger:Mixin.Label': true
+    'Sitegeist.PaperTiger:Mixin.Placeholder': true
+    'Sitegeist.PaperTiger:Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true

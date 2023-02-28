@@ -4,10 +4,10 @@ Sitegeist.PaperTiger:Field.Input:
     icon: icon-pencil-square-o
   superTypes:
     'Sitegeist.PaperTiger:Field': true
-    'Sitegeist.PaperTiger:Field.Mixin.Label': true
-    'Sitegeist.PaperTiger:Field.Mixin.Placeholder': true
-    'Sitegeist.PaperTiger:Field.Mixin.IsRequired': true
-    'Sitegeist.PaperTiger:Field.Mixin.CustomErrorMessage': true
+    'Sitegeist.PaperTiger:Mixin.Label': true
+    'Sitegeist.PaperTiger:Mixin.Placeholder': true
+    'Sitegeist.PaperTiger:Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true
   properties:
     minimumLength:
       type: integer
@@ -21,12 +21,5 @@ Sitegeist.PaperTiger:Field.Input:
       defaultValue: null
       ui:
         label: "Max Length"
-        inspector:
-          group: form-validation
-    regularExpression:
-      type: string
-      defaultValue: null
-      ui:
-        label: "Regular Expression"
         inspector:
           group: form-validation

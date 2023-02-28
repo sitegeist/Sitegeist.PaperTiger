@@ -4,11 +4,11 @@ Sitegeist.PaperTiger:Field.Dropdown:
     icon: icon-list-ol
   superTypes:
     'Sitegeist.PaperTiger:Field': true
-    'Sitegeist.PaperTiger:Field.Mixin.Label': true
-    'Sitegeist.PaperTiger:Field.Mixin.IsMultiple': true
-    'Sitegeist.PaperTiger:Field.Mixin.IsRequired': true
-    'Sitegeist.PaperTiger:Field.Mixin.Options': true
-    'Sitegeist.PaperTiger:Field.Mixin.ErrorMessage': true
+    'Sitegeist.PaperTiger:Mixin.Label': true
+    'Sitegeist.PaperTiger:Mixin.IsMultiple': true
+    'Sitegeist.PaperTiger:Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Mixin.Options': true
+    'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true
   properties:
     allowEmpty:
       type: boolean

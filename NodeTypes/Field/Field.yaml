@@ -16,9 +16,9 @@ Sitegeist.PaperTiger:Field:
           position: 30
           icon: 'check-double'
         'form-error':
-          label: "Form"
+          label: "Error message"
           position: 30
-          icon: 'icon-list-alt'
+          icon: 'icon-exclamation-triangle'
   properties:
     identifier:
       type: string

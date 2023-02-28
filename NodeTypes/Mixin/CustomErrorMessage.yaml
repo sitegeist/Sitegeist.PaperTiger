@@ -1,4 +1,4 @@
-Sitegeist.PaperTiger:Field.Mixin.CustomErrorMessage:
+Sitegeist.PaperTiger:Mixin.CustomErrorMessage:
   abstract: true
   properties:
     customErrorMessageEnabled:
@@ -15,6 +15,6 @@ Sitegeist.PaperTiger:Field.Mixin.CustomErrorMessage:
         inspector:
           group: form-error
           editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
-          hidden: 'ClientEval:node.properties.errorMessageCustom ? false : true'
+          hidden: 'ClientEval:node.properties.customErrorMessageEnabled ? false : true'
           editorOptions:
             rows: 7

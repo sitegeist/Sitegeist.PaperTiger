@@ -1,4 +1,4 @@
-Sitegeist.PaperTiger:Field.Mixin.IsRequired:
+Sitegeist.PaperTiger:Mixin.IsRequired:
   abstract: true
   properties:
     isRequired:
