@@ -7,7 +7,10 @@
         "php": ">=8.1",
         "neos/neos": "~8.1 || dev-master",
         "neos/fusion-form": ">2.0 || dev-master",
-        "sitegeist/inspectorgadget": "^2.0.0"
+        "sitegeist/inspectorgadget": "^2.0.0",
+        "sitegeist/neos-symfonymailer": "*",
+        "sitegeist/fusionform-uploads": "*"
+
     },
     "autoload": {
         "psr-4": {

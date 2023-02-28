@@ -11,17 +11,23 @@ Sitegeist.PaperTiger:Field:
           label: "Form"
           position: 30
           icon: 'icon-list-alt'
-        'validation':
+        'form-validation':
           label: "Validation"
           position: 30
           icon: 'check-double'
+        'form-error':
+          label: "Form"
+          position: 30
+          icon: 'icon-list-alt'
   properties:
-    name:
+    identifier:
       type: string
       ui:
-        label: "Name"
+        label: "Identifier"
         showInCreationDialog: true
         reloadIfChanged: true
+        help:
+          message: "A technical identifier for the field. Must only contain number and chars."
         inspector:
           group: form
       validation:

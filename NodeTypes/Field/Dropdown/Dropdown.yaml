@@ -8,6 +8,7 @@ Sitegeist.PaperTiger:Field.Dropdown:
     'Sitegeist.PaperTiger:Field.Mixin.IsMultiple': true
     'Sitegeist.PaperTiger:Field.Mixin.IsRequired': true
     'Sitegeist.PaperTiger:Field.Mixin.Options': true
+    'Sitegeist.PaperTiger:Field.Mixin.ErrorMessage': true
   properties:
     allowEmpty:
       type: boolean

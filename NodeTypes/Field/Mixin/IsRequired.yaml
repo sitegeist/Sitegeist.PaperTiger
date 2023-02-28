@@ -9,4 +9,4 @@ Sitegeist.PaperTiger:Field.Mixin.IsRequired:
         reloadIfChanged: true
         showInCreationDialog: true
         inspector:
-          group: validation
+          group: form-validation

@@ -7,3 +7,4 @@ Sitegeist.PaperTiger:Field.Email:
     'Sitegeist.PaperTiger:Field.Mixin.Label': true
     'Sitegeist.PaperTiger:Field.Mixin.Placeholder': true
     'Sitegeist.PaperTiger:Field.Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Field.Mixin.ErrorMessage': true
