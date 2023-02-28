@@ -9,8 +9,7 @@
         "neos/fusion-form": ">2.0 || dev-master",
         "sitegeist/inspectorgadget": "^2.0.0",
         "sitegeist/neos-symfonymailer": "*",
-        "sitegeist/fusionform-uploads": "*"
-
+        "sitegeist/fusionform-upload": "*"
     },
     "autoload": {
         "psr-4": {
