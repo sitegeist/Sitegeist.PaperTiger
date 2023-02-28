@@ -1,0 +1,10 @@
+Sitegeist.PaperTiger:Field.RadioButtons:
+  ui:
+    label: "RadioButtons"
+    icon: icon-dot-circle
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Mixin.Label': true
+    'Sitegeist.PaperTiger:Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Mixin.Options': true
+    'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true

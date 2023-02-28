@@ -1,0 +1,49 @@
+Sitegeist.PaperTiger:Field.Upload:
+  ui:
+    label: "Upload"
+    icon: icon-upload
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Mixin.Label': true
+    'Sitegeist.PaperTiger:Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true
+  properties:
+    allowedExtensions:
+      type: array
+      ui:
+        label: "Allowed File Extensions"
+        reloadIfChanged: true
+        inspector:
+          group: form
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'pdf':
+                label: '.pdf'
+                icon: 'icon-file-pdf-o'
+              'xls':
+                label: '.xls'
+                icon: 'icon-file-excel-o'
+              'xlsx':
+                label: '.xlsx'
+                icon: 'icon-file-excel-o'
+              'doc':
+                label: '.doc'
+                icon: 'icon-file-text'
+              'docx':
+                label: '.docx'
+                icon: 'icon-file-text'
+              'odt':
+                label: '.odt'
+                icon: 'icon-file-text'
+              'csv':
+                label: '.csv'
+                icon: 'icon-file-text'
+
+    allowedFilesize:
+      type: integer
+      ui:
+        label: "maximum Size (bytes)"
+        reloadIfChanged: true
+        inspector:
+          group: form

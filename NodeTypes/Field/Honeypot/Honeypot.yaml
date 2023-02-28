@@ -1,0 +1,6 @@
+Sitegeist.PaperTiger:Field.Honeypot:
+  ui:
+    label: "Honeypot"
+    icon: icon-candy-cane
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true

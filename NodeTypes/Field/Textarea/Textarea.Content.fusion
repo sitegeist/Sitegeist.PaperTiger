@@ -1,0 +1,29 @@
+prototype(Sitegeist.PaperTiger:Field.Textarea.Content) < prototype(Neos.Neos:ContentComponent) {
+
+  identifier = ${q(node).property('identifier')}
+  label = ${q(node).property('label')}
+  placeholder = ${q(node).property('placeholder')}
+  isRequired = ${q(node).property('isRequired')}
+  isRequired = ${q(node).property('isRequired')}
+  minimumLength = ${q(node).property('minimumLength')}
+  maximumLength = ${q(node).property('maximumLength')}
+  regularExpression = ${q(node).property('regularExpression')}
+
+  renderer = afx`
+    <Neos.Fusion.Form:FieldContainer
+      field.name={props.identifier}
+      label={props.label}
+      labelRenderer="Sitegeist.PaperTiger:LabelRenderer"
+      errorRenderer="Sitegeist.PaperTiger:FieldErrorRenderer"
+    >
+      <Neos.Fusion.Form:Textarea
+
+        attributes.required={props.isRequired || false}
+        attributes.minlength={props.minimumLength || false}
+        attributes.maxlength={props.maximumLength || false}
+        attributes.pattern={props.regularExpression || false}
+        attributes.placeholder={props.placeholder || false}
+      />
+    </Neos.Fusion.Form:FieldContainer>
+  `
+}

@@ -1,6 +1,6 @@
-Sitegeist.PaperTiger:Field.Input:
+Sitegeist.PaperTiger:Field.Textarea:
   ui:
-    label: "Textfeld einzeilig"
+    label: "Textfeld mehrzeilig"
     icon: icon-pencil-square-o
   superTypes:
     'Sitegeist.PaperTiger:Field': true

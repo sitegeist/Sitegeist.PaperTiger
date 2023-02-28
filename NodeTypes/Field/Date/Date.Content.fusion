@@ -1,0 +1,18 @@
+prototype(Sitegeist.PaperTiger:Field.Date.Content) < prototype(Neos.Neos:ContentComponent) {
+
+  identifier = ${q(node).property('identifier')}
+  label = ${q(node).property('label')}
+  placeholder = ${q(node).property('placeholder')}
+  isRequired = ${q(node).property('isRequired')}
+
+  renderer = afx`
+    <Neos.Fusion.Form:FieldContainer
+        field.name={props.identifier}
+        label={props.label}
+        labelRenderer="Sitegeist.PaperTiger:LabelRenderer"
+        errorRenderer="Sitegeist.PaperTiger:FieldErrorRenderer"
+    >
+      <Neos.Fusion.Form:Date attributes.required={props.isRequired} attributes.placeholder={props.placeholder} />
+    </Neos.Fusion.Form:FieldContainer>
+  `
+}
