@@ -1,8 +1,9 @@
 Sitegeist.PaperTiger:Field.Dropdown:
   ui:
-    label: "Dropdown Feld"
+    label: "Dropdown"
     icon: icon-list-ol
     group: form.elements
+    position: 500
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true
@@ -15,7 +16,7 @@ Sitegeist.PaperTiger:Field.Dropdown:
       type: boolean
       defaultValues: true
       ui:
-        label: "Leere werte erlauben"
+        label: "allow empty"
         reloadIfChanged: true
         inspector:
           position: 'before options'
@@ -24,7 +25,7 @@ Sitegeist.PaperTiger:Field.Dropdown:
       type: string
       defaultValues: ""
       ui:
-        label: "Label für leere werte"
+        label: "label for empty value"
         reloadIfChanged: true
         inspector:
           position: 'after allowEmpty'

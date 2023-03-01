@@ -3,6 +3,7 @@ Sitegeist.PaperTiger:Field.RadioButtons:
     label: "RadioButtons"
     icon: icon-dot-circle
     group: form.elements
+    position: 700
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true

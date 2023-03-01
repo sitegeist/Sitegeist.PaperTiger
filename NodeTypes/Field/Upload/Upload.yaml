@@ -1,8 +1,9 @@
 Sitegeist.PaperTiger:Field.Upload:
   ui:
-    label: "Upload"
+    label: "File upload"
     icon: icon-upload
     group: form.elements
+    position: 800
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true
@@ -19,27 +20,55 @@ Sitegeist.PaperTiger:Field.Upload:
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
-              'pdf':
-                label: '.pdf'
-                icon: 'icon-file-pdf-o'
+              'jpeg':
+                label: '.jpg'
+                icon: 'icon-image'
+                group: 'Image'
+              'png':
+                label: '.png'
+                icon: 'icon-image'
+                group: 'Image'
+              'gif':
+                label: '.gif'
+                icon: 'icon-image'
+                group: 'Image'
+              'tiff':
+                label: '.tiff'
+                icon: 'icon-image'
+                group: 'Image'
+
               'xls':
                 label: '.xls'
                 icon: 'icon-file-excel-o'
+                group: 'Office'
               'xlsx':
                 label: '.xlsx'
                 icon: 'icon-file-excel-o'
+                group: 'Office'
               'doc':
                 label: '.doc'
                 icon: 'icon-file-text'
+                group: 'Office'
               'docx':
                 label: '.docx'
                 icon: 'icon-file-text'
+                group: 'Office'
               'odt':
                 label: '.odt'
                 icon: 'icon-file-text'
+                group: 'Office'
+              'pdf':
+                label: '.pdf'
+                icon: 'icon-file-pdf-o'
+                group: 'Other'
               'csv':
                 label: '.csv'
                 icon: 'icon-file-text'
+                group: 'Other'
+              'zip':
+                label: '.zip'
+                icon: 'icon-archive'
+                group: 'Other'
 
     allowedFilesize:
       type: integer

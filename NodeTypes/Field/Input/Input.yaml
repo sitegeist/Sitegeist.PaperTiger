@@ -1,8 +1,9 @@
 Sitegeist.PaperTiger:Field.Input:
   ui:
-    label: "Textfeld einzeilig"
+    label: "Text (single-line)"
     icon: icon-pencil-square-o
     group: form.elements
+    position: 100
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true
