@@ -2,6 +2,7 @@ Sitegeist.PaperTiger:Field.Dropdown:
   ui:
     label: "Dropdown Feld"
     icon: icon-list-ol
+    group: form.elements
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true

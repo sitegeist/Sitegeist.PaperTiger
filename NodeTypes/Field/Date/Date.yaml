@@ -2,6 +2,7 @@ Sitegeist.PaperTiger:Field.Date:
   ui:
     label: "Date Feld"
     icon: icon-calendar
+    group: form.elements
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true

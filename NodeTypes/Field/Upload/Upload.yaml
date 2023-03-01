@@ -2,6 +2,7 @@ Sitegeist.PaperTiger:Field.Upload:
   ui:
     label: "Upload"
     icon: icon-upload
+    group: form.elements
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true

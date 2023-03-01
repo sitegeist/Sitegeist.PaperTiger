@@ -2,6 +2,7 @@ Sitegeist.PaperTiger:Field.Email:
   ui:
     label: "EMail Feld"
     icon: icon-paper-plane
+    group: form.elements
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true

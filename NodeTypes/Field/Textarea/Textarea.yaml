@@ -2,6 +2,7 @@ Sitegeist.PaperTiger:Field.Textarea:
   ui:
     label: "Textfeld mehrzeilig"
     icon: icon-pencil-square-o
+    group: form.elements
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true

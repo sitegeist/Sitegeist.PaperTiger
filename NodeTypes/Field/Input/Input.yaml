@@ -2,6 +2,7 @@ Sitegeist.PaperTiger:Field.Input:
   ui:
     label: "Textfeld einzeilig"
     icon: icon-pencil-square-o
+    group: form.elements
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true
