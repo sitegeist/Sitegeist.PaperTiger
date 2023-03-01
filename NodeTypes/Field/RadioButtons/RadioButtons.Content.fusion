@@ -7,15 +7,19 @@ prototype(Sitegeist.PaperTiger:Field.RadioButtons.Content) < prototype(Neos.Neos
   options = ${q(node).property('options')}
 
   renderer = afx`
-    <Neos.Fusion.Form:FieldContainer
+    <Sitegeist.PaperTiger:FieldContainerRenderer
       field.name={props.identifier}
       label={props.label}
-      labelRenderer="Sitegeist.PaperTiger:LabelRenderer"
-      errorRenderer="Sitegeist.PaperTiger:FieldErrorRenderer"
     >
       <Neos.Fusion:Loop items={props.options} itemName="option">
-        <label><Neos.Fusion.Form:Radio option.value={option.value} /> {option.label}</label>
+        <div>
+          <label>
+            <Neos.Fusion.Form:Radio
+              field.value={option.value}
+            /> {option.label}
+          </label>
+        </div>
       </Neos.Fusion:Loop>
-    </Neos.Fusion.Form:FieldContainer>
+    </Sitegeist.PaperTiger:FieldContainerRenderer>
   `
 }

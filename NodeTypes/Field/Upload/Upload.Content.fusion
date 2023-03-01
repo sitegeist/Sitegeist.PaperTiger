@@ -7,13 +7,15 @@ prototype(Sitegeist.PaperTiger:Field.Upload.Content) < prototype(Neos.Neos:Conte
   allowedExtensions = ${q(node).property('allowedExtensions')}
 
   renderer = afx`
-    <Neos.Fusion.Form:FieldContainer
+    <Sitegeist.PaperTiger:FieldContainerRenderer
       field.name={props.identifier}
       label={props.label}
-      labelRenderer="Sitegeist.PaperTiger:LabelRenderer"
-      errorRenderer="Sitegeist.PaperTiger:FieldErrorRenderer"
     >
-      <Sitegeist.FusionForm.Upload:Upload attributes.required={props.isRequired} attributes.accept={props.allowedExtensions ? '.' + Array.join(props.allowedExtensions, ',.') : false}/>
-    </Neos.Fusion.Form:FieldContainer>
+      <Sitegeist.FusionForm.Upload:Upload
+        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.element')}
+        attributes.required={props.isRequired}
+        attributes.accept={props.allowedExtensions ? '.' + Array.join(props.allowedExtensions, ',.') : false}
+      />
+    </Sitegeist.PaperTiger:FieldContainerRenderer>
   `
 }

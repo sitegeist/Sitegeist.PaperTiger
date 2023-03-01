@@ -1,15 +1,8 @@
-prototype(Sitegeist.PaperTiger:Action.Message.Preview) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Action.Message.Preview) < prototype(Neos.Fusion:Component) {
 
   message = ${q(node).property('message')}
 
   renderer = afx`
-    <dl>
-      <dt>
-        Message Action
-      </dt>
-      <dd>
-        {props.message}
-      </dd>
-    </dl>
+    {props.message}
   `
 }

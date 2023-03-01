@@ -23,14 +23,16 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
     backend {
       condition = ${node.context.inBackend}
       renderer = afx`
-          <fieldset>
-            <legend>content</legend>
-            <Sitegeist.PaperTiger:FieldCollection.ContentRenderer nodePath="fields" />
-          </fieldset>
-          <fieldset>
-            <legend>actions</legend>
-            <Sitegeist.PaperTiger:ActionCollection.PreviewRenderer nodePath="actions" />
-          </fieldset>
+          <div style="border-bottom: 1px solid black; margin-top: 2em; margin-bottom: 1em; padding-bottom: 1em; line-height:2em;">
+              <span style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">1</span>
+              <span style="color: black; font-size: 1.5em; position:relative; top: .1em; "> Form fields</span>
+          </div>
+          <Sitegeist.PaperTiger:FieldCollection.ContentRenderer nodePath="fields" />
+          <div style="border-bottom: 1px solid black; margin-top: 2em; margin-bottom: 1em; padding-bottom: 1em; line-height:2em;">
+              <span style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">2</span>
+              <span style="color: black; font-size: 1.5em; position:relative; top: .1em; "> Follow up actions</span>
+          </div>
+          <Sitegeist.PaperTiger:ActionCollection.PreviewRenderer nodePath="actions" />
       `
     }
   }

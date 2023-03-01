@@ -1,6 +1,7 @@
-prototype(Sitegeist.PaperTiger:Field.Honeypot.Content) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Field.Hidden.Content) < prototype(Neos.Neos:ContentComponent) {
 
   identifier = ${q(node).property('identifier')}
+  value = ${q(node).property('value')}
 
   renderer = Neos.Fusion:Case {
     backend {
@@ -9,7 +10,7 @@ prototype(Sitegeist.PaperTiger:Field.Honeypot.Content) < prototype(Neos.Neos:Con
         <Sitegeist.PaperTiger:FieldContainerRenderer
           field.name={props.identifier}
         >
-          <label>Honeypot</label> {props.identifier}
+          <label>Hidden</label> {props.identifier}:{props.value}
         </Sitegeist.PaperTiger:FieldContainerRenderer>
       `
     }
@@ -23,7 +24,7 @@ prototype(Sitegeist.PaperTiger:Field.Honeypot.Content) < prototype(Neos.Neos:Con
           attributes.autocomplete="off"
           attributes.tabindex="-1"
         >
-          <Neos.Fusion.Form:Input />
+          <Neos.Fusion.Form:Hidden field.value={props.value} />
         </Neos.Fusion.Form:FieldContainer>
       `
     }

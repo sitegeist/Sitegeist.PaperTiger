@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Action.Redirect:
   ui:
-      label: 'Weiterleiten'
+      label: 'Redirect user'
       icon: 'icon-arrow-right'
   superTypes:
     'Sitegeist.PaperTiger:Action': true

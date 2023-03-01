@@ -1,3 +1,16 @@
+Sitegeist:
+  PaperTiger:
+    rendering:
+      prototypes:
+        container: "Sitegeist.PaperTiger:FieldContainer"
+        label: "Sitegeist.PaperTiger:LabelRenderer"
+        error: "Sitegeist.PaperTiger:ErrorRenderer"
+    classes:
+      container: ''
+      element: ''
+      label: ''
+      error: 'error'
+
 Neos:
   Neos:
     fusion:

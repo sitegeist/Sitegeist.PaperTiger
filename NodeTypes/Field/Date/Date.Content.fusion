@@ -6,13 +6,15 @@ prototype(Sitegeist.PaperTiger:Field.Date.Content) < prototype(Neos.Neos:Content
   isRequired = ${q(node).property('isRequired')}
 
   renderer = afx`
-    <Neos.Fusion.Form:FieldContainer
+    <Sitegeist.PaperTiger:FieldContainerRenderer
         field.name={props.identifier}
         label={props.label}
-        labelRenderer="Sitegeist.PaperTiger:LabelRenderer"
-        errorRenderer="Sitegeist.PaperTiger:FieldErrorRenderer"
     >
-      <Neos.Fusion.Form:Date attributes.required={props.isRequired} attributes.placeholder={props.placeholder} />
-    </Neos.Fusion.Form:FieldContainer>
+      <Neos.Fusion.Form:Date
+        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.element')}
+        attributes.required={props.isRequired}
+        attributes.placeholder={props.placeholder}
+      />
+    </Sitegeist.PaperTiger:FieldContainerRenderer>
   `
 }

@@ -11,19 +11,17 @@ prototype(Sitegeist.PaperTiger:Field.Dropdown.Content) < prototype(Neos.Neos:Con
   allowEmpty = ${q(node).property('allowEmpty')}
 
   renderer = afx`
-    <Neos.Fusion.Form:FieldContainer
+    <Sitegeist.PaperTiger:FieldContainerRenderer
       field.name={props.identifier}
       field.multiple={props.isMultiple}
       label={props.label}
-      labelRenderer="Sitegeist.PaperTiger:LabelRenderer"
-      errorRenderer="Sitegeist.PaperTiger:FieldErrorRenderer"
     >
-      <Neos.Fusion.Form:Select attributes.required={props.isRequired}>
+      <Neos.Fusion.Form:Select attributes.required={props.isRequired} attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.element')}>
         <Neos.Fusion.Form:Select.Option option.value="" attributes.label={props.emptyLabel} @if={props.allowEmpty} />
         <Neos.Fusion:Loop items={props.options} itemName="option">
           <Neos.Fusion.Form:Select.Option option.value={option.value} attributes.label={option.label} />
         </Neos.Fusion:Loop>
       </Neos.Fusion.Form:Select>
-    </Neos.Fusion.Form:FieldContainer>
+    </Sitegeist.PaperTiger:FieldContainerRenderer>
   `
 }

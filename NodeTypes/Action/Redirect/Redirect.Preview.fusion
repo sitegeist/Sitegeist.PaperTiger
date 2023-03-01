@@ -1,15 +1,8 @@
-prototype(Sitegeist.PaperTiger:Action.Redirect.Preview) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Action.Redirect.Preview) < prototype(Neos.Fusion:Component) {
 
   uri = ${q(node).property('uri')}
 
   renderer = afx`
-    <dl>
-      <dt>
-        Redirect Action
-      </dt>
-      <dd>
-        {props.uri}
-      </dd>
-    </dl>
+    {props.uri}
   `
 }

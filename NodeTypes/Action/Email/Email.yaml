@@ -2,7 +2,7 @@ Sitegeist.PaperTiger:Action.Email:
   superTypes:
     'Sitegeist.PaperTiger:Action': true
   ui:
-    label: 'Email Action'
+    label: 'Send email'
     icon: 'icon-envelope-o'
   properties:
     'subject':

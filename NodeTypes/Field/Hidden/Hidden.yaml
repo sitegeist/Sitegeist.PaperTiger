@@ -1,0 +1,17 @@
+Sitegeist.PaperTiger:Field.Hidden:
+  ui:
+    label: "Hidden"
+    icon: eye-slash
+    group: form.special
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true
+  properties:
+    value:
+      type: string
+      ui:
+        label: 'Value'
+        showInCreationDialog: true
+        inspector:
+          group: form
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []

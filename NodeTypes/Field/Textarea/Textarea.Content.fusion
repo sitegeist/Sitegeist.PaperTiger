@@ -10,20 +10,18 @@ prototype(Sitegeist.PaperTiger:Field.Textarea.Content) < prototype(Neos.Neos:Con
   regularExpression = ${q(node).property('regularExpression')}
 
   renderer = afx`
-    <Neos.Fusion.Form:FieldContainer
+    <Sitegeist.PaperTiger:FieldContainerRenderer
       field.name={props.identifier}
       label={props.label}
-      labelRenderer="Sitegeist.PaperTiger:LabelRenderer"
-      errorRenderer="Sitegeist.PaperTiger:FieldErrorRenderer"
     >
       <Neos.Fusion.Form:Textarea
-
+        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.element')}
         attributes.required={props.isRequired || false}
         attributes.minlength={props.minimumLength || false}
         attributes.maxlength={props.maximumLength || false}
         attributes.pattern={props.regularExpression || false}
         attributes.placeholder={props.placeholder || false}
       />
-    </Neos.Fusion.Form:FieldContainer>
+    </Sitegeist.PaperTiger:FieldContainerRenderer>
   `
 }

@@ -1,10 +1,12 @@
-prototype(Sitegeist.PaperTiger:FieldErrorRenderer) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:ErrorRenderer) < prototype(Neos.Fusion:Component) {
 
-  errorRenderer = 'Neos.Fusion.Form:ErrorRenderer'
-  class = 'errors'
+  class = ${Configuration.setting("Sitegeist.PaperTiger.classes.label")}
 
   customErrorMessage = ${q(node).property('customErrorMessage')}
   customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
+
+  translationPackage = 'Neos.Flow'
+  translationSource = 'ValidationErrors'
 
   result = null
 
@@ -21,9 +23,12 @@ prototype(Sitegeist.PaperTiger:FieldErrorRenderer) < prototype(Neos.Fusion:Compo
 
     default {
       condition = true
-      type = ${props.errorRenderer}
-      element.class = ${props.class}
-      element.result = ${props.result}
+      renderer = Neos.Fusion.Form:ErrorRenderer {
+        class = ${props.class}
+        result = ${props.result}
+        translationPackage = ${props.translationPackage}
+        translationSource = ${props.translationPackage}
+      }
     }
   }
 }
