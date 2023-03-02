@@ -1,0 +1,3 @@
+prototype(Sitegeist.PaperTiger:Field.FriendlyCaptcha.Schema) < prototype(Neos.Fusion:Value) {
+  value = ${Form.Schema.string().validator('Sitegeist.FusionForm.FriendlyCaptcha:FriendlyCaptcha')}
+}

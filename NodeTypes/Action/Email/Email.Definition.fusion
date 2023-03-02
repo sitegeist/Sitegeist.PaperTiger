@@ -35,7 +35,7 @@ prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:
       items = ${data}
       itemName = "item"
       itemRenderer = ${item}
-      itemRenderer.@if.isUpload = ${Type.instance(value, 'Neos\Flow\ResourceManagement\PersistentResource') || Type.instance(value, 'Psr\Http\Message\UploadedFileInterface')}
+      itemRenderer.@if.isUpload = ${Type.instance(item, '\\Neos\\Flow\\ResourceManagement\\PersistentResource') || Type.instance(item, '\\Psr\\Http\\Message\\UploadedFileInterface')}
       @process.filterEmpty = ${Array.filter(value)}
     }
     testMode =  ${props.testMode}

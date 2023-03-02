@@ -1,0 +1,7 @@
+Sitegeist.PaperTiger:Field.FriendlyCaptcha:
+  ui:
+    label: "FriendlyCaptcha"
+    icon: resource://Sitegeist.PaperTiger/Icons/friendlycapcha.svg
+    group: form.special
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true

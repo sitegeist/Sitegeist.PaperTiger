@@ -16,7 +16,7 @@ Sitegeist.PaperTiger:Field.Upload:
         label: "Allowed File Extensions"
         reloadIfChanged: true
         inspector:
-          group: form
+          group: form-validation
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
@@ -76,4 +76,4 @@ Sitegeist.PaperTiger:Field.Upload:
         label: "maximum Size (bytes)"
         reloadIfChanged: true
         inspector:
-          group: form
+          group: form-validation

@@ -1,7 +1,10 @@
-prototype(Sitegeist.PaperTiger:FieldContainerRenderer) < prototype(Neos.Fusion.Form:Component.Field) {
+prototype(Sitegeist.PaperTiger:FieldContainerRenderer) < prototype(Neos.Fusion:Component) {
+
+  @context.field = ${this.field}
+
   label = null
+  field = Neos.Fusion.Form:Definition.Field
   attributes = Neos.Fusion:DataStructure
-  content = null
 
   class = ${Configuration.setting('Sitegeist.PaperTiger.rendering.classes.container')}
   errorClass = ${Configuration.setting('Sitegeist.PaperTiger.rendering.classes.error')}
@@ -11,6 +14,7 @@ prototype(Sitegeist.PaperTiger:FieldContainerRenderer) < prototype(Neos.Fusion.F
   errorRenderer = ${Configuration.setting('Sitegeist.PaperTiger.rendering.prototypes.error')}
 
   renderer = Neos.Fusion:Case {
+
     custom {
       condition = Neos.Fusion:CanRender {
         type = ${props.containerRenderer}
@@ -29,6 +33,7 @@ prototype(Sitegeist.PaperTiger:FieldContainerRenderer) < prototype(Neos.Fusion.F
         }
       }
     }
+
     default {
       condition = true
       renderer = Neos.Fusion.Form:FieldContainer {

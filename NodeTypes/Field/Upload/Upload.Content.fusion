@@ -11,7 +11,7 @@ prototype(Sitegeist.PaperTiger:Field.Upload.Content) < prototype(Neos.Neos:Conte
       field.name={props.identifier}
       label={props.label}
     >
-      <Sitegeist.FusionForm.Upload:Upload
+      <Sitegeist.FusionForm.Upload:Field.Upload
         attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.element')}
         attributes.required={props.isRequired}
         attributes.accept={props.allowedExtensions ? '.' + Array.join(props.allowedExtensions, ',.') : false}
