@@ -6,6 +6,7 @@ Sitegeist:
         label: "Sitegeist.PaperTiger:LabelRenderer"
         error: "Sitegeist.PaperTiger:ErrorRenderer"
     classes:
+      form: ''
       container: ''
       element: ''
       label: ''

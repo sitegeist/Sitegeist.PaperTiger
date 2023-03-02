@@ -5,6 +5,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
       condition = ${node.context.live}
       renderer = Neos.Fusion.Form:Runtime.RuntimeForm {
         namespace = ${q(node).property('_identifier')}
+        attributes.class = ${Configuration.setting('Sitegeist.PaperTiger.rendering.classes.form')}
         process = Neos.Fusion.Form:Runtime.SingleStepProcess {
           content = Sitegeist.PaperTiger:FieldCollection.ContentRenderer {
             nodePath = 'fields'
@@ -23,16 +24,20 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
     backend {
       condition = ${node.context.inBackend}
       renderer = afx`
-          <div style="border-bottom: 1px solid black; margin-top: 2em; margin-bottom: 1em; padding-bottom: 1em; line-height:2em;">
-              <span style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">1</span>
-              <span style="color: black; font-size: 1.5em; position:relative; top: .1em; "> Form fields</span>
-          </div>
-          <Sitegeist.PaperTiger:FieldCollection.ContentRenderer nodePath="fields" />
-          <div style="border-bottom: 1px solid black; margin-top: 2em; margin-bottom: 1em; padding-bottom: 1em; line-height:2em;">
-              <span style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">2</span>
-              <span style="color: black; font-size: 1.5em; position:relative; top: .1em; "> Follow up actions</span>
-          </div>
-          <Sitegeist.PaperTiger:ActionCollection.PreviewRenderer nodePath="actions" />
+        <div>
+            <div style="border-bottom: 1px solid black; margin-top: 2em; margin-bottom: 1em; padding-bottom: 1em; line-height:2em;">
+                <span style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">1</span>
+                <span style="color: black; font-size: 1.5em; position:relative; top: .1em; "> Form fields</span>
+            </div>
+            <form class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.form')}>
+              <Sitegeist.PaperTiger:FieldCollection.ContentRenderer nodePath="fields" />
+            </form>
+            <div style="border-bottom: 1px solid black; margin-top: 2em; margin-bottom: 1em; padding-bottom: 1em; line-height:2em;">
+                <span style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">2</span>
+                <span style="color: black; font-size: 1.5em; position:relative; top: .1em; "> Follow up actions</span>
+            </div>
+            <Sitegeist.PaperTiger:ActionCollection.PreviewRenderer nodePath="actions" />
+        </div>
       `
     }
   }
