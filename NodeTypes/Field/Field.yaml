@@ -5,6 +5,7 @@ Sitegeist.PaperTiger:Field:
     'Neos.Neos:Content': true
     'Sitegeist.PaperTiger:Field.Constraint': true
   ui:
+    inlineEditable: true
     inspector:
       groups:
         'form':

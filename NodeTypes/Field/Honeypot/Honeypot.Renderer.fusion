@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Field.Honeypot.Content) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Field.Honeypot.Renderer) < prototype(Neos.Neos:ContentComponent) {
 
   identifier = ${q(node).property('identifier')}
 
@@ -19,7 +19,7 @@ prototype(Sitegeist.PaperTiger:Field.Honeypot.Content) < prototype(Neos.Neos:Con
       renderer = afx`
         <Neos.Fusion.Form:FieldContainer
           field.name={props.identifier}
-          attributes.style="display:none; !important"
+          attributes.style="display:none !important;"
           attributes.autocomplete="off"
           attributes.tabindex="-1"
         >

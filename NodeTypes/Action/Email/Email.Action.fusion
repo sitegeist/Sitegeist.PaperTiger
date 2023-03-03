@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:Action.Email.Action) < prototype(Neos.Fusion:Component) {
 
   subject = ${q(node).property('subject')}
   format = ${q(node).property('format')}

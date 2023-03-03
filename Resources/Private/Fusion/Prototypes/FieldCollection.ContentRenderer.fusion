@@ -6,25 +6,27 @@ prototype(Sitegeist.PaperTiger:FieldCollection.ContentRenderer) < prototype(Neos
 }
 
 prototype(Sitegeist.PaperTiger:FieldCollection.ContentCase) < prototype(Neos.Fusion:Case) {
-  override {
-    @position = 'before content'
-    condition = Neos.Fusion:CanRender {
-      type = ${node.nodeType.name + '.Content.Override'}
-    }
-    type = ${node.nodeType.name + '.Content.Override'}
-  }
 
-  content {
-    @position = 'before default'
-    condition = Neos.Fusion:CanRender {
-      type = ${node.nodeType.name + '.Content'}
+  field {
+    condition = ${q(node).is('[instanceof Sitegeist.PaperTiger:Field]')}
+    renderer = Neos.Neos:ContentComponent {
+      renderer = Neos.Fusion:Case {
+        override {
+          condition = Neos.Fusion:CanRender {
+            type = ${node.nodeType.name + '.Renderer.Override'}
+          }
+          type = ${node.nodeType.name + '.Renderer.Override'}
+        }
+        content {
+          condition = true
+          type = ${node.nodeType.name + '.Renderer'}
+        }
+      }
     }
-    type = ${node.nodeType.name + '.Content'}
   }
 
   default {
-    @position = 'end'
     condition = true
-    type = ${node.nodeType.name}
+    renderer = Neos.Neos:ContentCase
   }
 }

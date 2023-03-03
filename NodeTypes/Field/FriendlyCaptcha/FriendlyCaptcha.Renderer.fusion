@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Field.FriendlyCaptcha.Content) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Field.FriendlyCaptcha.Renderer) < prototype(Neos.Neos:ContentComponent) {
 
   identifier = ${q(node).property('identifier')}
 

@@ -5,12 +5,20 @@ Sitegeist:
         container: "Sitegeist.PaperTiger:FieldContainer"
         label: "Sitegeist.PaperTiger:LabelRenderer"
         error: "Sitegeist.PaperTiger:ErrorRenderer"
-    classes:
-      form: ''
-      container: ''
-      element: ''
-      label: ''
-      error: 'error'
+      classes:
+        form: ''
+        container: ''
+        field:
+          dropdown: ''
+          checkbox: ''
+          radiobutton: ''
+          singleLineText: ''
+          multiLineText: ''
+          date: ''
+          email: ''
+          upload: ''
+        label: ''
+        error: 'error'
 
 Neos:
   Neos:

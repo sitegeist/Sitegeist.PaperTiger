@@ -10,3 +10,22 @@ Sitegeist.PaperTiger:Field.Date:
     'Sitegeist.PaperTiger:Mixin.Placeholder': true
     'Sitegeist.PaperTiger:Mixin.IsRequired': true
     'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true
+  properties:
+    earliestDate:
+      type: DateTime
+      defaultValue: null
+      ui:
+        label: 'earliest Date'
+        inspector:
+          group: form
+          editorOptions:
+            format: 'd.m.Y'
+    latestDate:
+      type: DateTime
+      defaultValue: null
+      ui:
+        label: 'latest Date'
+        inspector:
+          group: form
+          editorOptions:
+            format: 'd.m.Y'

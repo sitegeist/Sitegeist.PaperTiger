@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Field.Hidden.Content) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Field.Hidden.Renderer) < prototype(Neos.Neos:ContentComponent) {
 
   identifier = ${q(node).property('identifier')}
   value = ${q(node).property('value')}

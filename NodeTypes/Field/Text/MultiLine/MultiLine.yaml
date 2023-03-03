@@ -1,0 +1,55 @@
+Sitegeist.PaperTiger:Field.Text.MultiLine:
+  ui:
+    label: "Text (multiline)"
+    icon: icon-pencil-square-o
+    group: form.elements
+    position: 200
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Mixin.Label': true
+    'Sitegeist.PaperTiger:Mixin.Placeholder': true
+    'Sitegeist.PaperTiger:Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true
+  properties:
+    lineNumber:
+      type: integer
+      defaultValue: null
+      ui:
+        label: "Number of lines"
+        reloadIfChanged: true
+        inspector:
+          group: form
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              2:
+                label: '2'
+              3:
+                label: '3'
+              4:
+                label: '4'
+              5:
+                label: '5'
+              8:
+                label: '8'
+              10:
+                label: '10'
+              15:
+                label: '12'
+              20:
+                label: '20'
+    minimumLength:
+      type: integer
+      defaultValue: null
+      ui:
+        label: "Min Length"
+        inspector:
+          group: form-validation
+    maximumLength:
+      type: integer
+      defaultValue: null
+      ui:
+        label: "Max Length"
+        inspector:
+          group: form-validation

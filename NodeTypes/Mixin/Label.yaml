@@ -9,5 +9,3 @@ Sitegeist.PaperTiger:Mixin.Label:
         showInCreationDialog: true
         inspector:
           group: form
-      validation:
-        'Neos.Neos/Validation/NotEmptyValidator': []

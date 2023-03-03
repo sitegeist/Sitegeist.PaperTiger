@@ -1,4 +1,4 @@
-Sitegeist.PaperTiger:Field.Input:
+Sitegeist.PaperTiger:Field.Text.SingleLine:
   ui:
     label: "Text (single-line)"
     icon: icon-pencil-square-o

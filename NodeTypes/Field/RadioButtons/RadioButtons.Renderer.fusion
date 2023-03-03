@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Field.RadioButtons.Content) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Field.RadioButtons.Renderer) < prototype(Neos.Neos:ContentComponent) {
 
   identifier = ${q(node).property('identifier')}
   label = ${q(node).property('label')}
@@ -15,6 +15,7 @@ prototype(Sitegeist.PaperTiger:Field.RadioButtons.Content) < prototype(Neos.Neos
         <div>
           <label>
             <Neos.Fusion.Form:Radio
+              attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.radiobutton')}
               field.value={option.value}
             /> {option.label}
           </label>

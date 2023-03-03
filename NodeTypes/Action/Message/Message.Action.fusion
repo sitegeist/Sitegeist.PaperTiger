@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Action.Message.Definition) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:Action.Message.Action) < prototype(Neos.Fusion:Component) {
 
   message = ${q(node).property('message')}
 

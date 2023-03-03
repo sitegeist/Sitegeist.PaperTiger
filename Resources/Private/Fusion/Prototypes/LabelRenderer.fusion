@@ -2,7 +2,7 @@ prototype(Sitegeist.PaperTiger:LabelRenderer) < prototype(Neos.Fusion:Component)
   for = null
   label = ${q(node).property('label')}
   isRequired = ${q(node).property('isRequired')}
-  class = ${Configuration.setting("Sitegeist.PaperTiger.classes.label")}
+  class = ${Configuration.setting("Sitegeist.PaperTiger.rendering.classes.label")}
 
   translationPackage = null
   translationSource = null

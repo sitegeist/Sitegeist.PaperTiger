@@ -77,3 +77,33 @@ Sitegeist.PaperTiger:Field.Upload:
         reloadIfChanged: true
         inspector:
           group: form-validation
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              10000:
+                label: '10kb'
+              50000:
+                label: '50kb'
+              100000:
+                label: '100kb'
+              200000:
+                label: '200kb'
+              300000:
+                label: '300kb'
+              400000:
+                label: '500kb'
+              800000:
+                label: '800kb'
+              1000000:
+                label: '1MB'
+              21000000:
+                label: '2MB'
+              3000000:
+                label: '3MB'
+              5000000:
+                label: '5MB'
+              8000000:
+                label: '8MB'
+              10000000:
+                label: '10MB'

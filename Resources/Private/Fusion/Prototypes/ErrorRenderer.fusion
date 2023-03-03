@@ -1,6 +1,6 @@
 prototype(Sitegeist.PaperTiger:ErrorRenderer) < prototype(Neos.Fusion:Component) {
 
-  class = ${Configuration.setting("Sitegeist.PaperTiger.classes.label")}
+  class = ${Configuration.setting("Sitegeist.PaperTiger.rendering.classes.error")}
 
   customErrorMessage = ${q(node).property('customErrorMessage')}
   customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
