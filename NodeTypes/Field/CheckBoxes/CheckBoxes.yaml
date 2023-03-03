@@ -3,7 +3,7 @@ Sitegeist.PaperTiger:Field.CheckBoxes:
     label: "CheckBoxes"
     icon: icon-check-square
     group: form.elements
-    position: 600
+    position: 700
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true

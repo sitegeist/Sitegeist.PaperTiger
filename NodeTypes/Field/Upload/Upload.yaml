@@ -3,7 +3,7 @@ Sitegeist.PaperTiger:Field.Upload:
     label: "File upload"
     icon: icon-upload
     group: form.elements
-    position: 800
+    position: 900
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true

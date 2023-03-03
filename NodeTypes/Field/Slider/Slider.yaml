@@ -3,7 +3,7 @@ Sitegeist.PaperTiger:Flield.Slider:
     label: "Slider"
     icon: icon-sliders-h
     group: form.elements
-    position: 300
+    position: 1000
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true

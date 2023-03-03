@@ -3,7 +3,7 @@ Sitegeist.PaperTiger:Field.Dropdown:
     label: "Dropdown"
     icon: icon-list-ol
     group: form.elements
-    position: 500
+    position: 600
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true

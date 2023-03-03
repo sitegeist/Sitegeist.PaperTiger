@@ -3,7 +3,7 @@ Sitegeist.PaperTiger:Field.Number:
     label: "Number"
     icon: icon-sort-numeric-up-alt
     group: form.elements
-    position: 300
+    position: 1100
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true
