@@ -14,7 +14,7 @@ class DataTemplateImplementation extends AbstractFusionObject
 {
     public function getTemplate(): string
     {
-        return $this->fusionValue('template');
+        return (string) $this->fusionValue('template');
     }
 
     public function getData(): array
