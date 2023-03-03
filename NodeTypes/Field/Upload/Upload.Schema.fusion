@@ -8,7 +8,7 @@ prototype(Sitegeist.PaperTiger:Field.Upload.Schema) < prototype(Neos.Fusion:Comp
     maximumSize.@if.isDefined = ${q(node).property('allowedFilesize')}
   }
 
-  renderer = ${SitegeistUpload.Schema.upload()}
+  renderer = ${Form.Schema.forType('Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFile')}
   renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
   renderer.@process.addFileValidator = ${props.fileValidatorOptions ? value.validator('Sitegeist.FusionForm.Upload:UploadedFile', props.fileValidatorOptions) : value}
 }
