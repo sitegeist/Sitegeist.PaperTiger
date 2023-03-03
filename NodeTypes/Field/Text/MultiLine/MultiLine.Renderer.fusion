@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Field.Text.MultiLine.Renderer) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:Field.Text.MultiLine.Renderer) < prototype(Neos.Fusion:Component) {
 
   identifier = ${q(node).property('identifier')}
   label = ${q(node).property('label')}

@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Field.Email.Renderer) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:Field.TelephoneNumber.Renderer) < prototype(Neos.Fusion:Component) {
 
   identifier = ${q(node).property('identifier')}
   label = ${q(node).property('label')}
@@ -11,8 +11,8 @@ prototype(Sitegeist.PaperTiger:Field.Email.Renderer) < prototype(Neos.Fusion:Com
         label={props.label}
     >
       <Neos.Fusion.Form:Input
-        attributes.type="email"
-        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.email')}
+        attributes.type="tel"
+        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.tel')}
         attributes.required={props.isRequired}
         attributes.placeholder={props.placeholder || false}
       />

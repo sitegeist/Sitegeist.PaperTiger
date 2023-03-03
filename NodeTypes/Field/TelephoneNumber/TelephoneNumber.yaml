@@ -1,0 +1,12 @@
+Sitegeist.PaperTiger:Field.TelephoneNumber:
+  ui:
+    label: "Telephone number"
+    icon: icon-phone
+    group: form.elements
+    position: 400
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Mixin.Label': true
+    'Sitegeist.PaperTiger:Mixin.Placeholder': true
+    'Sitegeist.PaperTiger:Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true

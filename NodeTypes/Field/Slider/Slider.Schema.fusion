@@ -1,0 +1,9 @@
+prototype(Sitegeist.PaperTiger:Flield.Slider.Schema) < prototype(Neos.Fusion:Value) {
+  value = ${Form.Schema.integer()}
+
+  value.@process.addIsRequired.@if.isDefined = ${q(node).property('isRequired')}
+  value.@process.addIsRequired = ${value.required}
+
+  value.@process.rangeValidator.@if.isSet = ${q(node).property('minimumValue') || q(node).property('maximumValue')}
+  value.@process.rangeValidator = ${value.validator('NumberRange', Array.concat(q(node).property('minimumValue') ? {minimum: q(node).property('minimumValue')} : {}, q(node).property('maximumValue') ? {maximum: q(node).property('maximumValue')} : {}))}
+}

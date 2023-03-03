@@ -1,0 +1,26 @@
+Sitegeist.PaperTiger:Field.Number:
+  ui:
+    label: "Number"
+    icon: icon-sort-numeric-up-alt
+    group: form.elements
+    position: 300
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Mixin.Label': true
+    'Sitegeist.PaperTiger:Mixin.Placeholder': true
+    'Sitegeist.PaperTiger:Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true
+  properties:
+    minimumValue:
+      type: integer
+      ui:
+        label: 'minimum Value'
+        inspector:
+          group: form
+
+    maximumValue:
+      type: integer
+      ui:
+        label: 'maximum Value'
+        inspector:
+          group: form

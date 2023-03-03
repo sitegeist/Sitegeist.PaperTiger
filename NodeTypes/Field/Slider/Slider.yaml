@@ -1,0 +1,35 @@
+Sitegeist.PaperTiger:Flield.Slider:
+  ui:
+    label: "Slider"
+    icon: icon-sliders-h
+    group: form.elements
+    position: 300
+  superTypes:
+    'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Mixin.Label': true
+    'Sitegeist.PaperTiger:Mixin.IsRequired': true
+    'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true
+  properties:
+    minimumValue:
+      type: integer
+      defaultValue: 0
+      ui:
+        label: 'minimum Value'
+        showInCreationDialog: true
+        inspector:
+          group: form
+    maximumValue:
+      type: integer
+      defaultValue: 10
+      ui:
+        label: 'maximum Value'
+        showInCreationDialog: true
+        inspector:
+          group: form
+    stepValue:
+      type: integer
+      defaultValue: 1
+      ui:
+        label: 'Distance between values'
+        inspector:
+          group: form
