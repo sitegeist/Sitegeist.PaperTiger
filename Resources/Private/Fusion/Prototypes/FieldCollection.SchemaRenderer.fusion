@@ -14,7 +14,7 @@ prototype(Sitegeist.PaperTiger:FieldCollection.SchemaRenderer) < prototype(Neos.
             }
             type = ${node.nodeType.name + '.Schema'}
           }
-          value = ${(this.identifier && this.schema) ? Array.set(carry, this.identifier, this.schema) : value}
+          value = ${(this.identifier && this.schema) ? Array.set(carry, this.identifier, this.schema) : carry}
       }
       initialValue = ${{}}
     }

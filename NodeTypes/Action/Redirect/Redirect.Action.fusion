@@ -1,5 +1,4 @@
 prototype(Sitegeist.PaperTiger:Action.Redirect.Action) < prototype(Neos.Fusion:Component) {
-
   uri = ${q(node).property('uri')}
 
   renderer = Sitegeist.PaperTiger:Action {

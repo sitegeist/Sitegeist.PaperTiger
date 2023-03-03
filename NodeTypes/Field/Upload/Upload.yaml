@@ -21,6 +21,10 @@ Sitegeist.PaperTiger:Field.Upload:
           editorOptions:
             values:
               'jpeg':
+                label: '.jpeg'
+                icon: 'icon-image'
+                group: 'Image'
+              'jpg':
                 label: '.jpg'
                 icon: 'icon-image'
                 group: 'Image'

@@ -1,5 +1,4 @@
 prototype(Sitegeist.PaperTiger:Action.Message.Preview) < prototype(Neos.Fusion:Component) {
-
   message = ${q(node).property('message')}
 
   renderer = afx`

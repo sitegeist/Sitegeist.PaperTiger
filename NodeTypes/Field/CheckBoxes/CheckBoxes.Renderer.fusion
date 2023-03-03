@@ -1,8 +1,6 @@
 prototype(Sitegeist.PaperTiger:Field.CheckBoxes.Renderer) < prototype(Neos.Fusion:Component) {
-
   identifier = ${q(node).property('identifier')}
   label = ${q(node).property('label')}
-
   isRequired = ${q(node).property('isRequired')}
   options = ${q(node).property('options')}
 
