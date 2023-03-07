@@ -20,8 +20,8 @@ prototype(Sitegeist.PaperTiger:Field.Dropdown.Renderer) < prototype(Neos.Fusion:
         attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.dropdown')}
       >
         <Neos.Fusion.Form:Select.Option option.value="" attributes.label={props.emptyLabel} @if={props.allowEmpty} />
-        <Neos.Fusion:Loop items={props.options} itemName="option">
-          <Neos.Fusion.Form:Select.Option option.value={option.value} >{option.label || option.value}</Neos.Fusion.Form:Select.Option>
+        <Neos.Fusion:Loop items={props.options} itemName="item">
+          <Neos.Fusion.Form:Select.Option option.value={item.value}>{item.label}</Neos.Fusion.Form:Select.Option>
         </Neos.Fusion:Loop>
       </Neos.Fusion.Form:Select>
     </Sitegeist.PaperTiger:FieldContainerRenderer>

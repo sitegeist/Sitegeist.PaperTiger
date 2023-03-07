@@ -17,9 +17,11 @@ prototype(Sitegeist.PaperTiger:Field.FriendlyCaptcha.Renderer) < prototype(Neos.
       condition = true
       renderer = afx`
         <Sitegeist.FusionForm.FriendlyCaptcha:Scripts />
-        <Neos.Fusion.Form:FieldContainer field.name={props.identifier}>
+        <Sitegeist.PaperTiger:FieldContainerRenderer
+          field.name={props.identifier}
+        >
           <Sitegeist.FusionForm.FriendlyCaptcha:Captcha />
-        </Neos.Fusion.Form:FieldContainer>
+        </Sitegeist.PaperTiger:FieldContainerRenderer>
       `
     }
   }
