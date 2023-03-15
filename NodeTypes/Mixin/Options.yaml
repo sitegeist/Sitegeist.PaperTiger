@@ -2,7 +2,6 @@ Sitegeist.PaperTiger:Mixin.Options:
   abstract: true
   properties:
     options:
-      #type: \Sitegeist\PaperTiger\Domain\OptionSpecificationCollection
       type: array
       ui:
         label: "Options"
