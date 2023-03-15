@@ -1,6 +1,4 @@
 import * as React from 'react';
-import "regenerator-runtime/runtime";
-import "core-js/stable";
 
 export function* validator(option: any) {
     if (!option.label) {
