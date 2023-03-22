@@ -9,7 +9,7 @@ prototype(Sitegeist.PaperTiger:Field.Text.MultiLine.Renderer) < prototype(Neos.F
   lineNumber = ${q(node).property('lineNumber')}
 
   renderer = afx`
-    <Sitegeist.PaperTiger:FieldContainerRenderer
+    <Sitegeist.PaperTiger:FieldContainer
       field.name={props.identifier}
       label={props.label}
     >
@@ -22,6 +22,6 @@ prototype(Sitegeist.PaperTiger:Field.Text.MultiLine.Renderer) < prototype(Neos.F
         attributes.placeholder={props.placeholder || false}
         attributes.rows={props.lineNumber || false}
       />
-    </Sitegeist.PaperTiger:FieldContainerRenderer>
+    </Sitegeist.PaperTiger:FieldContainer>
   `
 }

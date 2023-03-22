@@ -7,7 +7,7 @@ prototype(Sitegeist.PaperTiger:Field.Number.Renderer) < prototype(Neos.Fusion:Co
   maximumValue = ${q(node).property('maximumValue')}
 
   renderer = afx`
-    <Sitegeist.PaperTiger:FieldContainerRenderer
+    <Sitegeist.PaperTiger:FieldContainer
         field.name={props.identifier}
         label={props.label}
     >
@@ -19,6 +19,6 @@ prototype(Sitegeist.PaperTiger:Field.Number.Renderer) < prototype(Neos.Fusion:Co
         attributes.min={props.minimumValue ? props.minimumValue : false}
         attributes.max={props.minimumValue ? props.maximumValue : false}
       />
-    </Sitegeist.PaperTiger:FieldContainerRenderer>
+    </Sitegeist.PaperTiger:FieldContainer>
   `
 }

@@ -1,13 +1,14 @@
 Sitegeist:
   PaperTiger:
     rendering:
-      prototypes:
-        container: "Sitegeist.PaperTiger:FieldContainer"
-        label: "Sitegeist.PaperTiger:LabelRenderer"
-        error: "Sitegeist.PaperTiger:ErrorRenderer"
       classes:
         form: ''
+
         container: ''
+        label: ''
+        error: 'error'
+        submit: ''
+
         field:
           dropdown: ''
           checkbox: ''
@@ -20,9 +21,7 @@ Sitegeist:
           number: ''
           range: ''
           upload: ''
-        label: ''
-        error: 'error'
-        submit: ''
+
 
 Neos:
   Neos:

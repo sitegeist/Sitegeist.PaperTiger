@@ -53,3 +53,10 @@ Sitegeist.PaperTiger:Field.Text.MultiLine:
         label: "Max Length"
         inspector:
           group: form-validation
+    regularExpression:
+      type: string
+      defaultValue: null
+      ui:
+        label: "Regular expression"
+        inspector:
+          group: form-validation

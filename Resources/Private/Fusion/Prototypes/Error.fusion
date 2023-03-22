@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:ErrorRenderer) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:Error) < prototype(Neos.Fusion:Component) {
 
   class = ${Configuration.setting("Sitegeist.PaperTiger.rendering.classes.error")}
 
@@ -11,6 +11,15 @@ prototype(Sitegeist.PaperTiger:ErrorRenderer) < prototype(Neos.Fusion:Component)
   result = null
 
   renderer = Neos.Fusion:Case {
+
+    override {
+      condition = Neos.Fusion:CanRender {
+        type = 'Sitegeist.PaperTiger:Error.Override'
+      }
+      renderer = Sitegeist.PaperTiger:Error.Override {
+        @apply.props = ${props}
+      }
+    }
 
     customErrorMessage {
       condition = ${props.customErrorMessageEnabled && props.customErrorMessage}

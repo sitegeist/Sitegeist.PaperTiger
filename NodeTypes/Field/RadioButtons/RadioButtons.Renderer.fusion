@@ -5,7 +5,7 @@ prototype(Sitegeist.PaperTiger:Field.RadioButtons.Renderer) < prototype(Neos.Fus
   options = ${q(node).property('options')}
 
   renderer = afx`
-    <Sitegeist.PaperTiger:FieldContainerRenderer
+    <Sitegeist.PaperTiger:FieldContainer
       field.name={props.identifier}
       label={props.label}
     >
@@ -19,6 +19,6 @@ prototype(Sitegeist.PaperTiger:Field.RadioButtons.Renderer) < prototype(Neos.Fus
           </label>
         </div>
       </Neos.Fusion:Loop>
-    </Sitegeist.PaperTiger:FieldContainerRenderer>
+    </Sitegeist.PaperTiger:FieldContainer>
   `
 }

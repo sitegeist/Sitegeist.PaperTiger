@@ -8,7 +8,7 @@ prototype(Sitegeist.PaperTiger:Field.Text.SingleLine.Renderer) < prototype(Neos.
   regularExpression = ${q(node).property('regularExpression')}
 
   renderer = afx`
-    <Sitegeist.PaperTiger:FieldContainerRenderer
+    <Sitegeist.PaperTiger:FieldContainer
       field.name={props.identifier}
       label={props.label}
     >
@@ -20,6 +20,6 @@ prototype(Sitegeist.PaperTiger:Field.Text.SingleLine.Renderer) < prototype(Neos.
         attributes.pattern={props.regularExpression || false}
         attributes.placeholder={props.placeholder || false}
       />
-    </Sitegeist.PaperTiger:FieldContainerRenderer>
+    </Sitegeist.PaperTiger:FieldContainer>
   `
 }

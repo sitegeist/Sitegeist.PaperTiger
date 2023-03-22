@@ -1,0 +1,28 @@
+prototype(Sitegeist.PaperTiger:SubmitButton) < prototype(Neos.Fusion:Component) {
+
+  customSubmitButtonLabel = ${q(node).property('customSubmitButtonLabel')}
+  customSubmitButtonLabelEnabled = ${q(node).property('customSubmitButtonLabelEnabled')}
+  submitButtonClass = ${Configuration.setting('Sitegeist.PaperTiger.rendering.classes.submit')}
+
+  renderer = Neos.Fusion:Case {
+
+    override {
+      condition = Neos.Fusion:CanRender {
+        type = 'Sitegeist.PaperTiger:SubmitButton.Override'
+      }
+      renderer = Sitegeist.PaperTiger:SubmitButton.Override {
+        @apply.props = ${props}
+      }
+    }
+
+    default {
+      condition = true
+      renderer = afx`
+        <Neos.Fusion.Form:Button attributes.class={props.submitButtonClass}>
+          {props.customSubmitButtonLabelEnabled ? props.customSubmitButtonLabel : Translation.id('forms.navigation.submit').package('Neos.Fusion.Form').translate()}
+        </Neos.Fusion.Form:Button>
+      `
+    }
+  }
+
+}

@@ -12,11 +12,11 @@ Sitegeist.PaperTiger:Field.Dropdown:
     'Sitegeist.PaperTiger:Mixin.Options': true
     'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true
   properties:
-    allowEmpty:
+    emptyOptionEnabled:
       type: boolean
       defaultValues: true
       ui:
-        label: "allow empty"
+        label: "Add empty option"
         reloadIfChanged: true
         inspector:
           position: 'before options'
@@ -25,11 +25,11 @@ Sitegeist.PaperTiger:Field.Dropdown:
       type: string
       defaultValues: ""
       ui:
-        label: "label for empty value"
+        label: "Empty option label"
         reloadIfChanged: true
         inspector:
-          position: 'after allowEmpty'
+          position: 'after emptyOptionEnabled'
           group: form
-          hidden: 'ClientEval:node.properties.allowEmpty ? false : true'
+          hidden: 'ClientEval:node.properties.emptyOptionEnabled ? false : true'
 
 

@@ -8,7 +8,7 @@ prototype(Sitegeist.PaperTiger:Flield.Slider.Renderer) < prototype(Neos.Fusion:C
   stepValue = ${q(node).property('stepValue')}
 
   renderer = afx`
-    <Sitegeist.PaperTiger:FieldContainerRenderer
+    <Sitegeist.PaperTiger:FieldContainer
         field.name={props.identifier}
         label={props.label}
     >
@@ -21,6 +21,6 @@ prototype(Sitegeist.PaperTiger:Flield.Slider.Renderer) < prototype(Neos.Fusion:C
         attributes.max={Type.isInteger(props.maximumValue) ? props.maximumValue : false}
         attributes.step={Type.isInteger(props.stepValue) ? props.stepValue : false}
       />
-    </Sitegeist.PaperTiger:FieldContainerRenderer>
+    </Sitegeist.PaperTiger:FieldContainer>
   `
 }

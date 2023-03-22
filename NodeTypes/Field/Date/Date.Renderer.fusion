@@ -7,7 +7,7 @@ prototype(Sitegeist.PaperTiger:Field.Date.Renderer) < prototype(Neos.Fusion:Comp
   latestDate =  ${q(node).property('latestDate')}
 
   renderer = afx`
-    <Sitegeist.PaperTiger:FieldContainerRenderer
+    <Sitegeist.PaperTiger:FieldContainer
         field.name={props.identifier}
         label={props.label}
     >
@@ -18,6 +18,6 @@ prototype(Sitegeist.PaperTiger:Field.Date.Renderer) < prototype(Neos.Fusion:Comp
         attributes.min={props.earliestDate ? Date.format(props.earliestDate, 'Y-m-d') : false}
         attributes.max={props.latestDate ? Date.format(props.latestDate, 'Y-m-d') : false}
       />
-    </Sitegeist.PaperTiger:FieldContainerRenderer>
+    </Sitegeist.PaperTiger:FieldContainer>
   `
 }

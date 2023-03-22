@@ -7,10 +7,10 @@ prototype(Sitegeist.PaperTiger:Field.Dropdown.Renderer) < prototype(Neos.Fusion:
   options = ${q(node).property('options')}
 
   emptyLabel = ${q(node).property('emptyLabel')}
-  allowEmpty = ${q(node).property('allowEmpty')}
+  emptyOptionEnabled = ${q(node).property('emptyOptionEnabled')}
 
   renderer = afx`
-    <Sitegeist.PaperTiger:FieldContainerRenderer
+    <Sitegeist.PaperTiger:FieldContainer
       field.name={props.identifier}
       field.multiple={props.isMultiple}
       label={props.label}
@@ -19,11 +19,11 @@ prototype(Sitegeist.PaperTiger:Field.Dropdown.Renderer) < prototype(Neos.Fusion:
         attributes.required={props.isRequired}
         attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.dropdown')}
       >
-        <Neos.Fusion.Form:Select.Option option.value="" attributes.label={props.emptyLabel} @if={props.allowEmpty} />
+        <Neos.Fusion.Form:Select.Option option.value="" attributes.label={props.emptyLabel} @if={props.emptyOptionEnabled} />
         <Neos.Fusion:Loop items={props.options} itemName="item">
           <Neos.Fusion.Form:Select.Option option.value={item.value}>{item.label}</Neos.Fusion.Form:Select.Option>
         </Neos.Fusion:Loop>
       </Neos.Fusion.Form:Select>
-    </Sitegeist.PaperTiger:FieldContainerRenderer>
+    </Sitegeist.PaperTiger:FieldContainer>
   `
 }

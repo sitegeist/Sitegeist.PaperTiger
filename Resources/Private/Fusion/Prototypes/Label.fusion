@@ -1,0 +1,32 @@
+prototype(Sitegeist.PaperTiger:Label) < prototype(Neos.Fusion:Component) {
+  for = null
+  label = ${q(node).property('label')}
+  isRequired = ${q(node).property('isRequired')}
+  class = ${Configuration.setting("Sitegeist.PaperTiger.rendering.classes.label")}
+
+  translationPackage = null
+  translationSource = null
+
+  renderer = Neos.Fusion:Case {
+
+    override {
+      condition = Neos.Fusion:CanRender {
+        type = 'Sitegeist.PaperTiger:Label.Override'
+      }
+      renderer = Sitegeist.PaperTiger:Label.Override {
+        @apply.props = ${props}
+      }
+    }
+
+    default {
+      condition = true
+      renderer = afx`
+        <label @if.hasLabel={props.label} for={props.for} class={props.class}>
+          {I18n.id(props.label).package(props.translationPackage).source(props.translationSource).value(props.label).translate()}
+          {props.isRequired ? ' *' : ''}
+        </label>&nbsp;
+      `
+    }
+  }
+}
+

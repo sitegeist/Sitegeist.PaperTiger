@@ -5,11 +5,11 @@ prototype(Sitegeist.PaperTiger:Field.FriendlyCaptcha.Renderer) < prototype(Neos.
     backend {
       condition = ${node.context.inBackend}
       renderer = afx`
-        <Sitegeist.PaperTiger:FieldContainerRenderer
+        <Sitegeist.PaperTiger:FieldContainer
           field.name={props.identifier}
         >
           <label>FriendlyCaptcha</label> {props.identifier}
-        </Sitegeist.PaperTiger:FieldContainerRenderer>
+        </Sitegeist.PaperTiger:FieldContainer>
       `
     }
 
@@ -17,11 +17,11 @@ prototype(Sitegeist.PaperTiger:Field.FriendlyCaptcha.Renderer) < prototype(Neos.
       condition = true
       renderer = afx`
         <Sitegeist.FusionForm.FriendlyCaptcha:Scripts />
-        <Sitegeist.PaperTiger:FieldContainerRenderer
+        <Sitegeist.PaperTiger:FieldContainer
           field.name={props.identifier}
         >
           <Sitegeist.FusionForm.FriendlyCaptcha:Captcha />
-        </Sitegeist.PaperTiger:FieldContainerRenderer>
+        </Sitegeist.PaperTiger:FieldContainer>
       `
     }
   }

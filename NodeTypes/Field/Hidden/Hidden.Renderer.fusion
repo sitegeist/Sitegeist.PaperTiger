@@ -6,11 +6,11 @@ prototype(Sitegeist.PaperTiger:Field.Hidden.Renderer) < prototype(Neos.Fusion:Co
     backend {
       condition = ${node.context.inBackend}
       renderer = afx`
-        <Sitegeist.PaperTiger:FieldContainerRenderer
+        <Sitegeist.PaperTiger:FieldContainer
           field.name={props.identifier}
         >
           <label>Hidden</label> {props.identifier}:{props.value}
-        </Sitegeist.PaperTiger:FieldContainerRenderer>
+        </Sitegeist.PaperTiger:FieldContainer>
       `
     }
 

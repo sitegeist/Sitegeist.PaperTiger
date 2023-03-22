@@ -5,11 +5,11 @@ prototype(Sitegeist.PaperTiger:Field.Honeypot.Renderer) < prototype(Neos.Fusion:
     backend {
       condition = ${node.context.inBackend}
       renderer = afx`
-        <Sitegeist.PaperTiger:FieldContainerRenderer
+        <Sitegeist.PaperTiger:FieldContainer
           field.name={props.identifier}
         >
           <label>Honeypot</label> {props.identifier}
-        </Sitegeist.PaperTiger:FieldContainerRenderer>
+        </Sitegeist.PaperTiger:FieldContainer>
       `
     }
 

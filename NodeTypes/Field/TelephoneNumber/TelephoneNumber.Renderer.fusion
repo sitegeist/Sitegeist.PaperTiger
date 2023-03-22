@@ -5,7 +5,7 @@ prototype(Sitegeist.PaperTiger:Field.TelephoneNumber.Renderer) < prototype(Neos.
   isRequired = ${q(node).property('isRequired')}
 
   renderer = afx`
-    <Sitegeist.PaperTiger:FieldContainerRenderer
+    <Sitegeist.PaperTiger:FieldContainer
         field.name={props.identifier}
         label={props.label}
     >
@@ -15,6 +15,6 @@ prototype(Sitegeist.PaperTiger:Field.TelephoneNumber.Renderer) < prototype(Neos.
         attributes.required={props.isRequired}
         attributes.placeholder={props.placeholder || false}
       />
-    </Sitegeist.PaperTiger:FieldContainerRenderer>
+    </Sitegeist.PaperTiger:FieldContainer>
   `
 }
