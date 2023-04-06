@@ -1,6 +1,6 @@
 prototype(Sitegeist.PaperTiger:Field.RadioButtons.Renderer) < prototype(Neos.Fusion:Component) {
   identifier = ${q(node).property('identifier')}
-  label = ${q(node).property('label')}
+  label = Sitegeist.PaperTiger:Lable.Editable
   isRequired = ${q(node).property('isRequired')}
   options = ${q(node).property('options')}
 

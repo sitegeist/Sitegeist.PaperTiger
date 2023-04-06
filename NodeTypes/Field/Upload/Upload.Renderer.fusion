@@ -1,7 +1,6 @@
 prototype(Sitegeist.PaperTiger:Field.Upload.Renderer) < prototype(Neos.Fusion:Component) {
   identifier = ${q(node).property('identifier')}
-  label = ${q(node).property('label')}
-
+  label = Sitegeist.PaperTiger:Lable.Editable
   isMultiple = ${q(node).property('isMultiple')}
   isRequired = ${q(node).property('isRequired')}
   allowedExtensions = ${q(node).property('allowedExtensions')}

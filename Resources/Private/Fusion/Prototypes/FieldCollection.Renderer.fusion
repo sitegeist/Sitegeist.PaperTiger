@@ -3,7 +3,6 @@ prototype(Sitegeist.PaperTiger:FieldCollection.Renderer) < prototype(Neos.Fusion
   nodePath = null
 
   renderer = Neos.Neos:ContentCollection {
-    tagName = 'fieldset'
     nodePath = ${props.nodePath}
     attributes.class = ${props.class}
 

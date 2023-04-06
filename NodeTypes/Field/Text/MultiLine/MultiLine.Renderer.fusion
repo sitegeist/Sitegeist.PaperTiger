@@ -1,6 +1,6 @@
 prototype(Sitegeist.PaperTiger:Field.Text.MultiLine.Renderer) < prototype(Neos.Fusion:Component) {
   identifier = ${q(node).property('identifier')}
-  label = ${q(node).property('label')}
+  label = Sitegeist.PaperTiger:Lable.Editable
   placeholder = ${q(node).property('placeholder')}
   isRequired = ${q(node).property('isRequired')}
   minimumLength = ${q(node).property('minimumLength')}
