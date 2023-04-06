@@ -3,7 +3,7 @@ Sitegeist.PaperTiger:Fieldset:
     label: "Fieldset"
     icon: window-maximize
     group: form.elements
-    position: 1000
+    position: 1100
   superTypes:
     'Neos.Neos:Content': true
     'Sitegeist.PaperTiger:Mixin.Label': true
