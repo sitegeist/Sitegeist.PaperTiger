@@ -1,20 +1,20 @@
-prototype(Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:ActionCollection.Definition) < prototype(Neos.Fusion:Component) {
   nodePath = null
 
-  renderer = Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer.Internal {
+  renderer = Sitegeist.PaperTiger:ActionCollection.Definition.Internal {
     actionMap = Neos.Fusion:Map {
       items = ${q(node).children(props.nodePath).children('[instanceof Sitegeist.PaperTiger:Action]').get()}
       itemName = 'node'
-      itemRenderer = Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer.ContentCase
+      itemRenderer = Sitegeist.PaperTiger:ActionCollection.Definition.ContentCase
     }
   }
 }
 
-prototype(Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer.Internal) {
+prototype(Sitegeist.PaperTiger:ActionCollection.Definition.Internal) {
   @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\ActionCollectionImplementation'
 }
 
-prototype(Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer.ContentCase) < prototype(Neos.Fusion:Case) {
+prototype(Sitegeist.PaperTiger:ActionCollection.Definition.ContentCase) < prototype(Neos.Fusion:Case) {
 
   override {
     @position = 'before definition'

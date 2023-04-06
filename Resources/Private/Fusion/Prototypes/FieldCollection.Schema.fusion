@@ -1,7 +1,7 @@
-prototype(Sitegeist.PaperTiger:FieldCollection.SchemaRenderer) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:FieldCollection.Schema) < prototype(Neos.Fusion:Component) {
   nodePath = null
 
-  renderer = Sitegeist.PaperTiger:FieldCollection.SchemaRenderer.Internal {
+  renderer = Sitegeist.PaperTiger:FieldCollection.Schema.Internal {
     schemaMap = Neos.Fusion:Reduce {
       items = ${q(node).children(props.nodePath).find('[instanceof Sitegeist.PaperTiger:Field]').get()}
       itemName = 'node'
@@ -21,27 +21,8 @@ prototype(Sitegeist.PaperTiger:FieldCollection.SchemaRenderer) < prototype(Neos.
   }
 }
 
-prototype(Sitegeist.PaperTiger:FieldCollection.SchemaRenderer.Internal) {
+prototype(Sitegeist.PaperTiger:FieldCollection.Schema.Internal) {
   @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\SchemaCollectionImplementation'
 }
 
 
-
-prototype(Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer.ContentCase) < prototype(Neos.Fusion:Case) {
-
-  override {
-    @position = 'before schema'
-    condition = Neos.Fusion:CanRender {
-      type = ${node.nodeType.name + '.Schema.Override'}
-    }
-    type = ${node.nodeType.name + '.Schema.Override'}
-  }
-
-  schema {
-    @position = 'end'
-    condition = Neos.Fusion:CanRender {
-      type = ${node.nodeType.name + '.Schema'}
-    }
-    type = ${node.nodeType.name + '.Schema'}
-  }
-}

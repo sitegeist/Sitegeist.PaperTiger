@@ -1,7 +1,15 @@
-prototype(Sitegeist.PaperTiger:FieldCollection.ContentRenderer) < prototype(Neos.Neos:ContentCollection) {
+prototype(Sitegeist.PaperTiger:FieldCollection.Renderer) < prototype(Neos.Fusion:Component) {
+  class = null
   nodePath = null
-  prototype(Neos.Neos:ContentCollectionRenderer) {
-    itemRenderer = Sitegeist.PaperTiger:FieldCollection.ContentCase
+
+  renderer = Neos.Neos:ContentCollection {
+    tagName = 'fieldset'
+    nodePath = ${props.nodePath}
+    attributes.class = ${props.class}
+
+    prototype(Neos.Neos:ContentCollectionRenderer) {
+      itemRenderer = Sitegeist.PaperTiger:FieldCollection.ContentCase
+    }
   }
 }
 

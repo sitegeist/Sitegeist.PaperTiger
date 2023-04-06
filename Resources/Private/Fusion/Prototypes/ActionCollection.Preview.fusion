@@ -1,11 +1,11 @@
-prototype(Sitegeist.PaperTiger:ActionCollection.PreviewRenderer) < prototype(Neos.Neos:ContentCollection) {
+prototype(Sitegeist.PaperTiger:ActionCollection.Preview) < prototype(Neos.Neos:ContentCollection) {
   nodePath = null
   prototype(Neos.Neos:ContentCollectionRenderer) {
-    itemRenderer = Sitegeist.PaperTiger:ActionCollection.PreviewRenderer.ContentCase
+    itemRenderer = Sitegeist.PaperTiger:ActionCollection.Preview.ContentCase
   }
 }
 
-prototype(Sitegeist.PaperTiger:ActionCollection.PreviewRenderer.ContentCase) < prototype(Neos.Neos:ContentComponent) {
+prototype(Sitegeist.PaperTiger:ActionCollection.Preview.ContentCase) < prototype(Neos.Neos:ContentComponent) {
   label = ${node.label}
   preview = Neos.Fusion:Case {
     override {

@@ -1,21 +1,27 @@
 prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
 
+  class = ''
+
+  # we put class into the context to make in available insode the runtime form
+  @context._formClass = ${this.class}
+
   renderer = Neos.Fusion:Case {
     runtimeForm {
       condition = ${node.context.live}
       renderer = Neos.Fusion.Form:Runtime.RuntimeForm {
+        @cache.context.formClass = '_formClass'
         namespace = ${q(node).property('_identifier')}
-        attributes.class = ${Configuration.setting('Sitegeist.PaperTiger.rendering.classes.form')}
+        attributes.class = ${_formClass}
         process = Neos.Fusion.Form:Runtime.SingleStepProcess {
-          content = Sitegeist.PaperTiger:FieldCollection.ContentRenderer {
+          content = Sitegeist.PaperTiger:FieldCollection.Renderer {
             nodePath = 'fields'
           }
-          schema = Sitegeist.PaperTiger:FieldCollection.SchemaRenderer {
+          schema = Sitegeist.PaperTiger:FieldCollection.Schema {
             nodePath = 'fields'
           }
           footer = Sitegeist.PaperTiger:SubmitButton
         }
-        action = Sitegeist.PaperTiger:ActionCollection.DefinitionRenderer {
+        action = Sitegeist.PaperTiger:ActionCollection.Definition {
           nodePath = 'actions'
         }
       }
@@ -29,14 +35,14 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
                 <span style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">1</span>
                 <span style="color: black; font-size: 1.5em; position:relative; top: .1em; ">&nbsp;&nbsp;Form fields</span>
             </div>
-            <form class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.form')}>
-              <Sitegeist.PaperTiger:FieldCollection.ContentRenderer nodePath="fields" />
+            <form class={_formClass}>
+              <Sitegeist.PaperTiger:FieldCollection.Renderer nodePath='fields' />
             </form>
             <div style="border-bottom: 1px solid black; margin-top: 2em; margin-bottom: 1em; padding-bottom: 1em; line-height:2em;">
                 <span style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">2</span>
                 <span style="color: black; font-size: 1.5em; position:relative; top: .1em; ">&nbsp;&nbsp;   Follow up actions</span>
             </div>
-            <Sitegeist.PaperTiger:ActionCollection.PreviewRenderer nodePath="actions" />
+            <Sitegeist.PaperTiger:ActionCollection.Preview nodePath="actions" />
         </div>
       `
     }
