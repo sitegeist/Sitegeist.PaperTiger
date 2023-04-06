@@ -1,4 +1,5 @@
 prototype(Sitegeist.PaperTiger:Field.Upload.Schema) < prototype(Neos.Fusion:Component) {
+  isMultiple = ${q(node).property('isMultiple')}
   isRequired = ${q(node).property('isRequired')}
   fileValidatorOptions = Neos.Fusion:DataStructure {
     allowedExtensions = ${q(node).property('allowedExtensions')}
@@ -11,4 +12,18 @@ prototype(Sitegeist.PaperTiger:Field.Upload.Schema) < prototype(Neos.Fusion:Comp
   renderer = ${Form.Schema.forType('Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFile')}
   renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
   renderer.@process.addFileValidator = ${props.fileValidatorOptions ? value.validator('Sitegeist.FusionForm.Upload:UploadedFile', props.fileValidatorOptions) : value}
+
+  renderer = Neos.Fusion:Case {
+    isMultiple {
+      condition = ${props.isMultiple}
+      renderer = ${Form.Schema.forType('Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFileCollection')}
+      renderer.@process.addFileValidator = ${props.fileValidatorOptions ? value.validator('Sitegeist.FusionForm.Upload:UploadedFileCollectionValidator', props.fileValidatorOptions) : value}
+    }
+    default {
+      condition = true
+      renderer = ${Form.Schema.forType('Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFile')}
+      renderer.@process.addFileValidator = ${props.fileValidatorOptions ? value.validator('Sitegeist.FusionForm.Upload:UploadedFile', props.fileValidatorOptions) : value}
+    }
+    @process.addIsRequired = ${props.isRequired ?  value.required : value}
+  }
 }

@@ -7,6 +7,7 @@ Sitegeist.PaperTiger:Field.Upload:
   superTypes:
     'Sitegeist.PaperTiger:Field': true
     'Sitegeist.PaperTiger:Mixin.Label': true
+    'Sitegeist.PaperTiger:Mixin.IsMultiple': true
     'Sitegeist.PaperTiger:Mixin.IsRequired': true
     'Sitegeist.PaperTiger:Mixin.CustomErrorMessage': true
   properties:
