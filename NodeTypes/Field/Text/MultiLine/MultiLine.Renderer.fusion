@@ -14,7 +14,6 @@ prototype(Sitegeist.PaperTiger:Field.Text.MultiLine.Renderer) < prototype(Neos.F
       label={props.label}
     >
       <Neos.Fusion.Form:Textarea
-        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.multiLineText')}
         attributes.required={props.isRequired || false}
         attributes.minlength={props.minimumLength || false}
         attributes.maxlength={props.maximumLength || false}

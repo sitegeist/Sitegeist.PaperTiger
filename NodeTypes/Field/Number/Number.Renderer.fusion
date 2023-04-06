@@ -13,7 +13,6 @@ prototype(Sitegeist.PaperTiger:Field.Number.Renderer) < prototype(Neos.Fusion:Co
     >
       <Neos.Fusion.Form:Input
         attributes.type="number"
-        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.number')}
         attributes.required={props.isRequired}
         attributes.placeholder={props.placeholder || false}
         attributes.min={props.minimumValue ? props.minimumValue : false}

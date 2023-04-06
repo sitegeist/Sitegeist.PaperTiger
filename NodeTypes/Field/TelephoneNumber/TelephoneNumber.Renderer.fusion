@@ -11,7 +11,6 @@ prototype(Sitegeist.PaperTiger:Field.TelephoneNumber.Renderer) < prototype(Neos.
     >
       <Neos.Fusion.Form:Input
         attributes.type="tel"
-        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.tel')}
         attributes.required={props.isRequired}
         attributes.placeholder={props.placeholder || false}
       />

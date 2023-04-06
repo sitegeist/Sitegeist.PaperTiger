@@ -1,13 +1,10 @@
 prototype(Sitegeist.PaperTiger:FieldContainer) < prototype(Neos.Fusion:Component) {
 
   @context.field = ${this.field}
+  field = Neos.Fusion.Form:Definition.Field
 
   label = null
-  field = Neos.Fusion.Form:Definition.Field
   attributes = Neos.Fusion:DataStructure
-
-  class = ${Configuration.setting('Sitegeist.PaperTiger.rendering.classes.container')}
-  errorClass = ${Configuration.setting('Sitegeist.PaperTiger.rendering.classes.error')}
 
   labelRenderer = 'Sitegeist.PaperTiger:Label'
   errorRenderer = 'Sitegeist.PaperTiger:Error'

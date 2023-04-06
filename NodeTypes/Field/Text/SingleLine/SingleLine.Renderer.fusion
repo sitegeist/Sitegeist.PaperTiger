@@ -13,7 +13,6 @@ prototype(Sitegeist.PaperTiger:Field.Text.SingleLine.Renderer) < prototype(Neos.
       label={props.label}
     >
       <Neos.Fusion.Form:Input
-        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.singleLineText')}
         attributes.required={props.isRequired || false}
         attributes.minlength={props.minimumLength || false}
         attributes.maxlength={props.maximumLength || false}

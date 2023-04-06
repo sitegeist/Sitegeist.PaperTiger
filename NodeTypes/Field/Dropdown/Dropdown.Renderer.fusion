@@ -17,7 +17,6 @@ prototype(Sitegeist.PaperTiger:Field.Dropdown.Renderer) < prototype(Neos.Fusion:
     >
       <Neos.Fusion.Form:Select
         attributes.required={props.isRequired}
-        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.dropdown')}
       >
         <Neos.Fusion.Form:Select.Option option.value="" attributes.label={props.emptyLabel} @if={props.emptyOptionEnabled} />
         <Neos.Fusion:Loop items={props.options} itemName="item">

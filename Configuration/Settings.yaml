@@ -2,26 +2,9 @@ Sitegeist:
   PaperTiger:
     rendering:
       classes:
+        customError: 'form-errors'
         form: ''
-
-        container: ''
-        label: ''
-        error: 'error'
         submit: ''
-
-        field:
-          dropdown: ''
-          checkbox: ''
-          radiobutton: ''
-          singleLineText: ''
-          multiLineText: ''
-          date: ''
-          email: ''
-          tel: ''
-          number: ''
-          range: ''
-          upload: ''
-
 
 Neos:
   Neos:

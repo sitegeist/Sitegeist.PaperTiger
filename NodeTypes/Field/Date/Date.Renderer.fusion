@@ -12,7 +12,6 @@ prototype(Sitegeist.PaperTiger:Field.Date.Renderer) < prototype(Neos.Fusion:Comp
         label={props.label}
     >
       <Neos.Fusion.Form:Date
-        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.date')}
         attributes.required={props.isRequired}
         attributes.placeholder={props.placeholder}
         attributes.min={props.earliestDate ? Date.format(props.earliestDate, 'Y-m-d') : false}

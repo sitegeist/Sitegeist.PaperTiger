@@ -24,7 +24,6 @@ prototype(Sitegeist.PaperTiger:Field.Upload.Renderer) < prototype(Neos.Fusion:Co
       </Neos.Fusion:Loop>
 
       <Sitegeist.FusionForm.Upload:Field.Upload
-        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.upload')}
         attributes.required={props.isRequired}
         attributes.accept={props.allowedExtensions ? '.' + Array.join(props.allowedExtensions, ',.') : false}
       />

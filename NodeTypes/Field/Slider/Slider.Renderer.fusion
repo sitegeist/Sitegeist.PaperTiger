@@ -14,7 +14,6 @@ prototype(Sitegeist.PaperTiger:Flield.Slider.Renderer) < prototype(Neos.Fusion:C
     >
       <Neos.Fusion.Form:Input
         attributes.type="range"
-        attributes.class={Configuration.setting('Sitegeist.PaperTiger.rendering.classes.field.range')}
         attributes.required={props.isRequired}
         attributes.placeholder={props.placeholder || false}
         attributes.min={Type.isInteger(props.minimumValue) ? props.minimumValue : false}
