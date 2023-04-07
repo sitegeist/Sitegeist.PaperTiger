@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Flield.Slider.Schema) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:Field.Slider.Schema) < prototype(Neos.Fusion:Component) {
   isRequired = ${q(node).property('isRequired')}
   rangeValidatorOptions = Neos.Fusion:DataStructure {
     minimum = ${q(node).property('minimumValue')}
