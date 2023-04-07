@@ -31,6 +31,8 @@ The package adds the content prototype `Sitegeist.PaperTiger:Form` to Neos cms. 
 
 The contents of the Form are defined as nodes in the section "Form fields" (fields, Sitegeist.PaperTiger:Field.Collection).
 
+<img src="./Documentation/Screenshots/FieldNodeTypes.png" width="920" />
+
 The package comes with the following field NodeTypes, all of them can have a label and can be
 declared as beeing required with additional constraints depending on the fieldtype. 
 
@@ -52,9 +54,9 @@ Special:
 - `Sitegeist.PaperTiger:Field.Hidden` - A hidden field with the specified value
 - `Sitegeist.PaperTiger:Field.FriendlyCaptcha` - Captcha using [Sitegeist.FusionForm.FriendlyCaptcha](https://github.com/sitegeist/Sitegeist.FusionForm.FriendlyCaptcha)
 
-<img src="./Documentation/Screenshots/FieldNodeTypes.png" width="920" />
-
-The NodeType `Sitegeist.PaperTiger:Field.Collection` accepts all contents with the constraint `Sitegeist.PaperTiger:Field.Constraint`.
+The NodeType `Sitegeist.PaperTiger:Field.Collection` accepts all contents with the constraint `Sitegeist.PaperTiger:Field.Constraint`. During rendering
+the contents with the supertype `Sitegeist.PaperTiger:Field` will be handled differently and are expected to be implemented by a `.Renderer` and a `.Schema` 
+as is described in section [Custom field NodeTypes](#custom-field-nodetypes).
 
 ### Follow up actions
 
