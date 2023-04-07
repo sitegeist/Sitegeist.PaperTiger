@@ -19,14 +19,14 @@ prototype(Sitegeist.PaperTiger:ActionCollection.Definition.ContentCase) < protot
   override {
     @position = 'before definition'
     condition = Neos.Fusion:CanRender {
-      type = ${node.nodeType.name + '.Action.Override'}
+      type = ${node.nodeType.name + '.Definition.Override'}
     }
-    type = ${node.nodeType.name + '.Action.Override'}
+    type = ${node.nodeType.name + '.Definition.Override'}
   }
 
   definition {
     @position = 'end'
     condition = true
-    type = ${node.nodeType.name + '.Action'}
+    type = ${node.nodeType.name + '.Definition'}
   }
 }
