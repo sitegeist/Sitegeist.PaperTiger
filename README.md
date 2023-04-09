@@ -1,5 +1,5 @@
 # Sitegeist.PaperTiger
-## Editor defined forms for Neos CMS
+## Form builder for Neos CMS based on Neos.Fusion.Form
 
 This package allows editors to define simple forms and the submit action using nodes. Since the package is build on top 
 of [Neos.Fusion.Form](https://github.com/neos/fusion-form) the whole this package is designed to be easily adjustable and extensible especially with custom rendering.
