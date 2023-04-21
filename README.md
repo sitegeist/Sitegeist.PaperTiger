@@ -102,7 +102,7 @@ pass a `label` if this fits the nodetype.
 ```neosfusion
 prototype(Sitegeist.PaperTiger:Field.Slider) < prototype(Neos.Neos:ContentComponent) {
   identifier = ${q(node).property('identifier')}
-  label = Sitegeist.PaperTiger:Lable.Editable
+  label = ${q(node).property('label')}
   isRequired = ${q(node).property('isRequired')}
   minimumValue = ${q(node).property('minimumValue')}
   maximumValue = ${q(node).property('maximumValue')}

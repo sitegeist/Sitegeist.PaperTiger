@@ -1,6 +1,6 @@
 prototype(Sitegeist.PaperTiger:Field.Date) < prototype(Neos.Neos:ContentComponent) {
   identifier = ${q(node).property('identifier')}
-  label = Sitegeist.PaperTiger:Lable.Editable
+  label = ${q(node).property('label')}
   placeholder = ${q(node).property('placeholder')}
   isRequired = ${q(node).property('isRequired')}
   earliestDate =  ${q(node).property('earliestDate')}

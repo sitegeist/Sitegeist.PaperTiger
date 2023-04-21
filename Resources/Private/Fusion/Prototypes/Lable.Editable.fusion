@@ -1,4 +1,0 @@
-prototype(Sitegeist.PaperTiger:Lable.Editable) < prototype(Neos.Neos:Editable) {
-  property = "label"
-  block = false
-}

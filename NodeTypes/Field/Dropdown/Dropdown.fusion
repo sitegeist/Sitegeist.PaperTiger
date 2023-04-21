@@ -1,6 +1,6 @@
 prototype(Sitegeist.PaperTiger:Field.Dropdown) < prototype(Neos.Neos:ContentComponent) {
   identifier = ${q(node).property('identifier')}
-  label = Sitegeist.PaperTiger:Lable.Editable
+  label = ${q(node).property('label')}
   isRequired = ${q(node).property('isRequired')}
   isMultiple = ${q(node).property('isMultiple')}
   options = ${q(node).property('options')}

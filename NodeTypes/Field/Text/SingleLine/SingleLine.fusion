@@ -1,6 +1,6 @@
 prototype(Sitegeist.PaperTiger:Field.Text.SingleLine) < prototype(Neos.Neos:ContentComponent) {
   identifier = ${q(node).property('identifier')}
-  label = Sitegeist.PaperTiger:Lable.Editable
+  label = ${q(node).property('label')}
   placeholder = ${q(node).property('placeholder')}
   isRequired = ${q(node).property('isRequired')}
   minimumLength = ${q(node).property('minimumLength')}

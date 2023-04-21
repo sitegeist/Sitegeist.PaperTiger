@@ -6,10 +6,6 @@ Sitegeist.PaperTiger:Mixin.Label:
       ui:
         label: "Label"
         reloadIfChanged: true
-        inlineEditable: true
         showInCreationDialog: true
         inspector:
           group: form
-        inline:
-          editorOptions:
-            placeholder: "Add label"
