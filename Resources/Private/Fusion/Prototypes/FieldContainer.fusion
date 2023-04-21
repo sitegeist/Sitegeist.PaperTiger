@@ -11,15 +11,6 @@ prototype(Sitegeist.PaperTiger:FieldContainer) < prototype(Neos.Fusion:Component
 
   renderer = Neos.Fusion:Case {
 
-    override {
-      condition = Neos.Fusion:CanRender {
-        type = 'Sitegeist.PaperTiger:FieldContainer.Override'
-      }
-      renderer = Sitegeist.PaperTiger:FieldContainer.Override {
-        @apply.props = ${props}
-      }
-    }
-
     default {
       condition = true
       renderer = Neos.Fusion.Form:FieldContainer {

@@ -7,16 +7,6 @@ prototype(Sitegeist.PaperTiger:Label) < prototype(Neos.Fusion:Component) {
   translationSource = null
 
   renderer = Neos.Fusion:Case {
-
-    override {
-      condition = Neos.Fusion:CanRender {
-        type = 'Sitegeist.PaperTiger:Label.Override'
-      }
-      renderer = Sitegeist.PaperTiger:Label.Override {
-        @apply.props = ${props}
-      }
-    }
-
     default {
       condition = true
       renderer = afx`

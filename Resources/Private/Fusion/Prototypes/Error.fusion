@@ -7,16 +7,6 @@ prototype(Sitegeist.PaperTiger:Error) < prototype(Neos.Fusion:Component) {
   result = null
 
   renderer = Neos.Fusion:Case {
-
-    override {
-      condition = Neos.Fusion:CanRender {
-        type = 'Sitegeist.PaperTiger:Error.Override'
-      }
-      renderer = Sitegeist.PaperTiger:Error.Override {
-        @apply.props = ${props}
-      }
-    }
-
     customErrorMessage {
       condition = ${props.customErrorMessageEnabled && props.customErrorMessage}
       renderer = afx`

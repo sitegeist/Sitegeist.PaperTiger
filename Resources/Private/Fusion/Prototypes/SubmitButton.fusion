@@ -6,16 +6,6 @@ prototype(Sitegeist.PaperTiger:SubmitButton) < prototype(Neos.Fusion:Component) 
   customSubmitButtonLabelEnabled = ${q(node).property('customSubmitButtonLabelEnabled')}
 
   renderer = Neos.Fusion:Case {
-
-    override {
-      condition = Neos.Fusion:CanRender {
-        type = 'Sitegeist.PaperTiger:SubmitButton.Override'
-      }
-      renderer = Sitegeist.PaperTiger:SubmitButton.Override {
-        @apply.props = ${props}
-      }
-    }
-
     default {
       condition = true
       renderer = afx`
