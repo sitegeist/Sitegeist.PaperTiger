@@ -1,8 +1,10 @@
-prototype(Sitegeist.PaperTiger:Field.TelephoneNumber.Renderer) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:Field.Number) < prototype(Neos.Neos:ContentComponent) {
   identifier = ${q(node).property('identifier')}
   label = Sitegeist.PaperTiger:Lable.Editable
   placeholder = ${q(node).property('placeholder')}
   isRequired = ${q(node).property('isRequired')}
+  minimumValue = ${q(node).property('minimumValue')}
+  maximumValue = ${q(node).property('maximumValue')}
 
   renderer = afx`
     <Sitegeist.PaperTiger:FieldContainer
@@ -10,9 +12,11 @@ prototype(Sitegeist.PaperTiger:Field.TelephoneNumber.Renderer) < prototype(Neos.
         label={props.label}
     >
       <Neos.Fusion.Form:Input
-        attributes.type="tel"
+        attributes.type="number"
         attributes.required={props.isRequired}
         attributes.placeholder={props.placeholder || false}
+        attributes.min={props.minimumValue ? props.minimumValue : false}
+        attributes.max={props.minimumValue ? props.maximumValue : false}
       />
     </Sitegeist.PaperTiger:FieldContainer>
   `

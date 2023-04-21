@@ -55,7 +55,7 @@ Special:
 - `Sitegeist.PaperTiger:Field.FriendlyCaptcha` - Captcha using [Sitegeist.FusionForm.FriendlyCaptcha](https://github.com/sitegeist/Sitegeist.FusionForm.FriendlyCaptcha)
 
 The NodeType `Sitegeist.PaperTiger:Field.Collection` accepts all contents with the constraint `Sitegeist.PaperTiger:Field.Constraint`. During rendering
-the contents with the supertype `Sitegeist.PaperTiger:Field` will be handled differently and are expected to be implemented by a `.Renderer` and a `.Schema` 
+the contents with the supertype `Sitegeist.PaperTiger:Field` will be handled differently and are expected to be implemented by a `NodeType.Name` and a `NodeType.Name.Schema` 
 as is described in section [Custom field NodeTypes](#custom-field-nodetypes).
 
 ### Follow up actions
@@ -93,14 +93,14 @@ Sitegeist.PaperTiger:Field.Slider:
       type: integer
 ```
 
-Other than usual contents NodeTypes with the `Sitegeist.PaperTiger:Field` supertype are expected to be accompanied by two 
-fusion-prototype a `.Renderer` and a `.Schema` which are both prefixed with the name of the NodeType.
+Other than usual contents NodeTypes with the `Sitegeist.PaperTiger:Field` supertype are expected to be implemented an 
+additional `NodeType.Name.Schema` prototype accompanying the default `NodeType.Name` renderer.
 
-The `.Renderer` specifies the frontend representation. It is recommended to use wrap the rendered form into a `Sitegeist.PaperTiger:FieldContainer` and 
+The `NodeType.Name` prototype specifies the frontend representation. It is recommended to wrap the rendered form into a `Sitegeist.PaperTiger:FieldContainer` and 
 pass a `label` if this fits the nodetype.
 
 ```neosfusion
-prototype(Sitegeist.PaperTiger:Field.Slider.Renderer) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:Field.Slider) < prototype(Neos.Neos:ContentComponent) {
   identifier = ${q(node).property('identifier')}
   label = Sitegeist.PaperTiger:Lable.Editable
   isRequired = ${q(node).property('isRequired')}
@@ -229,14 +229,6 @@ prototype(Sitegeist.PaperTiger:SubmitButton) {
     class  = 'submit mt-8'
 }
 ```
-
-#### Override the rendering of a field
-
-If the adjustments that are needed require a deeper interaction than adjusting properties `.Override` prototypes can be
-defined using the additional postfix `Override` to completely replace `Field.Renderer`, `Field.Schema`, `Action.Definition` and
-`Action.Preview` if needed.
-
-!!! The concept of `.Override` prototypes has not matured yet and may be replaced in future once better patterns are discovered. !!!  
 
 ## Contribution
 

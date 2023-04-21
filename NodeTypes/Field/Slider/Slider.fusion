@@ -1,4 +1,4 @@
-prototype(Sitegeist.PaperTiger:Field.Slider.Renderer) < prototype(Neos.Fusion:Component) {
+prototype(Sitegeist.PaperTiger:Field.Slider) < prototype(Neos.Neos:ContentComponent) {
   identifier = ${q(node).property('identifier')}
   label = Sitegeist.PaperTiger:Lable.Editable
   placeholder = ${q(node).property('placeholder')}

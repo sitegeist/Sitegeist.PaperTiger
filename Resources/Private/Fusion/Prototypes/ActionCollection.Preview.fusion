@@ -7,16 +7,9 @@ prototype(Sitegeist.PaperTiger:ActionCollection.Preview) < prototype(Neos.Neos:C
 
 prototype(Sitegeist.PaperTiger:ActionCollection.Preview.ContentCase) < prototype(Neos.Neos:ContentComponent) {
   label = ${node.label}
-  preview = Neos.Fusion:Case {
-    override {
-      @position = 'before preview'
-      condition = Neos.Fusion:CanRender {
-        type = ${node.nodeType.name + '.Preview.Override'}
-      }
-      type = ${node.nodeType.name + '.Preview.Override'}
-    }
 
-    preview {
+  preview = Neos.Fusion:Case {
+    default {
       @position = 'end'
       condition = true
       type = ${node.nodeType.name + '.Preview'}

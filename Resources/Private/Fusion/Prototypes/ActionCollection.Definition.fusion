@@ -15,16 +15,7 @@ prototype(Sitegeist.PaperTiger:ActionCollection.Definition.Internal) {
 }
 
 prototype(Sitegeist.PaperTiger:ActionCollection.Definition.ContentCase) < prototype(Neos.Fusion:Case) {
-
-  override {
-    @position = 'before definition'
-    condition = Neos.Fusion:CanRender {
-      type = ${node.nodeType.name + '.Definition.Override'}
-    }
-    type = ${node.nodeType.name + '.Definition.Override'}
-  }
-
-  definition {
+  default {
     @position = 'end'
     condition = true
     type = ${node.nodeType.name + '.Definition'}
