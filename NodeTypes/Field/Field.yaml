@@ -23,7 +23,7 @@ Sitegeist.PaperTiger:Field:
     identifier:
       type: string
       ui:
-        label: "Identifier"
+        label: "Identifier / Name"
         showInCreationDialog: true
         reloadIfChanged: true
         help:

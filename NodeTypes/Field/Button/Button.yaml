@@ -1,10 +1,12 @@
-Sitegeist.PaperTiger:Field.Hidden:
+Sitegeist.PaperTiger:Field.Button:
   ui:
-    label: "Hidden"
-    icon: eye-slash
-    group: form.special
+    label: "Button"
+    icon: square
+    group: form.elements
+    position: 1100
   superTypes:
     'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Mixin.Label': true
   properties:
     value:
       type: string

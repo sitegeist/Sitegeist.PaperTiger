@@ -19,7 +19,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
           schema = Sitegeist.PaperTiger:FieldCollection.Schema {
             nodePath = 'fields'
           }
-          footer = Sitegeist.PaperTiger:SubmitButton
+          footer >
         }
         action = Sitegeist.PaperTiger:ActionCollection.Definition {
           nodePath = 'actions'

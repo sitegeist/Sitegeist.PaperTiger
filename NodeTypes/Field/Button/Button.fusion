@@ -1,0 +1,13 @@
+prototype(Sitegeist.PaperTiger:Field.Button) < prototype(Neos.Neos:ContentComponent) {
+  identifier = ${q(node).property('identifier')}
+  value = ${q(node).property('value')}
+  label = ${q(node).property('label')}
+
+  renderer = afx`
+      <Neos.Fusion.Form:FieldContainer
+        field.name={props.identifier}
+      >
+        <Neos.Fusion.Form:Button field.value={props.value} >{props.label}</Neos.Fusion.Form:Button>
+      </Neos.Fusion.Form:FieldContainer>
+    `
+}
