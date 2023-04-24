@@ -1,11 +1,11 @@
 prototype(Sitegeist.PaperTiger:Action.Message.Definition) < prototype(Neos.Fusion:Component) {
   message = ${q(node).property('message')}
+  message.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
 
   renderer = Sitegeist.PaperTiger:Action {
     type = 'Neos.Fusion.Form.Runtime:Message'
     options {
       message = ${props.message}
-      message.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
     }
   }
 }

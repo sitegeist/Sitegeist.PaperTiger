@@ -1,10 +1,13 @@
 prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:Component) {
   subject = ${q(node).property('subject')}
+  subject.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
   format = ${q(node).property('format')}
   plaintext = ${q(node).property('plaintext')}
+  plaintext.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
   plaintext.@if.isPlaintextOrMultipart = ${this.format != 'html'}
   html = ${q(node).property('html')}
   html.@if.isHtmlOrMultipart = ${this.format != 'plaintext'}
+  html.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
   recipientAddress = ${q(node).property('recipientAddress')}
   recipientName = ${q(node).property('recipientName')}
   senderAddress = ${q(node).property('senderAddress')}
@@ -19,11 +22,8 @@ prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:
     type = 'Sitegeist.Neos.SymfonyMailer:SendMail'
     options {
       subject = ${props.subject}
-      subject.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
       text = ${props.plaintext}
-      text.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
       html = ${props.html}
-      html.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
       recipientAddress = ${props.recipientAddress}
       recipientName = ${props.recipientName}
       senderAddress = ${props.senderAddress}
