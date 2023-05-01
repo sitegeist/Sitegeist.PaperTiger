@@ -1,5 +1,5 @@
 prototype(Sitegeist.PaperTiger:Field.Text.SingleLine) < prototype(Neos.Neos:ContentComponent) {
-  identifier = ${q(node).property('identifier')}
+  name = ${q(node).property('name')}
   label = ${q(node).property('label')}
   placeholder = ${q(node).property('placeholder')}
   isRequired = ${q(node).property('isRequired')}
@@ -9,7 +9,7 @@ prototype(Sitegeist.PaperTiger:Field.Text.SingleLine) < prototype(Neos.Neos:Cont
 
   renderer = afx`
     <Sitegeist.PaperTiger:FieldContainer
-      field.name={props.identifier}
+      field.name={props.name}
       label={props.label}
     >
       <Neos.Fusion.Form:Input

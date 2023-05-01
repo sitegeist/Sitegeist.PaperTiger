@@ -7,14 +7,14 @@ prototype(Sitegeist.PaperTiger:FieldCollection.Schema) < prototype(Neos.Fusion:C
       itemName = 'node'
       carryName = 'carry'
       itemReducer = Neos.Fusion:Value {
-          identifier =  ${q(node).property('identifier')}
+          name =  ${q(node).is('[instanceof Sitegeist.PaperTiger:Mixin.Name]') ? q(node).property('name') : q(node).property('_identifier')}
           schema = Neos.Fusion:Renderer {
             @if.canRender = Neos.Fusion:CanRender {
               type = ${node.nodeType.name + '.Schema'}
             }
             type = ${node.nodeType.name + '.Schema'}
           }
-          value = ${(this.identifier && this.schema) ? Array.set(carry, this.identifier, this.schema) : carry}
+          value = ${(this.name && this.schema) ? Array.set(carry, this.name, this.schema) : carry}
       }
       initialValue = ${{}}
     }

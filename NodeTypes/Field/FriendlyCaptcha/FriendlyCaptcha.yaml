@@ -5,3 +5,4 @@ Sitegeist.PaperTiger:Field.FriendlyCaptcha:
     group: form.special
   superTypes:
     'Sitegeist.PaperTiger:Field': true
+    'Sitegeist.PaperTiger:Mixin.Name': false
