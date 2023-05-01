@@ -1,0 +1,18 @@
+up:
+  comments: 'Raname identifier field to name'
+  migration:
+    - filters:
+        - type: 'NodeType'
+          settings:
+            nodeType: 'Sitegeist.PaperTiger:Mixin.Name'
+        - type: 'PropertyNotEmpty'
+          settings:
+            propertyName: "identifier"
+      transformations:
+        - type: 'RenameProperty'
+          settings:
+            oldPropertyName: 'identifier'
+            newPropertyName: 'name'
+
+down:
+  comments: 'No down migration available'

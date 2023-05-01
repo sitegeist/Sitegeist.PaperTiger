@@ -4,6 +4,7 @@ Sitegeist.PaperTiger:Field:
   superTypes:
     'Neos.Neos:Content': true
     'Sitegeist.PaperTiger:Field.Constraint': true
+    'Sitegeist.PaperTiger:Mixin.Name': true
   ui:
     inspector:
       groups:
@@ -19,21 +20,3 @@ Sitegeist.PaperTiger:Field:
           label: "Error message"
           position: 30
           icon: 'icon-exclamation-triangle'
-  properties:
-    identifier:
-      type: string
-      ui:
-        label: "Identifier / Name"
-        showInCreationDialog: true
-        reloadIfChanged: true
-        help:
-          message: "A technical identifier for the field. Must only contain number and chars."
-        inspector:
-          group: form
-      validation:
-        'Neos.Neos/Validation/NotEmptyValidator': []
-        'Neos.Neos/Validation/StringLengthValidator':
-          minimum: 1
-          maximum: 255
-        'Neos.Neos/Validation/RegularExpressionValidator':
-          regularExpression: '/^[a-z0-9\-]+$/i'
