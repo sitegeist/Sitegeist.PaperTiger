@@ -9,6 +9,7 @@ use Neos\Fusion\Form\Runtime\Domain\ActionInterface;
 use Neos\Fusion\Form\Runtime\Domain\ActionResolver;
 use Neos\Fusion\Form\Runtime\Domain\ConfigurableActionInterface;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
+use Neos\Utility\Arrays;
 
 class DataTemplateImplementation extends AbstractFusionObject
 {
@@ -25,8 +26,14 @@ class DataTemplateImplementation extends AbstractFusionObject
     {
         $template = $this->getTemplate();
         $data = $this->getData();
-        $search = array_map(function (string|int $key) {return '{' .  $key . '}';}, array_keys($data));
-        $replace = array_map(function ($value) {return (is_string($value) || $value instanceof \Stringable) ? strip_tags((string) $value): '';}, array_values($data));
-        return str_replace($search, $replace, $template);
+
+        return preg_replace_callback(
+            '/{([a-z0-9\\.]+)}/um',
+            function(array $matches) use ($data) {
+                $value = Arrays::getValueByPath($data, $matches[1]);
+                return (is_string($value) || $value instanceof \Stringable) ? htmlspecialchars(strip_tags((string) $value)) : '';
+            },
+        $template
+        );
     }
 }
