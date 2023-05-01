@@ -12,6 +12,6 @@ Sitegeist.PaperTiger:Field.Button:
       type: string
       ui:
         label: 'Value'
-        showInCreationDialog: true
+        showInCreationDialog: false
         inspector:
           group: form
