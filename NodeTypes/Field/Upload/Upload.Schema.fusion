@@ -9,18 +9,14 @@ prototype(Sitegeist.PaperTiger:Field.Upload.Schema) < prototype(Neos.Fusion:Comp
     maximumSize.@if.isDefined = ${q(node).property('allowedFilesize')}
   }
 
-  renderer = ${Form.Schema.forType('Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFile')}
-  renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
-  renderer.@process.addFileValidator = ${props.fileValidatorOptions ? value.validator('Sitegeist.FusionForm.Upload:UploadedFile', props.fileValidatorOptions) : value}
-
   renderer = Neos.Fusion:Case {
     isMultiple {
       condition = ${props.isMultiple}
       renderer = ${Form.Schema.forType('Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFileCollection')}
-      renderer.@process.addFileValidator = ${props.fileValidatorOptions ? value.validator('Sitegeist.FusionForm.Upload:UploadedFileCollectionValidator', props.fileValidatorOptions) : value}
+      renderer.@process.addFileValidator = ${props.fileValidatorOptions ? value.validator('Sitegeist.FusionForm.Upload:UploadedFileCollection', props.fileValidatorOptions) : value}
     }
     default {
-      condition = true
+      condition = ${!props.isMultiple}
       renderer = ${Form.Schema.forType('Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFile')}
       renderer.@process.addFileValidator = ${props.fileValidatorOptions ? value.validator('Sitegeist.FusionForm.Upload:UploadedFile', props.fileValidatorOptions) : value}
     }
