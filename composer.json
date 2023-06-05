@@ -8,10 +8,10 @@
         "neos/neos": "~8.2 || 8.3.x-dev ",
         "neos/fusion": "~8.2 || 8.3.x-dev",
         "neos/fusion-form": "~2.0 || dev-master",
-        "sitegeist/inspectorgadget": "^2.0.0",
-        "sitegeist/neos-symfonymailer": "~1.1.0",
-        "sitegeist/fusionform-upload": "~1.0.0",
-        "sitegeist/fusionform-friendlycaptcha": "~1.0.0"
+        "sitegeist/inspectorgadget": "~2.0",
+        "sitegeist/neos-symfonymailer": "~1.1",
+        "sitegeist/fusionform-upload": "~1.0",
+        "sitegeist/fusionform-friendlycaptcha": "~1.0"
     },
     "autoload": {
         "psr-4": {
