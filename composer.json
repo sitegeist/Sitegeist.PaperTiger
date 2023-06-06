@@ -13,14 +13,36 @@
         "sitegeist/fusionform-upload": "~1.0",
         "sitegeist/fusionform-friendlycaptcha": "~1.0"
     },
+    "require-dev": {
+        "phpstan/phpstan": "~1.10.16",
+        "phpunit/phpunit": "~9.6.8",
+        "squizlabs/php_codesniffer": "~3.7.2"
+    },
     "autoload": {
         "psr-4": {
             "Sitegeist\\PaperTiger\\": "Classes/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Sitegeist\\PaperTiger\\Tests\\": "Tests/"
+        }
+    },
+    "scripts": {
+        "test:lint-fix": ["phpcbf --standard=PSR12 -n Classes"],
+        "test:lint": ["phpcs --standard=PSR12 -n Classes"],
+        "test:unit": ["vendor/bin/phpstan analyse Classes"],
+        "test:stan": ["vendor/bin/phpunit Tests/Unit"],
+        "test": ["composer install", "composer  test:lint", "composer  test:stan", "composer  test:unit"]
+    },
     "extra": {
         "neos": {
             "package-key": "Sitegeist.PaperTiger"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "neos/composer-plugin": true
         }
     }
 }
