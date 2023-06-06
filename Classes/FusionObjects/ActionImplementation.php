@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Sitegeist\PaperTiger\FusionObjects;
@@ -24,7 +25,7 @@ class ActionImplementation extends AbstractFusionObject implements ActionInterfa
     protected $type;
 
     /**
-     * @var array|null
+     * @var mixed[]|null
      */
     protected $options;
 

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Sitegeist\PaperTiger\FusionObjects;
@@ -9,14 +10,20 @@ use Neos\Fusion\FusionObjects\AbstractFusionObject;
 
 class ActionCollectionImplementation extends AbstractFusionObject implements ActionInterface
 {
+    /**
+     * @return ActionInterface[]
+     */
     protected function getActionMap(): array
     {
         $map = $this->fusionValue('actionMap') ?: [];
         return array_filter(
             $map,
-            function ($item) {return $item instanceof ActionInterface;}
+            function ($item) {
+                return $item instanceof ActionInterface;
+            }
         );
     }
+
 
     public function evaluate()
     {

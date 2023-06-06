@@ -1,8 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Sitegeist\PaperTiger\FusionObjects;
-
 
 use Neos\Error\Messages\Result;
 use Neos\Fusion\Form\Runtime\Domain\SchemaInterface;
@@ -10,12 +10,17 @@ use Neos\Fusion\FusionObjects\AbstractFusionObject;
 
 class SchemaCollectionImplementation extends AbstractFusionObject implements SchemaInterface
 {
+    /**
+     * @return SchemaInterface[]
+     */
     protected function getSchemaMap(): array
     {
         $map = $this->fusionValue('schemaMap') ?: [];
         return array_filter(
             $map,
-            function ($item) {return $item instanceof SchemaInterface;}
+            function ($item) {
+                return $item instanceof SchemaInterface;
+            }
         );
     }
 
