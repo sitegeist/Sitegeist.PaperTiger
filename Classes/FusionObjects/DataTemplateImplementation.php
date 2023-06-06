@@ -28,7 +28,7 @@ class DataTemplateImplementation extends AbstractFusionObject
         $data = $this->getData();
 
         return preg_replace_callback(
-            '/{([A-Za-z0-9\\.]+)}/um',
+            '/{([a-z0-9\\-\\.]+)}/ium',
             function(array $matches) use ($data) {
                 $value = Arrays::getValueByPath($data, $matches[1]);
                 return (is_string($value) || $value instanceof \Stringable) ? htmlspecialchars(strip_tags((string) $value)) : '';
