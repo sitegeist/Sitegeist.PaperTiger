@@ -31,7 +31,17 @@ class DataTemplateImplementation extends AbstractFusionObject
             '/{([a-z0-9\\-\\.]+)}/ium',
             function(array $matches) use ($data) {
                 $value = Arrays::getValueByPath($data, $matches[1]);
-                return (is_string($value) || $value instanceof \Stringable) ? htmlspecialchars(strip_tags((string) $value)) : '';
+                try {
+                    if (is_string($value) || $value instanceof \Stringable) {
+                        return htmlspecialchars(strip_tags((string) $value));
+                    } elseif (is_array($value)) {
+                        return htmlspecialchars(strip_tags( implode(', ', $value)));
+                    } else {
+                        return '';
+                    }
+                } catch (\Exception) {
+                    return '';
+                }
             },
         $template
         );
