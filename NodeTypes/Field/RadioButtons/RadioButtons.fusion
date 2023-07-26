@@ -14,6 +14,7 @@ prototype(Sitegeist.PaperTiger:Field.RadioButtons) < prototype(Neos.Neos:Content
           <label>
             <Neos.Fusion.Form:Radio
               field.value={option.value}
+              attributes.required={props.isRequired}
             /> {option.label}
           </label>
         </div>
