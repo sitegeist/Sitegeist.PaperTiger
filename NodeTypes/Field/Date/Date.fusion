@@ -5,6 +5,8 @@ prototype(Sitegeist.PaperTiger:Field.Date) < prototype(Neos.Neos:ContentComponen
   isRequired = ${q(node).property('isRequired')}
   earliestDate =  ${q(node).property('earliestDate')}
   latestDate =  ${q(node).property('latestDate')}
+  customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
+  customErrorMessage = ${q(node).property('customErrorMessage')}
 
   renderer = afx`
     <Sitegeist.PaperTiger:FieldContainer
@@ -16,6 +18,10 @@ prototype(Sitegeist.PaperTiger:Field.Date) < prototype(Neos.Neos:ContentComponen
         attributes.placeholder={props.placeholder}
         attributes.min={props.earliestDate ? Date.format(props.earliestDate, 'Y-m-d') : false}
         attributes.max={props.latestDate ? Date.format(props.latestDate, 'Y-m-d') : false}
+        attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
+        attributes.oninvalid.@if={props.customErrorMessageEnabled}
+        attributes.oninput={"this.setCustomValidity('')"}
+        attributes.oninput.@if={props.customErrorMessageEnabled}
       />
     </Sitegeist.PaperTiger:FieldContainer>
   `

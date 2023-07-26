@@ -8,6 +8,9 @@ prototype(Sitegeist.PaperTiger:Field.Dropdown) < prototype(Neos.Neos:ContentComp
   emptyLabel = ${q(node).property('emptyLabel')}
   emptyOptionEnabled = ${q(node).property('emptyOptionEnabled')}
 
+  customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
+  customErrorMessage = ${q(node).property('customErrorMessage')}
+
   renderer = afx`
     <Sitegeist.PaperTiger:FieldContainer
       field.name={props.name}
@@ -16,6 +19,10 @@ prototype(Sitegeist.PaperTiger:Field.Dropdown) < prototype(Neos.Neos:ContentComp
     >
       <Neos.Fusion.Form:Select
         attributes.required={props.isRequired}
+        attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
+        attributes.oninvalid.@if={props.customErrorMessageEnabled}
+        attributes.oninput={"this.setCustomValidity('')"}
+        attributes.oninput.@if={props.customErrorMessageEnabled}
       >
         <Neos.Fusion.Form:Select.Option option.value="" attributes.label={props.emptyLabel} @if={props.emptyOptionEnabled} />
         <Neos.Fusion:Loop items={props.options} itemName="item">

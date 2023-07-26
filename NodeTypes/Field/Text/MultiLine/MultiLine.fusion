@@ -7,6 +7,8 @@ prototype(Sitegeist.PaperTiger:Field.Text.MultiLine) < prototype(Neos.Neos:Conte
   maximumLength = ${q(node).property('maximumLength')}
   regularExpression = ${q(node).property('regularExpression')}
   lineNumber = ${q(node).property('lineNumber')}
+  customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
+  customErrorMessage = ${q(node).property('customErrorMessage')}
 
   renderer = afx`
     <Sitegeist.PaperTiger:FieldContainer
@@ -20,6 +22,10 @@ prototype(Sitegeist.PaperTiger:Field.Text.MultiLine) < prototype(Neos.Neos:Conte
         attributes.pattern={props.regularExpression || false}
         attributes.placeholder={props.placeholder || false}
         attributes.rows={props.lineNumber || false}
+        attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
+        attributes.oninvalid.@if={props.customErrorMessageEnabled}
+        attributes.oninput={"this.setCustomValidity('')"}
+        attributes.oninput.@if={props.customErrorMessageEnabled}
       />
     </Sitegeist.PaperTiger:FieldContainer>
   `
