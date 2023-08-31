@@ -15,7 +15,23 @@ prototype(Sitegeist.PaperTiger:Action.Email.Preview) < prototype(Neos.Fusion:Com
   attachUploads = ${q(node).property('attachUploads')}
   testMode = ${q(node).property('testMode')}
 
+  @private {
+    requiredFields = Neos.Fusion:DataStructure {
+      recipientAddress = 'recipient-address'
+      recipientAddress.@if.isMissing = ${!props.recipientAddress}
+
+      senderAddress = 'sender-address'
+      senderAddress.@if.isMissing  = ${!props.senderAddress}
+
+      textOrHtml = 'text or html'
+      textOrHtml.@if.isMissing=${!(props.plaintext || props.html)}
+    }
+  }
+
   renderer = afx`
+    <p @if.hasMissingFields={private.requiredFields}>
+      The following information is missing: {Array.join(private.requiredFields, ', ')}
+    </p>
     <dl>
       <dt>Subject</dt>
       <dd>{props.subject}</dd>
