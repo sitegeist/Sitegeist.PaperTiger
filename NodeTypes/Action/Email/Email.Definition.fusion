@@ -19,6 +19,7 @@ prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:
   testMode = ${q(node).property('testMode')}
 
   renderer = Sitegeist.PaperTiger:Action {
+    @if.minRequirementsAreMet=${props.recipientAddress && props.senderAddress && props.subject && (props.plaintext || props.html)}
     type = 'Sitegeist.Neos.SymfonyMailer:SendMail'
     options {
       subject = ${props.subject}
