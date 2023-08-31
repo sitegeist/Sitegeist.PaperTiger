@@ -5,6 +5,8 @@ prototype(Sitegeist.PaperTiger:Field.Number) < prototype(Neos.Neos:ContentCompon
   isRequired = ${q(node).property('isRequired')}
   minimumValue = ${q(node).property('minimumValue')}
   maximumValue = ${q(node).property('maximumValue')}
+  customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
+  customErrorMessage = ${q(node).property('customErrorMessage')}
 
   renderer = afx`
     <Sitegeist.PaperTiger:FieldContainer
@@ -17,6 +19,10 @@ prototype(Sitegeist.PaperTiger:Field.Number) < prototype(Neos.Neos:ContentCompon
         attributes.placeholder={props.placeholder || false}
         attributes.min={props.minimumValue ? props.minimumValue : false}
         attributes.max={props.minimumValue ? props.maximumValue : false}
+        attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
+        attributes.oninvalid.@if={props.customErrorMessageEnabled}
+        attributes.oninput={"this.setCustomValidity('')"}
+        attributes.oninput.@if={props.customErrorMessageEnabled}
       />
     </Sitegeist.PaperTiger:FieldContainer>
   `

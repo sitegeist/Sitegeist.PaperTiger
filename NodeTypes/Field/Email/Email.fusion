@@ -3,6 +3,8 @@ prototype(Sitegeist.PaperTiger:Field.Email) < prototype(Neos.Neos:ContentCompone
   label = ${q(node).property('label')}
   placeholder = ${q(node).property('placeholder')}
   isRequired = ${q(node).property('isRequired')}
+  customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
+  customErrorMessage = ${q(node).property('customErrorMessage')}
 
   renderer = afx`
     <Sitegeist.PaperTiger:FieldContainer
@@ -13,6 +15,11 @@ prototype(Sitegeist.PaperTiger:Field.Email) < prototype(Neos.Neos:ContentCompone
         attributes.type="email"
         attributes.required={props.isRequired}
         attributes.placeholder={props.placeholder || false}
+        attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
+        attributes.oninvalid.@if={props.customErrorMessageEnabled}
+        attributes.oninput={"this.setCustomValidity('')"}
+        attributes.oninput.@if={props.customErrorMessageEnabled}
+
       />
     </Sitegeist.PaperTiger:FieldContainer>
   `

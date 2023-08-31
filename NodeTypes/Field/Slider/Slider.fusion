@@ -6,6 +6,8 @@ prototype(Sitegeist.PaperTiger:Field.Slider) < prototype(Neos.Neos:ContentCompon
   minimumValue = ${q(node).property('minimumValue')}
   maximumValue = ${q(node).property('maximumValue')}
   stepValue = ${q(node).property('stepValue')}
+  customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
+  customErrorMessage = ${q(node).property('customErrorMessage')}
 
   renderer = afx`
     <Sitegeist.PaperTiger:FieldContainer
@@ -19,6 +21,10 @@ prototype(Sitegeist.PaperTiger:Field.Slider) < prototype(Neos.Neos:ContentCompon
         attributes.min={Type.isInteger(props.minimumValue) ? props.minimumValue : false}
         attributes.max={Type.isInteger(props.maximumValue) ? props.maximumValue : false}
         attributes.step={Type.isInteger(props.stepValue) ? props.stepValue : false}
+        attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
+        attributes.oninvalid.@if={props.customErrorMessageEnabled}
+        attributes.oninput={"this.setCustomValidity('')"}
+        attributes.oninput.@if={props.customErrorMessageEnabled}
       />
     </Sitegeist.PaperTiger:FieldContainer>
   `
