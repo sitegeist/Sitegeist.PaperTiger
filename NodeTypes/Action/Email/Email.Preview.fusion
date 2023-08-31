@@ -30,7 +30,7 @@ prototype(Sitegeist.PaperTiger:Action.Email.Preview) < prototype(Neos.Fusion:Com
 
   renderer = afx`
     <p @if.hasMissingFields={private.requiredFields}>
-      The following information is missing: {Array.join(private.requiredFields, ', ')}
+        <strong style="color:red">The following configuration is missing: {Array.join(private.requiredFields, ', ')}</strong>
     </p>
     <dl>
       <dt>Subject</dt>
