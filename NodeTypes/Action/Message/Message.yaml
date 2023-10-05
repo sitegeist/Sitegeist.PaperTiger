@@ -1,7 +1,7 @@
 Sitegeist.PaperTiger:Action.Message:
   ui:
-      label: 'Show message'
-      icon: 'icon-comment'
+    label: 'Show message'
+    icon: 'icon-comment'
   superTypes:
     'Sitegeist.PaperTiger:Action': true
   properties:

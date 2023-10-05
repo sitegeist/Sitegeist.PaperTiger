@@ -1,14 +1,14 @@
 prototype(Sitegeist.PaperTiger:Field.Number.Schema) < prototype(Neos.Fusion:Component) {
-  isRequired = ${q(node).property('isRequired')}
-  rangeValidatorOptions = Neos.Fusion:DataStructure {
-    minimum = ${q(node).property('minimumValue')}
-    minimum.@if.isDefined = ${q(node).property('minimumValue')}
+    isRequired = ${q(node).property('isRequired')}
+    rangeValidatorOptions = Neos.Fusion:DataStructure {
+        minimum = ${q(node).property('minimumValue')}
+        minimum.@if.isDefined = ${q(node).property('minimumValue')}
 
-    maximum = ${q(node).property('maximumValue')}
-    maximum.@if.isDefined = ${q(node).property('maximumValue')}
-  }
+        maximum = ${q(node).property('maximumValue')}
+        maximum.@if.isDefined = ${q(node).property('maximumValue')}
+    }
 
-  renderer = ${Form.Schema.integer()}
-  renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
-  renderer.@process.addRangeValidator = ${props.rangeValidatorOptions ? value.validator('NumberRange', props.rangeValidatorOptions) : value}
+    renderer = ${Form.Schema.integer()}
+    renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
+    renderer.@process.addRangeValidator = ${props.rangeValidatorOptions ? value.validator('NumberRange', props.rangeValidatorOptions) : value}
 }

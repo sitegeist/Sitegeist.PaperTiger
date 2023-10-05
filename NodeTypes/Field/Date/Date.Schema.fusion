@@ -1,13 +1,13 @@
 prototype(Sitegeist.PaperTiger:Field.Date.Schema) < prototype(Neos.Fusion:Component) {
-  isRequired = ${q(node).property('isRequired')}
-  dateRangeValidatorOptions = Neos.Fusion:DataStructure {
-    earliestDate = ${q(node).property('earliestDate')}
-    earliestDate.@if.isDefined = ${q(node).property('earliestDate')}
-    latestDate = ${q(node).property('latestDate')}
-    latestDate.@if.isDefined = ${q(node).property('latestDate')}
-  }
+    isRequired = ${q(node).property('isRequired')}
+    dateRangeValidatorOptions = Neos.Fusion:DataStructure {
+        earliestDate = ${q(node).property('earliestDate')}
+        earliestDate.@if.isDefined = ${q(node).property('earliestDate')}
+        latestDate = ${q(node).property('latestDate')}
+        latestDate.@if.isDefined = ${q(node).property('latestDate')}
+    }
 
-  renderer = ${Form.Schema.date()}
-  renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
-  renderer.@process.addDateRangeValidator = ${props.dateRangeValidatorOptions ? value.validator('NumberRange', props.dateRangeValidatorOptions) : value}
+    renderer = ${Form.Schema.date()}
+    renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
+    renderer.@process.addDateRangeValidator = ${props.dateRangeValidatorOptions ? value.validator('NumberRange', props.dateRangeValidatorOptions) : value}
 }

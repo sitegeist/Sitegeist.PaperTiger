@@ -1,28 +1,28 @@
 prototype(Sitegeist.PaperTiger:Field.Date) < prototype(Neos.Neos:ContentComponent) {
-  name = ${q(node).property('name')}
-  label = ${q(node).property('label')}
-  placeholder = ${q(node).property('placeholder')}
-  isRequired = ${q(node).property('isRequired')}
-  earliestDate =  ${q(node).property('earliestDate')}
-  latestDate =  ${q(node).property('latestDate')}
-  customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
-  customErrorMessage = ${q(node).property('customErrorMessage')}
+    name = ${q(node).property('name')}
+    label = ${q(node).property('label')}
+    placeholder = ${q(node).property('placeholder')}
+    isRequired = ${q(node).property('isRequired')}
+    earliestDate = ${q(node).property('earliestDate')}
+    latestDate = ${q(node).property('latestDate')}
+    customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
+    customErrorMessage = ${q(node).property('customErrorMessage')}
 
-  renderer = afx`
-    <Sitegeist.PaperTiger:FieldContainer
-        field.name={props.name}
-        label={props.label}
-    >
-      <Neos.Fusion.Form:Date
-        attributes.required={props.isRequired}
-        attributes.placeholder={props.placeholder}
-        attributes.min={props.earliestDate ? Date.format(props.earliestDate, 'Y-m-d') : false}
-        attributes.max={props.latestDate ? Date.format(props.latestDate, 'Y-m-d') : false}
-        attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
-        attributes.oninvalid.@if={props.customErrorMessageEnabled}
-        attributes.oninput={"this.setCustomValidity('')"}
-        attributes.oninput.@if={props.customErrorMessageEnabled}
-      />
-    </Sitegeist.PaperTiger:FieldContainer>
-  `
+    renderer = afx`
+        <Sitegeist.PaperTiger:FieldContainer
+            field.name={props.name}
+            label={props.label}
+        >
+            <Neos.Fusion.Form:Date
+                attributes.required={props.isRequired}
+                attributes.placeholder={props.placeholder}
+                attributes.min={props.earliestDate ? Date.format(props.earliestDate, 'Y-m-d') : false}
+                attributes.max={props.latestDate ? Date.format(props.latestDate, 'Y-m-d') : false}
+                attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
+                attributes.oninvalid.@if={props.customErrorMessageEnabled}
+                attributes.oninput={"this.setCustomValidity('')"}
+                attributes.oninput.@if={props.customErrorMessageEnabled}
+            />
+        </Sitegeist.PaperTiger:FieldContainer>
+    `
 }

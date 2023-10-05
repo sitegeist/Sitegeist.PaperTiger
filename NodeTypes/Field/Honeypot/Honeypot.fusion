@@ -1,30 +1,30 @@
 prototype(Sitegeist.PaperTiger:Field.Honeypot) < prototype(Neos.Neos:ContentComponent) {
-  name = ${q(node).property('_identifier')}
+    name = ${q(node).property('_identifier')}
 
-  renderer = Neos.Fusion:Case {
-    backend {
-      condition = ${node.context.inBackend}
-      renderer = afx`
-        <Sitegeist.PaperTiger:FieldContainer
-          field.name={props.name}
-        >
-          <label>Honeypot</label>
-        </Sitegeist.PaperTiger:FieldContainer>
-      `
-    }
+    renderer = Neos.Fusion:Case {
+        backend {
+            condition = ${node.context.inBackend}
+            renderer = afx`
+                <Sitegeist.PaperTiger:FieldContainer
+                    field.name={props.name}
+                >
+                    <label>Honeypot</label>
+                </Sitegeist.PaperTiger:FieldContainer>
+            `
+        }
 
-    default {
-      condition = true
-      renderer = afx`
-        <Neos.Fusion.Form:FieldContainer
-          field.name={props.name}
-          attributes.style="display:none !important;"
-          attributes.autocomplete="off"
-          attributes.tabindex="-1"
-        >
-          <Neos.Fusion.Form:Input />
-        </Neos.Fusion.Form:FieldContainer>
-      `
+        default {
+            condition = true
+            renderer = afx`
+                <Neos.Fusion.Form:FieldContainer
+                    field.name={props.name}
+                    attributes.style="display:none !important;"
+                    attributes.autocomplete="off"
+                    attributes.tabindex="-1"
+                >
+                    <Neos.Fusion.Form:Input/>
+                </Neos.Fusion.Form:FieldContainer>
+            `
+        }
     }
-  }
 }

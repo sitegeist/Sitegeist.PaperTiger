@@ -1,25 +1,25 @@
 prototype(Sitegeist.PaperTiger:Field.TelephoneNumber) < prototype(Neos.Neos:ContentComponent) {
-  name = ${q(node).property('name')}
-  label = ${q(node).property('label')}
-  placeholder = ${q(node).property('placeholder')}
-  isRequired = ${q(node).property('isRequired')}
-  customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
-  customErrorMessage = ${q(node).property('customErrorMessage')}
+    name = ${q(node).property('name')}
+    label = ${q(node).property('label')}
+    placeholder = ${q(node).property('placeholder')}
+    isRequired = ${q(node).property('isRequired')}
+    customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
+    customErrorMessage = ${q(node).property('customErrorMessage')}
 
-  renderer = afx`
-    <Sitegeist.PaperTiger:FieldContainer
-        field.name={props.name}
-        label={props.label}
-    >
-      <Neos.Fusion.Form:Input
-        attributes.type="tel"
-        attributes.required={props.isRequired}
-        attributes.placeholder={props.placeholder || false}
-        attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
-        attributes.oninvalid.@if={props.customErrorMessageEnabled}
-        attributes.oninput={"this.setCustomValidity('')"}
-        attributes.oninput.@if={props.customErrorMessageEnabled}
-      />
-    </Sitegeist.PaperTiger:FieldContainer>
-  `
+    renderer = afx`
+        <Sitegeist.PaperTiger:FieldContainer
+            field.name={props.name}
+            label={props.label}
+        >
+            <Neos.Fusion.Form:Input
+                attributes.type="tel"
+                attributes.required={props.isRequired}
+                attributes.placeholder={props.placeholder || false}
+                attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
+                attributes.oninvalid.@if={props.customErrorMessageEnabled}
+                attributes.oninput={"this.setCustomValidity('')"}
+                attributes.oninput.@if={props.customErrorMessageEnabled}
+            />
+        </Sitegeist.PaperTiger:FieldContainer>
+    `
 }

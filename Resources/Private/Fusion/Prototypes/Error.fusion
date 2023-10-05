@@ -1,27 +1,27 @@
 prototype(Sitegeist.PaperTiger:Error) < prototype(Neos.Fusion:Component) {
-  customErrorMessage = ${q(node).property('customErrorMessage')}
-  customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
+    customErrorMessage = ${q(node).property('customErrorMessage')}
+    customErrorMessageEnabled = ${q(node).property('customErrorMessageEnabled')}
 
-  customErrorClass = ''
+    customErrorClass = ''
 
-  result = null
+    result = null
 
-  renderer = Neos.Fusion:Case {
-    customErrorMessage {
-      condition = ${props.customErrorMessageEnabled && props.customErrorMessage}
-      renderer = afx`
-        <div class={props.customErrorClass}>
-          {props.customErrorMessage}
-        </div>
-      `
+    renderer = Neos.Fusion:Case {
+        customErrorMessage {
+            condition = ${props.customErrorMessageEnabled && props.customErrorMessage}
+            renderer = afx`
+                <div class={props.customErrorClass}>
+                    {props.customErrorMessage}
+                </div>
+            `
+        }
+
+        default {
+            condition = true
+            renderer = Neos.Fusion.Form:ErrorRenderer {
+                result = ${props.result}
+            }
+        }
     }
-
-    default {
-      condition = true
-      renderer = Neos.Fusion.Form:ErrorRenderer {
-        result = ${props.result}
-      }
-    }
-  }
 }
 

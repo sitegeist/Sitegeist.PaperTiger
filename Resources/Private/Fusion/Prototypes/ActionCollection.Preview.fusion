@@ -1,28 +1,28 @@
 prototype(Sitegeist.PaperTiger:ActionCollection.Preview) < prototype(Neos.Neos:ContentCollection) {
-  nodePath = null
-  prototype(Neos.Neos:ContentCollectionRenderer) {
-    itemRenderer = Sitegeist.PaperTiger:ActionCollection.Preview.ContentCase
-  }
+    nodePath = null
+    prototype(Neos.Neos:ContentCollectionRenderer) {
+        itemRenderer = Sitegeist.PaperTiger:ActionCollection.Preview.ContentCase
+    }
 }
 
 prototype(Sitegeist.PaperTiger:ActionCollection.Preview.ContentCase) < prototype(Neos.Neos:ContentComponent) {
-  label = ${node.label}
+    label = ${node.label}
 
-  preview = Neos.Fusion:Case {
-    default {
-      @position = 'end'
-      condition = true
-      type = ${node.nodeType.name + '.Preview'}
+    preview = Neos.Fusion:Case {
+        default {
+            @position = 'end'
+            condition = true
+            type = ${node.nodeType.name + '.Preview'}
+        }
     }
-  }
 
-  renderer = afx`
-    <div style="margin:20px 0">
-      <div><strong>{props.label}</strong></div>
-      <Neos.Fusion:Fragment @if={props.preview}>
-        <hr />
-        <div>{props.preview}</div>
-      </Neos.Fusion:Fragment>
-    </div>
-  `
+    renderer = afx`
+        <div style="margin:20px 0">
+            <div><strong>{props.label}</strong></div>
+            <Neos.Fusion:Fragment @if={props.preview}>
+                <hr/>
+                <div>{props.preview}</div>
+            </Neos.Fusion:Fragment>
+        </div>
+    `
 }

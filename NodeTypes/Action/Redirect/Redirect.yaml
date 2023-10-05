@@ -1,7 +1,7 @@
 Sitegeist.PaperTiger:Action.Redirect:
   ui:
-      label: 'Redirect user'
-      icon: 'icon-arrow-right'
+    label: 'Redirect user'
+    icon: 'icon-arrow-right'
   superTypes:
     'Sitegeist.PaperTiger:Action': true
   properties:

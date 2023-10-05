@@ -1,31 +1,31 @@
 prototype(Sitegeist.PaperTiger:Field.Hidden) < prototype(Neos.Neos:ContentComponent) {
-  name = ${q(node).property('name')}
-  value = ${q(node).property('value')}
+    name = ${q(node).property('name')}
+    value = ${q(node).property('value')}
 
-  renderer = Neos.Fusion:Case {
-    backend {
-      condition = ${node.context.inBackend}
-      renderer = afx`
-        <Sitegeist.PaperTiger:FieldContainer
-          field.name={props.name}
-        >
-          <label>Hidden</label> {props.name}:{props.value}
-        </Sitegeist.PaperTiger:FieldContainer>
-      `
-    }
+    renderer = Neos.Fusion:Case {
+        backend {
+            condition = ${node.context.inBackend}
+            renderer = afx`
+                <Sitegeist.PaperTiger:FieldContainer
+                    field.name={props.name}
+                >
+                    <label>Hidden</label> {props.name}:{props.value}
+                </Sitegeist.PaperTiger:FieldContainer>
+            `
+        }
 
-    default {
-      condition = true
-      renderer = afx`
-        <Neos.Fusion.Form:FieldContainer
-          field.name={props.name}
-          attributes.style="display:none; !important"
-          attributes.autocomplete="off"
-          attributes.tabindex="-1"
-        >
-          <Neos.Fusion.Form:Hidden field.value={props.value} />
-        </Neos.Fusion.Form:FieldContainer>
-      `
+        default {
+            condition = true
+            renderer = afx`
+                <Neos.Fusion.Form:FieldContainer
+                    field.name={props.name}
+                    attributes.style="display:none; !important"
+                    attributes.autocomplete="off"
+                    attributes.tabindex="-1"
+                >
+                    <Neos.Fusion.Form:Hidden field.value={props.value}/>
+                </Neos.Fusion.Form:FieldContainer>
+            `
+        }
     }
-  }
 }

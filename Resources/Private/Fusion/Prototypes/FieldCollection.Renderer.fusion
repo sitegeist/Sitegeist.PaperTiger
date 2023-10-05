@@ -1,9 +1,9 @@
 prototype(Sitegeist.PaperTiger:FieldCollection.Renderer) < prototype(Neos.Fusion:Component) {
-  class = null
-  nodePath = null
+    class = null
+    nodePath = null
 
-  renderer = Neos.Neos:ContentCollection {
-    nodePath = ${props.nodePath}
-    attributes.class = ${props.class}
-  }
+    renderer = Neos.Neos:ContentCollection {
+        nodePath = ${props.nodePath}
+        attributes.class = ${props.class}
+    }
 }

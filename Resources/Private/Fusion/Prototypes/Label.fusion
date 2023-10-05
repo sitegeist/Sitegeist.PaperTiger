@@ -1,21 +1,21 @@
 prototype(Sitegeist.PaperTiger:Label) < prototype(Neos.Fusion:Component) {
-  for = null
-  label = ${q(node).property('label')}
-  isRequired = ${q(node).property('isRequired')}
+    for = null
+    label = ${q(node).property('label')}
+    isRequired = ${q(node).property('isRequired')}
 
-  translationPackage = null
-  translationSource = null
+    translationPackage = null
+    translationSource = null
 
-  renderer = Neos.Fusion:Case {
-    default {
-      condition = true
-      renderer = afx`
-        <label @if.hasLabel={props.label} for={props.for}>
-          {I18n.id(props.label).package(props.translationPackage).source(props.translationSource).value(props.label).translate()}
-          {props.isRequired ? ' *' : ''}
-        </label>
-      `
+    renderer = Neos.Fusion:Case {
+        default {
+            condition = true
+            renderer = afx`
+                <label @if.hasLabel={props.label} for={props.for}>
+                    {I18n.id(props.label).package(props.translationPackage).source(props.translationSource).value(props.label).translate()}
+                    {props.isRequired ? ' *' : ''}
+                </label>
+            `
+        }
     }
-  }
 }
 

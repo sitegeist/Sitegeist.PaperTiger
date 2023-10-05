@@ -1,6 +1,6 @@
 prototype(Sitegeist.PaperTiger:Field.RadioButtons.Schema) < prototype(Neos.Fusion:Component) {
-  isRequired = ${q(node).property('isRequired')}
+    isRequired = ${q(node).property('isRequired')}
 
-  renderer = ${Form.Schema.string()}
-  renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
+    renderer = ${Form.Schema.string()}
+    renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
 }

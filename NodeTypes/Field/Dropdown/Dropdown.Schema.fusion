@@ -1,16 +1,16 @@
 prototype(Sitegeist.PaperTiger:Field.Dropdown.Schema) < prototype(Neos.Fusion:Component) {
-  isMultiple = ${q(node).property('isMultiple')}
-  isRequired = ${q(node).property('isRequired')}
+    isMultiple = ${q(node).property('isMultiple')}
+    isRequired = ${q(node).property('isRequired')}
 
-  renderer = Neos.Fusion:Case {
-    isMultiple {
-      condition = ${props.isMultiple}
-      renderer = ${Form.Schema.arrayOf(Form.Schema.string())}
+    renderer = Neos.Fusion:Case {
+        isMultiple {
+            condition = ${props.isMultiple}
+            renderer = ${Form.Schema.arrayOf(Form.Schema.string())}
+        }
+        default {
+            condition = true
+            renderer = ${Form.Schema.string()}
+        }
+        @process.addIsRequired = ${props.isRequired ?  value.required : value}
     }
-    default {
-      condition = true
-      renderer = ${Form.Schema.string()}
-    }
-    @process.addIsRequired = ${props.isRequired ?  value.required : value}
-  }
 }
