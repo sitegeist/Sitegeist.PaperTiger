@@ -1,3 +1,8 @@
-prototype(Sitegeist.PaperTiger:Field.Honeypot.Schema) < prototype(Neos.Fusion:Component) {
-    renderer = ${Form.Schema.string().validator('StringLength', {minimum:0, maximum:0})}
+prototype(Sitegeist.PaperTiger:Field.Honeypot.Schema) < prototype(Neos.Fusion:Value) {
+
+    value = Neos.Fusion.Form:Runtime.SchemaCollection {
+        one = ${Form.Schema.string().validator('StringLength', {minimum:0, maximum:0})}
+        two = ${Form.Schema.string().isRequired().validator('Sitegeist.PaperTiger:TimestampWithHmac', {'minimumAge': 10, 'maximumAge': 86400})}
+        three = ${Form.Schema.string().isRequired().validator('Sitegeist.PaperTiger:TimestampWithHmac', {'minimumAge': 10, 'maximumAge': 86400})}
+    }
 }
