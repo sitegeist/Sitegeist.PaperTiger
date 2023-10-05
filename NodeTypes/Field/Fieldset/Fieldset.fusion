@@ -1,15 +1,15 @@
 prototype(Sitegeist.PaperTiger:Fieldset) < prototype(Neos.Neos:ContentComponent) {
-  label = Neos.Neos:Editable {
-     property = 'label'
-  }
+    label = Neos.Neos:Editable {
+        property = 'label'
+    }
 
-  class = null
-  legendClass = null
+    class = null
+    legendClass = null
 
-  renderer = afx`
-    <fieldset class={props.class}>
-        <legend @if={props.label} class={props.legendClass}>{props.label}</legend>
-        <Sitegeist.PaperTiger:FieldCollection.Renderer nodePath="." />
-    </fieldset>
-  `
+    renderer = afx`
+        <fieldset class={props.class}>
+            <legend @if={props.label} class={props.legendClass}>{props.label}</legend>
+            <Sitegeist.PaperTiger:FieldCollection.Renderer nodePath="."/>
+        </fieldset>
+    `
 }

@@ -20,19 +20,20 @@ class DataTemplateTest extends TestCase
     public function stringifyConvertsDataProvider(): \Generator
     {
         yield 'string' => ['foo', 'foo'];
-        yield 'int' =>  [123, '123'];
+        yield 'int' => [123, '123'];
         yield 'float' => [1.23, '1.23'];
         yield 'true' => [true, ''];
         yield 'false' => [false, ''];
-        yield 'array' => [['foo','bar'], 'foo, bar'];
+        yield 'array' => [['foo', 'bar'], 'foo, bar'];
         yield 'dateTime' => [\DateTimeImmutable::createFromFormat(\DateTimeImmutable::W3C, '2005-08-15T15:52:01+00:00'), '2005-08-15T15:52:01+00:00'];
         yield 'object' => [new \stdClass(), ''];
     }
+
     /**
      * @test
      * @dataProvider stringifyConvertsDataProvider
      */
-    public function stringifyConvertsData(mixed $data, string $expectedString) : void
+    public function stringifyConvertsData(mixed $data, string $expectedString): void
     {
 
         $this->assertSame($expectedString, $this->dataTemplate->stringify($data));
@@ -49,7 +50,7 @@ class DataTemplateTest extends TestCase
      * @test
      * @dataProvider evaluateEscapesDataProvider
      */
-    public function evaluateEscapesData(mixed $data, string $template, string $expectedString) : void
+    public function evaluateEscapesData(mixed $data, string $template, string $expectedString): void
     {
         $this->dataTemplate->expects($this->once())->method('getTemplate')->willReturn($template);
         $this->dataTemplate->expects($this->once())->method('getData')->willReturn($data);
@@ -62,14 +63,14 @@ class DataTemplateTest extends TestCase
         yield 'mixedCase' => [['fooBar' => 'value'], '-{fooBar}-', '-value-'];
         yield 'minus' => [['foo-bar' => 'value'], '-{foo-bar}-', '-value-'];
         yield 'multiple' => [['foo' => 'value1', 'bar' => 'value2'], '-{foo}-{bar}-', '-value1-value2-'];
-        yield 'nested' => [['foo' => ['bar' => [ 'baz' => 'value']]], '-{foo.bar.baz}-', '-value-'];
+        yield 'nested' => [['foo' => ['bar' => ['baz' => 'value']]], '-{foo.bar.baz}-', '-value-'];
     }
 
     /**
      * @test
      * @dataProvider evaluateAccessesNestedDataProvider
      */
-    public function evaluateAccessesNestedData(mixed $data, string $template, string $expectedString) : void
+    public function evaluateAccessesNestedData(mixed $data, string $template, string $expectedString): void
     {
         $this->dataTemplate->expects($this->once())->method('getTemplate')->willReturn($template);
         $this->dataTemplate->expects($this->once())->method('getData')->willReturn($data);

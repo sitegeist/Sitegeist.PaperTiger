@@ -1,46 +1,46 @@
 prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:Component) {
-  subject = ${q(node).property('subject')}
-  subject.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
-  format = ${q(node).property('format')}
-  plaintext = ${q(node).property('plaintext')}
-  plaintext.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
-  plaintext.@if.isPlaintextOrMultipart = ${this.format != 'html'}
-  html = ${q(node).property('html')}
-  html.@if.isHtmlOrMultipart = ${this.format != 'plaintext'}
-  html.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
-  recipientAddress = ${q(node).property('recipientAddress')}
-  recipientName = ${q(node).property('recipientName')}
-  senderAddress = ${q(node).property('senderAddress')}
-  senderName = ${q(node).property('senderName')}
-  replyToAddress = ${q(node).property('replyToAddress')}
-  carbonCopyAddress = ${q(node).property('carbonCopyAddress')}
-  blindCarbonCopyAddress = ${q(node).property('blindCarbonCopyAddress')}
-  attachUploads = ${q(node).property('attachUploads')}
-  testMode = ${q(node).property('testMode')}
+    subject = ${q(node).property('subject')}
+    subject.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
+    format = ${q(node).property('format')}
+    plaintext = ${q(node).property('plaintext')}
+    plaintext.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
+    plaintext.@if.isPlaintextOrMultipart = ${this.format != 'html'}
+    html = ${q(node).property('html')}
+    html.@if.isHtmlOrMultipart = ${this.format != 'plaintext'}
+    html.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
+    recipientAddress = ${q(node).property('recipientAddress')}
+    recipientName = ${q(node).property('recipientName')}
+    senderAddress = ${q(node).property('senderAddress')}
+    senderName = ${q(node).property('senderName')}
+    replyToAddress = ${q(node).property('replyToAddress')}
+    carbonCopyAddress = ${q(node).property('carbonCopyAddress')}
+    blindCarbonCopyAddress = ${q(node).property('blindCarbonCopyAddress')}
+    attachUploads = ${q(node).property('attachUploads')}
+    testMode = ${q(node).property('testMode')}
 
-  renderer = Sitegeist.PaperTiger:Action {
-    @if.minRequirementsAreMet=${props.recipientAddress && props.senderAddress && props.subject && (props.plaintext || props.html)}
-    type = 'Sitegeist.Neos.SymfonyMailer:SendMail'
-    options {
-      subject = ${props.subject}
-      text = ${props.plaintext}
-      html = ${props.html}
-      recipientAddress = ${props.recipientAddress}
-      recipientName = ${props.recipientName}
-      senderAddress = ${props.senderAddress}
-      senderName = ${props.senderName}
-      replyToAddress = ${props.replyToAddress}
-      carbonCopyAddress = ${props.carbonCopyAddress}
-      blindCarbonCopyAddress = ${props.blindCarbonCopyAddress}
-      attachments = Neos.Fusion:Map {
-        @if.isEnabled = ${props.attachUploads}
-        items = ${data}
-        itemName = "item"
-        itemRenderer = ${item}
-        itemRenderer.@if.isUpload = ${Type.instance(item, '\\Neos\\Flow\\ResourceManagement\\PersistentResource') || Type.instance(item, '\\Psr\\Http\\Message\\UploadedFileInterface') || Type.instance(item, '\\Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFileCollection')}
-        @process.filterEmpty = ${Array.filter(value)}
-      }
-      testMode = ${props.testMode}
+    renderer = Sitegeist.PaperTiger:Action {
+        @if.minRequirementsAreMet = ${props.recipientAddress && props.senderAddress && props.subject && (props.plaintext || props.html)}
+        type = 'Sitegeist.Neos.SymfonyMailer:SendMail'
+        options {
+            subject = ${props.subject}
+            text = ${props.plaintext}
+            html = ${props.html}
+            recipientAddress = ${props.recipientAddress}
+            recipientName = ${props.recipientName}
+            senderAddress = ${props.senderAddress}
+            senderName = ${props.senderName}
+            replyToAddress = ${props.replyToAddress}
+            carbonCopyAddress = ${props.carbonCopyAddress}
+            blindCarbonCopyAddress = ${props.blindCarbonCopyAddress}
+            attachments = Neos.Fusion:Map {
+                @if.isEnabled = ${props.attachUploads}
+                items = ${data}
+                itemName = "item"
+                itemRenderer = ${item}
+                itemRenderer.@if.isUpload = ${Type.instance(item, '\\Neos\\Flow\\ResourceManagement\\PersistentResource') || Type.instance(item, '\\Psr\\Http\\Message\\UploadedFileInterface') || Type.instance(item, '\\Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFileCollection')}
+                @process.filterEmpty = ${Array.filter(value)}
+            }
+            testMode = ${props.testMode}
+        }
     }
-  }
 }

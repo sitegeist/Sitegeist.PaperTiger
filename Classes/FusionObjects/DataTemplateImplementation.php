@@ -17,7 +17,7 @@ class DataTemplateImplementation extends AbstractFusionObject
 {
     public function getTemplate(): string
     {
-        return (string) $this->fusionValue('template');
+        return (string)$this->fusionValue('template');
     }
 
     /**
@@ -53,7 +53,7 @@ class DataTemplateImplementation extends AbstractFusionObject
         if (is_string($value)) {
             return $value;
         } elseif (is_int($value) || is_float($value)) {
-            return (string) $value;
+            return (string)$value;
         } elseif ($value instanceof \Stringable) {
             return $value->__toString();
         } elseif ($value instanceof \DateTimeInterface) {

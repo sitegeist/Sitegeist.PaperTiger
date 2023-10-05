@@ -1,21 +1,21 @@
 prototype(Sitegeist.PaperTiger:FieldContainer) < prototype(Neos.Fusion:Component) {
 
-  @context.field = ${this.field}
-  field = Neos.Fusion.Form:Definition.Field
+    @context.field = ${this.field}
+    field = Neos.Fusion.Form:Definition.Field
 
-  label = null
-  attributes = Neos.Fusion:DataStructure
+    label = null
+    attributes = Neos.Fusion:DataStructure
 
-  labelRenderer = 'Sitegeist.PaperTiger:Label'
-  errorRenderer = 'Sitegeist.PaperTiger:Error'
+    labelRenderer = 'Sitegeist.PaperTiger:Label'
+    errorRenderer = 'Sitegeist.PaperTiger:Error'
 
-  renderer = Neos.Fusion:Case {
+    renderer = Neos.Fusion:Case {
 
-    default {
-      condition = true
-      renderer = Neos.Fusion.Form:FieldContainer {
-        @apply.props = ${props}
-      }
+        default {
+            condition = true
+            renderer = Neos.Fusion.Form:FieldContainer {
+                @apply.props = ${props}
+            }
+        }
     }
-  }
 }

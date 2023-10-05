@@ -1,7 +1,7 @@
 prototype(Sitegeist.PaperTiger:Action.DataTemplate) < prototype(Neos.Fusion:Value) {
-  @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\DataTemplateImplementation'
-  template = ${value}
-  data = ${data}
+    @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\DataTemplateImplementation'
+    template = ${value}
+    data = ${data}
 
-  dateTimeFormat = 'Y-m-d H:i:s'
+    dateTimeFormat = 'Y-m-d H:i:s'
 }

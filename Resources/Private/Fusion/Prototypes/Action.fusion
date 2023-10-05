@@ -1,5 +1,5 @@
 prototype(Sitegeist.PaperTiger:Action) {
-  @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\ActionImplementation'
-  type = null
-  options = Neos.Fusion:DataStructure
+    @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\ActionImplementation'
+    type = null
+    options = Neos.Fusion:DataStructure
 }

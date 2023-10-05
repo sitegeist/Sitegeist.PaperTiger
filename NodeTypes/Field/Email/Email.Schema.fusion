@@ -1,6 +1,6 @@
 prototype(Sitegeist.PaperTiger:Field.Email.Schema) < prototype(Neos.Fusion:Component) {
-  isRequired = ${q(node).property('isRequired')}
+    isRequired = ${q(node).property('isRequired')}
 
-  renderer = ${Form.Schema.string().validator('Neos\Flow\Validation\Validator\EmailAddressValidator')}
-  renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
+    renderer = ${Form.Schema.string().validator('Neos\Flow\Validation\Validator\EmailAddressValidator')}
+    renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
 }

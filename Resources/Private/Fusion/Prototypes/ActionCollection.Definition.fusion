@@ -1,23 +1,23 @@
 prototype(Sitegeist.PaperTiger:ActionCollection.Definition) < prototype(Neos.Fusion:Component) {
-  nodePath = null
+    nodePath = null
 
-  renderer = Sitegeist.PaperTiger:ActionCollection.Definition.Internal {
-    actionMap = Neos.Fusion:Map {
-      items = ${q(node).children(props.nodePath).children('[instanceof Sitegeist.PaperTiger:Action]').get()}
-      itemName = 'node'
-      itemRenderer = Sitegeist.PaperTiger:ActionCollection.Definition.ContentCase
+    renderer = Sitegeist.PaperTiger:ActionCollection.Definition.Internal {
+        actionMap = Neos.Fusion:Map {
+            items = ${q(node).children(props.nodePath).children('[instanceof Sitegeist.PaperTiger:Action]').get()}
+            itemName = 'node'
+            itemRenderer = Sitegeist.PaperTiger:ActionCollection.Definition.ContentCase
+        }
     }
-  }
 }
 
 prototype(Sitegeist.PaperTiger:ActionCollection.Definition.Internal) {
-  @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\ActionCollectionImplementation'
+    @class = '\\Sitegeist\\PaperTiger\\FusionObjects\\ActionCollectionImplementation'
 }
 
 prototype(Sitegeist.PaperTiger:ActionCollection.Definition.ContentCase) < prototype(Neos.Fusion:Case) {
-  default {
-    @position = 'end'
-    condition = true
-    type = ${node.nodeType.name + '.Definition'}
-  }
+    default {
+        @position = 'end'
+        condition = true
+        type = ${node.nodeType.name + '.Definition'}
+    }
 }

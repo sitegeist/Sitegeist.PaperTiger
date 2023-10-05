@@ -1,68 +1,69 @@
 prototype(Sitegeist.PaperTiger:Action.Email.Preview) < prototype(Neos.Fusion:Component) {
-  subject = ${q(node).property('subject')}
-  format = ${q(node).property('format')}
-  plaintext = ${q(node).property('plaintext')}
-  plaintext.@if.isPlaintextOrMultipart = ${this.format != 'html'}
-  html = ${q(node).property('html')}
-  html.@if.isHtmlOrMultipart = ${this.format != 'plaintext'}
-  recipientAddress = ${q(node).property('recipientAddress')}
-  recipientName = ${q(node).property('recipientName')}
-  senderAddress = ${q(node).property('senderAddress')}
-  senderName = ${q(node).property('senderName')}
-  replyToAddress = ${q(node).property('replyToAddress')}
-  carbonCopyAddress = ${q(node).property('carbonCopyAddress')}
-  blindCarbonCopyAddress = ${q(node).property('blindCarbonCopyAddress')}
-  attachUploads = ${q(node).property('attachUploads')}
-  testMode = ${q(node).property('testMode')}
+    subject = ${q(node).property('subject')}
+    format = ${q(node).property('format')}
+    plaintext = ${q(node).property('plaintext')}
+    plaintext.@if.isPlaintextOrMultipart = ${this.format != 'html'}
+    html = ${q(node).property('html')}
+    html.@if.isHtmlOrMultipart = ${this.format != 'plaintext'}
+    recipientAddress = ${q(node).property('recipientAddress')}
+    recipientName = ${q(node).property('recipientName')}
+    senderAddress = ${q(node).property('senderAddress')}
+    senderName = ${q(node).property('senderName')}
+    replyToAddress = ${q(node).property('replyToAddress')}
+    carbonCopyAddress = ${q(node).property('carbonCopyAddress')}
+    blindCarbonCopyAddress = ${q(node).property('blindCarbonCopyAddress')}
+    attachUploads = ${q(node).property('attachUploads')}
+    testMode = ${q(node).property('testMode')}
 
-  @private {
-    requiredFields = Neos.Fusion:DataStructure {
-      recipientAddress = 'recipient-address'
-      recipientAddress.@if.isMissing = ${!props.recipientAddress}
+    @private {
+        requiredFields = Neos.Fusion:DataStructure {
+            recipientAddress = 'recipient-address'
+            recipientAddress.@if.isMissing = ${!props.recipientAddress}
 
-      senderAddress = 'sender-address'
-      senderAddress.@if.isMissing  = ${!props.senderAddress}
+            senderAddress = 'sender-address'
+            senderAddress.@if.isMissing = ${!props.senderAddress}
 
-      textOrHtml = 'text or html'
-      textOrHtml.@if.isMissing=${!(props.plaintext || props.html)}
+            textOrHtml = 'text or html'
+            textOrHtml.@if.isMissing = ${!(props.plaintext || props.html)}
+        }
     }
-  }
 
-  renderer = afx`
-    <p @if.hasMissingFields={private.requiredFields}>
-        <strong style="color:red">The following configuration is missing: {Array.join(private.requiredFields, ', ')}</strong>
-    </p>
-    <dl>
-      <dt>Subject</dt>
-      <dd>{props.subject}</dd>
-      <Neos.Fusion:Fragment @if={props.html}>
-        <dt>Html</dt>
-        <dd>{props.html}</dd>
-      </Neos.Fusion:Fragment>
-      <Neos.Fusion:Fragment @if={props.plaintext}>
-        <dt>Plaintext</dt>
-        <dd>{props.plaintext}</dd>
-      </Neos.Fusion:Fragment>
-      <Neos.Fusion:Fragment @if={props.recipientAddress}>
-        <dt>Recipient</dt>
-        <dd>{props.recipientName} {props.recipientAddress}</dd>
-      </Neos.Fusion:Fragment>
-      <Neos.Fusion:Fragment @if={props.senderAddress}>
-        <dt>Sender</dt>
-        <dd>{props.senderName} {props.senderAddress}</dd>
-      </Neos.Fusion:Fragment>
-      <Neos.Fusion:Fragment @if={props.replyToAddress}>
-        <dt>Reply to</dt>
-        <dd>{props.replyToAddress}</dd>
-      </Neos.Fusion:Fragment>
-      <Neos.Fusion:Fragment @if={props.carbonCopyAddress}>
-        <dt>Carbon copy</dt>
-        <dd>{props.carbonCopyAddress}</dd>
-      </Neos.Fusion:Fragment>
-      <Neos.Fusion:Fragment @if={props.blindCarbonCopyAddress}>
-        <dt>Blind carbon copy</dt>
-        <dd>{props.blindCarbonCopyAddress}</dd>
-      </Neos.Fusion:Fragment>
-    </dl>
-  `
+    renderer = afx`
+        <p @if.hasMissingFields={private.requiredFields}>
+            <strong style="color:red">The following configuration is
+                missing: {Array.join(private.requiredFields, ', ')}</strong>
+        </p>
+        <dl>
+            <dt>Subject</dt>
+            <dd>{props.subject}</dd>
+            <Neos.Fusion:Fragment @if={props.html}>
+                <dt>Html</dt>
+                <dd>{props.html}</dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.plaintext}>
+                <dt>Plaintext</dt>
+                <dd>{props.plaintext}</dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.recipientAddress}>
+                <dt>Recipient</dt>
+                <dd>{props.recipientName} {props.recipientAddress}</dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.senderAddress}>
+                <dt>Sender</dt>
+                <dd>{props.senderName} {props.senderAddress}</dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.replyToAddress}>
+                <dt>Reply to</dt>
+                <dd>{props.replyToAddress}</dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.carbonCopyAddress}>
+                <dt>Carbon copy</dt>
+                <dd>{props.carbonCopyAddress}</dd>
+            </Neos.Fusion:Fragment>
+            <Neos.Fusion:Fragment @if={props.blindCarbonCopyAddress}>
+                <dt>Blind carbon copy</dt>
+                <dd>{props.blindCarbonCopyAddress}</dd>
+            </Neos.Fusion:Fragment>
+        </dl>
+    `
 }

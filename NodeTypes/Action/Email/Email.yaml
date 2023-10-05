@@ -14,7 +14,7 @@ Sitegeist.PaperTiger:Action.Email:
           editorOptions:
             required: true
       validation:
-        'Neos.Neos/Validation/NotEmptyValidator': []
+        'Neos.Neos/Validation/NotEmptyValidator': [ ]
     'format':
       type: string
       defaultValue: plaintext
@@ -65,7 +65,7 @@ Sitegeist.PaperTiger:Action.Email:
           editorOptions:
             required: true
       validation:
-        'Neos.Neos/Validation/NotEmptyValidator': []
+        'Neos.Neos/Validation/NotEmptyValidator': [ ]
     'recipientName':
       type: string
       ui:
@@ -81,7 +81,7 @@ Sitegeist.PaperTiger:Action.Email:
           editorOptions:
             required: true
       validation:
-        'Neos.Neos/Validation/NotEmptyValidator': []
+        'Neos.Neos/Validation/NotEmptyValidator': [ ]
     'senderName':
       type: string
       ui:

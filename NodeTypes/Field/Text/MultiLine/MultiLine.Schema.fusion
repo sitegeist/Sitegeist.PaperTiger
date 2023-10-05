@@ -1,18 +1,18 @@
 prototype(Sitegeist.PaperTiger:Field.Text.MultiLine.Schema) < prototype(Neos.Fusion:Component) {
-  isRequired = ${q(node).property('isRequired')}
-  stringLengthValidatorOptions = Neos.Fusion:DataStructure {
-    minimum = ${q(node).property('minimumLength')}
-    minimum.@if.istSet = ${q(node).property('minimumLength')}
-    maximum = ${q(node).property('maximumLength')}
-    maximum.@if.istSet = ${q(node).property('maximumLength')}
-  }
-  regexValidatorOptions = Neos.Fusion:DataStructure {
-    regularExpression = ${'/^' + q(node).property('regularExpression') + '$/'}
-    regularExpression.@if.istSet = ${q(node).property('regularExpression')}
-  }
+    isRequired = ${q(node).property('isRequired')}
+    stringLengthValidatorOptions = Neos.Fusion:DataStructure {
+        minimum = ${q(node).property('minimumLength')}
+        minimum.@if.istSet = ${q(node).property('minimumLength')}
+        maximum = ${q(node).property('maximumLength')}
+        maximum.@if.istSet = ${q(node).property('maximumLength')}
+    }
+    regexValidatorOptions = Neos.Fusion:DataStructure {
+        regularExpression = ${'/^' + q(node).property('regularExpression') + '$/'}
+        regularExpression.@if.istSet = ${q(node).property('regularExpression')}
+    }
 
-  renderer = ${Form.Schema.string()}
-  renderer.@process.addIsRequired = ${props.isRequired ? value.required : value}
-  renderer.@process.addStringLengthValidator = ${props.stringLengthValidatorOptions ? value.validator('StringLength', props.stringLengthValidatorOptions) : value}
-  renderer.@process.addRegexValidator = ${props.regexValidatorOptions ? value.validator('RegularExpression', props.regexValidatorOptions) : value}
+    renderer = ${Form.Schema.string()}
+    renderer.@process.addIsRequired = ${props.isRequired ? value.required : value}
+    renderer.@process.addStringLengthValidator = ${props.stringLengthValidatorOptions ? value.validator('StringLength', props.stringLengthValidatorOptions) : value}
+    renderer.@process.addRegexValidator = ${props.regexValidatorOptions ? value.validator('RegularExpression', props.regexValidatorOptions) : value}
 }
