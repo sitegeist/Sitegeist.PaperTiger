@@ -46,6 +46,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
                             style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">2</span>
                         <span style="color: black; font-size: 1.5em; position:relative; top: .1em; ">&nbsp;&nbsp;   Follow up actions</span>
                     </div>
+                    <Sitegeist.PaperTiger:ActionCollection.Fieldnames nodePath="fields"/>
                     <Sitegeist.PaperTiger:ActionCollection.Preview nodePath="actions"/>
                 </div>
             `
