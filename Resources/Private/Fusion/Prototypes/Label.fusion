@@ -1,5 +1,6 @@
 prototype(Sitegeist.PaperTiger:Label) < prototype(Neos.Fusion:Component) {
     for = null
+    for.@process.withPrefix = ${value ? 'field_' + value : null}
     label = ${q(node).property('label')}
     isRequired = ${q(node).property('isRequired')}
 

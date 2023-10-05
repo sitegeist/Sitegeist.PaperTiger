@@ -23,6 +23,7 @@ prototype(Sitegeist.PaperTiger:Field.Dropdown) < prototype(Neos.Neos:ContentComp
                 attributes.oninvalid.@if={props.customErrorMessageEnabled}
                 attributes.oninput={"this.setCustomValidity('')"}
                 attributes.oninput.@if={props.customErrorMessageEnabled}
+                attributes.id={'field_' + field.name}
             >
                 <Neos.Fusion.Form:Select.Option option.value="" attributes.label={props.emptyLabel}
                                                 @if={props.emptyOptionEnabled}/>
