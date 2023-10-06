@@ -30,11 +30,11 @@ class TimestampWithHmacValidator extends AbstractValidator
         try {
             $timestamp = $this->hashService->validateAndStripHmac($value);
             $age = time() - (int)$timestamp;
-          if ($age > $this->options['maximumAge']) {
-            $this->addError("Timestamp is too old", 1696525723);
-        } else if ($age < $this->options['minimumAge']) {
-            $this->addError("Timestamp is too young", 1696525723);
-        }
+            if ($age > $this->options['maximumAge']) {
+                $this->addError("Timestamp is too old", 1696525723);
+            } else if ($age < $this->options['minimumAge']) {
+                $this->addError("Timestamp is too young", 1696525723);
+            }
         } catch (InvalidArgumentForHashGenerationException | InvalidHashException) {
             $this->addError("Hmac did not match", 1696525723);
         }
