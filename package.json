@@ -1,0 +1,12 @@
+{
+    "license": "GPL-3.0",
+    "private": true,
+    "scripts": {
+        "build": "esbuild Resources/Private/Assets/Honeypot.ts --bundle --minify --outdir=Resources/Private/Templates",
+        "watch": "esbuild Resources/Private/Assets/Honeypot.ts --bundle --watch --outdir=Resources/Private/Templates",
+        "pipeline": "yarn install --silent --non-interactive;yarn build"
+    },
+    "dependencies": {
+        "esbuild": "^0.14.31"
+    }
+}

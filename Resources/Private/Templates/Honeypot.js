@@ -1,0 +1,1 @@
+(()=>{var s=["touchstart","keydown","mousemove","touchmove"],t=document,o=t.currentScript?.dataset||{};function r(){let e=t.getElementById(o.name||""),n=o.value||"";e&&n&&e.setAttribute("value",n),c()}function a(){s.forEach(e=>{t.addEventListener(e,r,!0)})}function c(){s.forEach(e=>{t.removeEventListener(e,r,!0)})}a();})();
