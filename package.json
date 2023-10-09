@@ -7,6 +7,6 @@
         "pipeline": "yarn install --silent --non-interactive;yarn build"
     },
     "dependencies": {
-        "esbuild": "^0.14.31"
+        "esbuild": "^0.19.4"
     }
 }
