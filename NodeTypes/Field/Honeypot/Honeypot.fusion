@@ -1,6 +1,12 @@
 prototype(Sitegeist.PaperTiger:Field.Honeypot) < prototype(Neos.Neos:ContentComponent) {
     name = ${q(node).property('_identifier')}
 
+    honeypotScript = afx`
+        <script data-name={"field_" + q(node).property('_identifier')} data-value={PaperTiger.timestampWithHmac()}>
+            {StaticResource.content('Sitegeist.PaperTiger', 'Public/Scripts/Honeypot.js')}
+        </script>
+    `
+
     renderer = Neos.Fusion:Case {
         backend {
             condition = ${node.context.inBackend}
@@ -24,35 +30,7 @@ prototype(Sitegeist.PaperTiger:Field.Honeypot) < prototype(Neos.Neos:ContentComp
                     <Neos.Fusion.Form:Input field.name={props.name + '[one]'} attributes.value="" />
                     <Neos.Fusion.Form:Input field.name={props.name + '[two]'} attributes.value={PaperTiger.timestampWithHmac()} />
                     <Neos.Fusion.Form:Input field.name={props.name + '[three]'} attributes.id={'field_' + props.name} attributes.value="" />
-                    <script data-name={"field_" + props.name} data-value={PaperTiger.timestampWithHmac()}>
-                        {'
-                            const events = ["touchstart", "keydown", "mousemove", "touchmove"];
-                            const dataset = document.currentScript.dataset;
-
-                            function insertSpamProtectionValue() {
-                                const field = document.getElementById(dataset.name);
-                                const value = dataset.value;
-                                if (field && value) {
-                                    field.setAttribute("value", value);
-                                }
-                                removeEventListeners();
-                            }
-
-                            function addEventListeners() {
-                                events.forEach(event => {
-                                    document.addEventListener(event, insertSpamProtectionValue, true);
-                                });
-                            }
-
-                            function removeEventListeners() {
-                                events.forEach(event => {
-                                    document.removeEventListener(event, insertSpamProtectionValue, true);
-                                });
-                            }
-
-                            addEventListeners();
-                        '}
-                    </script>
+                    {props.honeypotScript}
                 </Neos.Fusion.Form:FieldContainer>
             `
         }
