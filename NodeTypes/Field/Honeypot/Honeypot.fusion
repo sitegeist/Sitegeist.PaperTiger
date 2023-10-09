@@ -3,7 +3,7 @@ prototype(Sitegeist.PaperTiger:Field.Honeypot) < prototype(Neos.Neos:ContentComp
 
     honeypotScript = afx`
         <script data-name={"field_" + q(node).property('_identifier')} data-value={PaperTiger.timestampWithHmac()}>
-            {StaticResource.content('Sitegeist.PaperTiger', 'Private/Templates/Honeypot.js')}
+            {StaticResource.content('Sitegeist.PaperTiger', 'Public/Scripts/Honeypot.js')}
         </script>
     `
 
