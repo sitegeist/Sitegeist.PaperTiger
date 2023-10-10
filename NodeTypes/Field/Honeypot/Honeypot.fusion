@@ -24,12 +24,10 @@ prototype(Sitegeist.PaperTiger:Field.Honeypot) < prototype(Neos.Neos:ContentComp
             renderer = afx`
                 <Neos.Fusion.Form:FieldContainer
                     attributes.style="display:none !important;"
-                    attributes.autocomplete="off"
-                    attributes.tabindex="-1"
                 >
-                    <Neos.Fusion.Form:Input field.name={props.name + '[one]'} attributes.value="" />
-                    <Neos.Fusion.Form:Input field.name={props.name + '[two]'} attributes.value={PaperTiger.timestampWithHmac()} />
-                    <Neos.Fusion.Form:Input field.name={props.name + '[three]'} attributes.id={'field_' + props.name} attributes.value="" />
+                    <Neos.Fusion.Form:Input field.name={props.name + '[one]'} attributes.value="" attributes.autocomplete="off" attributes.tabindex="-1" />
+                    <Neos.Fusion.Form:Input field.name={props.name + '[two]'} attributes.value={PaperTiger.timestampWithHmac()} attributes.autocomplete="off" attributes.tabindex="-1" />
+                    <Neos.Fusion.Form:Input field.name={props.name + '[three]'} attributes.id={'field_' + props.name} attributes.value="" attributes.autocomplete="off" attributes.tabindex="-1" />
                     {props.honeypotScript}
                 </Neos.Fusion.Form:FieldContainer>
             `
