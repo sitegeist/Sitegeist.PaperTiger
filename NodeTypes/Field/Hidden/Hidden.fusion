@@ -1,6 +1,8 @@
 prototype(Sitegeist.PaperTiger:Field.Hidden) < prototype(Neos.Neos:ContentComponent) {
     name = ${q(node).property('name')}
     value = ${q(node).property('value')}
+    style = 'display:none; !important'
+    class = null
 
     renderer = Neos.Fusion:Case {
         backend {
@@ -19,7 +21,8 @@ prototype(Sitegeist.PaperTiger:Field.Hidden) < prototype(Neos.Neos:ContentCompon
             renderer = afx`
                 <Neos.Fusion.Form:FieldContainer
                     field.name={props.name}
-                    attributes.style="display:none; !important"
+                    attributes.style={props.style}
+                    attributes.class={props.class}
                     attributes.autocomplete="off"
                     attributes.tabindex="-1"
                 >
