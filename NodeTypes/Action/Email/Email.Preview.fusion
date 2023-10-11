@@ -23,17 +23,16 @@ prototype(Sitegeist.PaperTiger:Action.Email.Preview) < prototype(Neos.Fusion:Com
             senderAddress = 'sender-address'
             senderAddress.@if.isMissing = ${!props.senderAddress}
 
-            textOrHtml = 'text or html'
+            textOrHtml = 'text or HTML'
             textOrHtml.@if.isMissing = ${!(props.plaintext || props.html)}
         }
     }
 
     renderer = afx`
-        <p @if.hasMissingFields={private.requiredFields}>
-            <strong style="color:red">The following configuration is
-                missing: {Array.join(private.requiredFields, ', ')}</strong>
+        <p @if={private.requiredFields} class="papertiger-action-email__error">
+            <strong>The following configuration is missing: {Array.join(private.requiredFields, ', ')}</strong>
         </p>
-        <dl>
+        <dl class="papertiger-action-email__list">
             <dt>Subject</dt>
             <dd>{props.subject}</dd>
             <Neos.Fusion:Fragment @if={props.html}>

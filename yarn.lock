@@ -112,6 +112,11 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.19.4.tgz#d46a6e220a717f31f39ae80f49477cc3220be0f0"
   integrity sha512-HP0GDNla1T3ZL8Ko/SHAS2GgtjOg+VmWnnYLhuTksr++EnduYB0f3Y2LzHsUwb2iQ13JGoY6G3R8h6Du/WG6uA==
 
+detect-libc@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
+  integrity sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg==
+
 esbuild@^0.19.4:
   version "0.19.4"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.19.4.tgz#cdf5c4c684956d550bc3c6d0c01dac7fef6c75b1"
@@ -139,3 +144,65 @@ esbuild@^0.19.4:
     "@esbuild/win32-arm64" "0.19.4"
     "@esbuild/win32-ia32" "0.19.4"
     "@esbuild/win32-x64" "0.19.4"
+
+lightningcss-cli-darwin-arm64@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-cli-darwin-arm64/-/lightningcss-cli-darwin-arm64-1.22.0.tgz#3182c57af95fa805a0d7ff8cba30c597406324f9"
+  integrity sha512-4JDDccSTOX0JItTvPovPIr3HR+YfHl+3f6WUq/Xl+0jlA66YHcm1xmL8wUAf34GGrBrA+tTVEFozKkxCmORYHA==
+
+lightningcss-cli-darwin-x64@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-cli-darwin-x64/-/lightningcss-cli-darwin-x64-1.22.0.tgz#425306651cc551e8d68209fd91e09561aba05c61"
+  integrity sha512-4UEIUqyoQ5k0Kby2XJbYUmqXs8qWbPmVzNcyzEZK6jIPAuQsFh6RQEak7sVreqYN1rTbtLTP+BkWbJ36brLnsA==
+
+lightningcss-cli-freebsd-x64@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-cli-freebsd-x64/-/lightningcss-cli-freebsd-x64-1.22.0.tgz#7dea4bd5db95d24cde1ec1c05eb86fa6b6c30bf2"
+  integrity sha512-OEBKEsisTM837qEGMME41MlQ/YTrdvSG5UV6+81jhUIVNYGPiHv42iyIKUEa8C9gqiRqRWOMIU60ksuC9UdotQ==
+
+lightningcss-cli-linux-arm-gnueabihf@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-cli-linux-arm-gnueabihf/-/lightningcss-cli-linux-arm-gnueabihf-1.22.0.tgz#6209048c952eb13cb4414f04662c42cc06f3bf1f"
+  integrity sha512-r95vVVmNlY3hQPiHz9aeGPMAlvht1OvKyVMSUJ3nXkG8W9XbsOVXwjSI60QAaEj1FlezuUeDjQ1I3JfB6dYHhQ==
+
+lightningcss-cli-linux-arm64-gnu@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-cli-linux-arm64-gnu/-/lightningcss-cli-linux-arm64-gnu-1.22.0.tgz#71e463d8443679aeac85353f36591785433322fb"
+  integrity sha512-UrzE1KKt7lcwoUAM9VP+3gSRrT1mRWZDNxvj7WaQt77SVjxcOKIW4xgrcr3hyn+BpojYXex2nHCh/kCpBu7YIw==
+
+lightningcss-cli-linux-arm64-musl@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-cli-linux-arm64-musl/-/lightningcss-cli-linux-arm64-musl-1.22.0.tgz#015e2a7204c61b6f01a4339e56c4a5f6e968e579"
+  integrity sha512-mSXEMKQt1/ZYxQ/d/GPtjr3yvrCrzV7SIMc+uADnWZelM41hWmeB4D5JRw2PP9ZgNCRVSui5umaLuyjDdeMgeg==
+
+lightningcss-cli-linux-x64-gnu@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-cli-linux-x64-gnu/-/lightningcss-cli-linux-x64-gnu-1.22.0.tgz#ae66620b4a090eeb2dd693e9b0f4ba89ba8eb403"
+  integrity sha512-Gd84GEZcuL/0gxGxuDKZj0D9dROb+mjz5fjBsj9CJnFFwv0K6K0T6bjoigCH8Snmrv8xlkCoou3amvarNdq+cQ==
+
+lightningcss-cli-linux-x64-musl@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-cli-linux-x64-musl/-/lightningcss-cli-linux-x64-musl-1.22.0.tgz#28b6ad909feb00855a4170a003b604891a0ddba9"
+  integrity sha512-Hg4Swn57RlwdgQSiGWwqggTPqJQuDtPNXLoEJTFjvQw506ISKnyKsvhonNlEX0gGYNlnKKsaZTVVNzBgjhHuOg==
+
+lightningcss-cli-win32-x64-msvc@1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-cli-win32-x64-msvc/-/lightningcss-cli-win32-x64-msvc-1.22.0.tgz#c9f9d2aecb4d223dfade9163634578743b898930"
+  integrity sha512-+S3mMn4fV8yWsOEIrz214Z10O5vkdEjzApZufSzZBN4fpmqONgk0F+hjOwJyQTJ8mpCXmWM+nU3afyC6jt1XoA==
+
+lightningcss-cli@^1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/lightningcss-cli/-/lightningcss-cli-1.22.0.tgz#8c2fab8fcd15505873742fd4a254be5bb61e6a33"
+  integrity sha512-uJA+a1Yv5Nwq9VD8pAuHv+yS8G0yJP55W2qLwERSetDVxJdnU8QBvfyW8/BFM4GfO4xLliIx31wxMbhmuyxkGw==
+  dependencies:
+    detect-libc "^1.0.3"
+  optionalDependencies:
+    lightningcss-cli-darwin-arm64 "1.22.0"
+    lightningcss-cli-darwin-x64 "1.22.0"
+    lightningcss-cli-freebsd-x64 "1.22.0"
+    lightningcss-cli-linux-arm-gnueabihf "1.22.0"
+    lightningcss-cli-linux-arm64-gnu "1.22.0"
+    lightningcss-cli-linux-arm64-musl "1.22.0"
+    lightningcss-cli-linux-x64-gnu "1.22.0"
+    lightningcss-cli-linux-x64-musl "1.22.0"
+    lightningcss-cli-win32-x64-msvc "1.22.0"

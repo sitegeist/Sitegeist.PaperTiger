@@ -1,0 +1,66 @@
+/* Sitegeist.PaperTiger:Form */
+.papertiger-form__header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1em;
+	border-bottom: 1px solid currentColor;
+	margin-top: 2em;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+	line-height:2em;
+}
+
+.paper-tiger-form__header-number {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	color: white;
+	border-radius: 50%;
+	text-align: center;
+	width: 2em;
+	height: 2em;
+}
+
+.paper-tiger-form__header-title {
+	font-size: 1.5em;
+}
+
+/* Sitegeist.PaperTiger:Action.Email.Preview */
+.papertiger-action-email__error {
+	color: red;
+}
+
+/* Sitegeist.PaperTiger:ActionCollection.Preview */
+.papertiger-actioncollection {
+	margin: 20px 0;
+}
+
+.papertiger-actioncollection__label {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 0;
+}
+
+.papertiger-actioncollection__preview {
+	padding-top: 2em;
+	margin-top: 2em;
+	border-top: 1px solid currentColor;
+}
+
+/* Sitegeist.PaperTiger:Action.Redirect.Preview */
+.papertiger-action-redirect--error {
+	color: red;
+	font-weight: strong;
+}
+
+/* Sitegeist.PaperTiger:ActionCollection.Fieldnames */
+.papertiger-clipboard__text,
+.papertiger-clipboard--not-allowed .papertiger-clipboard__button {
+	display: none;
+}
+
+.papertiger-clipboard--not-allowed .papertiger-clipboard__text {
+	display: inline-block;
+}
