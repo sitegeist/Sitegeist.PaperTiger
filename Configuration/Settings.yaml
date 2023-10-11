@@ -1,4 +1,7 @@
 Neos:
+  Fusion:
+    defaultContext:
+      PaperTiger: "Sitegeist\\PaperTiger\\Helper\\PaperTigerHelper"
   Neos:
     fusion:
       autoInclude:

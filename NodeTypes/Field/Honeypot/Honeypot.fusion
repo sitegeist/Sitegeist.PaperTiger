@@ -1,6 +1,12 @@
 prototype(Sitegeist.PaperTiger:Field.Honeypot) < prototype(Neos.Neos:ContentComponent) {
     name = ${q(node).property('_identifier')}
 
+    honeypotScript = afx`
+        <script data-name={"field_" + q(node).property('_identifier')} data-value={PaperTiger.timestampWithHmac()}>
+            {StaticResource.content('Sitegeist.PaperTiger', 'Public/Scripts/Honeypot.js')}
+        </script>
+    `
+
     renderer = Neos.Fusion:Case {
         backend {
             condition = ${node.context.inBackend}
@@ -16,14 +22,12 @@ prototype(Sitegeist.PaperTiger:Field.Honeypot) < prototype(Neos.Neos:ContentComp
         default {
             condition = true
             renderer = afx`
-                <Neos.Fusion.Form:FieldContainer
-                    field.name={props.name}
-                    attributes.style="display:none !important;"
-                    attributes.autocomplete="off"
-                    attributes.tabindex="-1"
-                >
-                    <Neos.Fusion.Form:Input/>
-                </Neos.Fusion.Form:FieldContainer>
+                <div style="display:none !important;">
+                    <Neos.Fusion.Form:Input field.name={props.name + '[one]'} attributes.value="" attributes.autocomplete="off" attributes.tabindex="-1" />
+                    <Neos.Fusion.Form:Input field.name={props.name + '[two]'} attributes.value={PaperTiger.timestampWithHmac()} attributes.autocomplete="off" attributes.tabindex="-1" />
+                    <Neos.Fusion.Form:Input field.name={props.name + '[three]'} attributes.id={'field_' + props.name} attributes.value="" attributes.autocomplete="off" attributes.tabindex="-1" />
+                    {props.honeypotScript}
+                </div>
             `
         }
     }
