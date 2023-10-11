@@ -1,16 +1,17 @@
 prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
 
     class = ''
+    anchor = afx`<a id={'form_' + node.identifier}></a>`
 
     # we put class into the context to make in available insode the runtime form
-  @context._formClass = ${this.class}
+    @context._formClass = ${this.class}
 
     renderer = Neos.Fusion:Case {
         runtimeForm {
             condition = ${node.context.live}
 
             renderer = Neos.Fusion:Join {
-                anchor = afx`<a id={'form_' + node.identifier}></a>`
+                anchor = ${props.anchor}
                 form = Neos.Fusion.Form:Runtime.RuntimeForm {
                     @cache.context.formClass = '_formClass'
                     namespace = ${q(node).property('_identifier')}
@@ -58,4 +59,3 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
         }
     }
 }
-
