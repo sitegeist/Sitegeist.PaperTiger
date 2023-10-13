@@ -1,21 +1,31 @@
 prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
 
     class = ''
+    action = ${'#form_' + node.identifier}
+    anchor = afx`<a id={'form_' + node.identifier}></a>`
 
     # we put class into the context to make in available insode the runtime form
-  @context._formClass = ${this.class}
+    @context {
+        _formClass = ${this.class}
+        _formAction = ${this.action}
+    }
 
     renderer = Neos.Fusion:Case {
         runtimeForm {
             condition = ${node.context.live}
 
             renderer = Neos.Fusion:Join {
-                anchor = afx`<a id={'form_' + node.identifier}></a>`
+                anchor = ${props.anchor}
                 form = Neos.Fusion.Form:Runtime.RuntimeForm {
-                    @cache.context.formClass = '_formClass'
+                    # since the runtime form is uncached we have to add values required inside to the form context
+                    @cache.context {
+                        formClass = '_formClass'
+                        formAction = '_formAction'
+                    }
+
                     namespace = ${q(node).property('_identifier')}
                     attributes.class = ${_formClass}
-                    attributes.action = ${'#form_' + node.identifier}
+                    attributes.action = ${_formAction}
 
                     process = Neos.Fusion.Form:Runtime.SingleStepProcess {
                         content = Sitegeist.PaperTiger:FieldCollection.Renderer {
@@ -58,4 +68,3 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
         }
     }
 }
-
