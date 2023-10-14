@@ -1,30 +1,46 @@
 prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
 
     class = ''
+    action = ${'#form_' + node.identifier}
+    anchor = afx`<a id={'form_' + node.identifier}></a>`
 
     backendStyle = ${StaticResource.content('Sitegeist.PaperTiger', 'Public/Styles/Backend.css')}
 
     # we put class into the context to make in available insode the runtime form
-    @context._formClass = ${this.class}
+    @context {
+        _formClass = ${this.class}
+        _formAction = ${this.action}
+    }
 
     renderer = Neos.Fusion:Case {
         runtimeForm {
             condition = ${node.context.live}
-            renderer = Neos.Fusion.Form:Runtime.RuntimeForm {
-                @cache.context.formClass = '_formClass'
-                namespace = ${q(node).property('_identifier')}
-                attributes.class = ${_formClass}
-                process = Neos.Fusion.Form:Runtime.SingleStepProcess {
-                    content = Sitegeist.PaperTiger:FieldCollection.Renderer {
-                        nodePath = 'fields'
+
+            renderer = Neos.Fusion:Join {
+                anchor = ${props.anchor}
+                form = Neos.Fusion.Form:Runtime.RuntimeForm {
+                    # since the runtime form is uncached we have to add values required inside to the form context
+                    @cache.context {
+                        formClass = '_formClass'
+                        formAction = '_formAction'
                     }
-                    schema = Sitegeist.PaperTiger:FieldCollection.Schema {
-                        nodePath = 'fields'
+
+                    namespace = ${q(node).property('_identifier')}
+                    attributes.class = ${_formClass}
+                    attributes.action = ${_formAction}
+
+                    process = Neos.Fusion.Form:Runtime.SingleStepProcess {
+                        content = Sitegeist.PaperTiger:FieldCollection.Renderer {
+                            nodePath = 'fields'
+                        }
+                        schema = Sitegeist.PaperTiger:FieldCollection.Schema {
+                            nodePath = 'fields'
+                        }
+                        footer >
                     }
-                    footer >
-                }
-                action = Sitegeist.PaperTiger:ActionCollection.Definition {
-                    nodePath = 'actions'
+                    action = Sitegeist.PaperTiger:ActionCollection.Definition {
+                        nodePath = 'actions'
+                    }
                 }
             }
         }
@@ -45,6 +61,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
                         <span class="paper-tiger-form__header-number">2</span>
                         <span class="paper-tiger-form__header-title">Follow up actions</span>
                     </div>
+                    <Sitegeist.PaperTiger:ActionCollection.Fieldnames nodePath="fields"/>
                     <Sitegeist.PaperTiger:ActionCollection.Preview nodePath="actions"/>
                 </div>
             `

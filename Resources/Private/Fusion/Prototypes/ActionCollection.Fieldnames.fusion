@@ -1,0 +1,15 @@
+prototype(Sitegeist.PaperTiger:ActionCollection.Fieldnames) < prototype(Neos.Fusion:Component) {
+    nodePath = null
+    describtion = 'Fieldnames:&nbsp;'
+    renderer = Neos.Fusion:Tag {
+        content = Neos.Fusion:Join {
+            describtion = ${props.describtion}
+            fieldNames = Neos.Fusion:Loop {
+                @glue = ', '
+                items = ${q(node).children(props.nodePath).find('[instanceof Sitegeist.PaperTiger:Field]').get()}
+                itemName = 'field'
+                itemRenderer = ${'{' + q(field).property('name') + '}'}
+            }
+        }
+    }
+}
