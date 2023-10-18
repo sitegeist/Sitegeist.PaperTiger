@@ -14,7 +14,7 @@ Sitegeist.PaperTiger:Field.Dropdown:
   properties:
     emptyOptionEnabled:
       type: boolean
-      defaultValues: true
+      defaultValue: true
       ui:
         label: "Add empty option"
         reloadIfChanged: true
@@ -23,7 +23,7 @@ Sitegeist.PaperTiger:Field.Dropdown:
           group: form
     emptyLabel:
       type: string
-      defaultValues: ""
+      defaultValue: ""
       ui:
         label: "Empty option label"
         reloadIfChanged: true
