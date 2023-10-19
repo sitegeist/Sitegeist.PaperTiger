@@ -1,13 +1,12 @@
 prototype(Sitegeist.PaperTiger:Action.Redirect.Preview) < prototype(Neos.Fusion:Component) {
     uri = ${q(node).property('uri')}
     uri.@process.convert = Neos.Neos:ConvertUris {
-        @if.hasValue = ${value}
-        node = ${q(site).context({'workspaceName': 'live'}).get(0)}
+        node = ${q(node).context({'workspaceName': 'live'}).get(0)}
         forceConversion = true
     }
 
     renderer = afx`
-        <a @if={props.uri} class="papertiger-action-redirect" href="_blank">
+        <a @if={props.uri} class="papertiger-action-redirect" href={props.uri} target="_blank">
             {props.uri}
         </a>
         <div @if={!props.uri} class="papertiger-action-redirect papertiger-action-redirect--error">No Uri set</div>
