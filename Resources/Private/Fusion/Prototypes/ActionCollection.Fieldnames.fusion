@@ -1,15 +1,24 @@
 prototype(Sitegeist.PaperTiger:ActionCollection.Fieldnames) < prototype(Neos.Fusion:Component) {
     nodePath = null
-    describtion = 'Fieldnames:&nbsp;'
-    renderer = Neos.Fusion:Tag {
-        content = Neos.Fusion:Join {
-            describtion = ${props.describtion}
-            fieldNames = Neos.Fusion:Loop {
-                @glue = ', '
-                items = ${q(node).children(props.nodePath).find('[instanceof Sitegeist.PaperTiger:Field]').get()}
-                itemName = 'field'
-                itemRenderer = ${'{' + q(field).property('name') + '}'}
-            }
-        }
-    }
+    description = 'Fieldnames:'
+    buttonTitle = 'Copy to clipboard'
+    items = ${q(node).children(props.nodePath).find('[instanceof Sitegeist.PaperTiger:Field]').get()}
+
+    @if.hasNodePathAndItems = ${this.nodePath && Type.isArray(this.items) && Array.length(this.items)}
+
+    renderer = afx`
+        <div class="papertiger-fieldnames">
+            <span @if={props.description} @key="description" class="papertiger-fieldnames__describtion">
+                {props.description}
+            </span>
+            <Neos.Fusion:Loop @key="fieldNames" items={props.items}>
+                <span @key="text" class="papertiger-fieldnames__text">
+                    {'{' + q(item).property('name') + '}'}
+                </span>
+                <button @key="button"  type="button" class="papertiger-fieldnames__button" title={props.buttonTitle}>
+                    {'{' + q(item).property('name') + '}'}
+                </button>
+            </Neos.Fusion:Loop>
+        </div>
+    `
 }

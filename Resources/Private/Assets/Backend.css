@@ -56,11 +56,21 @@
 }
 
 /* Sitegeist.PaperTiger:ActionCollection.Fieldnames */
-.papertiger-clipboard__text,
-.papertiger-clipboard--not-allowed .papertiger-clipboard__button {
+.papertiger-fieldnames {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 1em;
+}
+
+.papertiger-fieldnames__describtion {
+	font-weight: bold;
+}
+
+.papertiger-fieldnames__text,
+.papertiger-clipboard--not-allowed .papertiger-fieldnames__button {
 	display: none;
 }
 
-.papertiger-clipboard--not-allowed .papertiger-clipboard__text {
+.papertiger-clipboard--not-allowed .papertiger-fieldnames__text {
 	display: inline-block;
 }

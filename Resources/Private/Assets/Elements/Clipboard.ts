@@ -9,7 +9,7 @@ doc.addEventListener("click", (event) => {
 	const target = event.target;
 	if (
 		target instanceof Element &&
-		target.classList.contains("papertiger-clipboard__button")
+		target.classList.contains("papertiger-fieldnames__button")
 	) {
 		const text = target.textContent;
 		copy(text);

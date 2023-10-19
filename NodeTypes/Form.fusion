@@ -5,6 +5,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
     anchor = afx`<a id={'form_' + node.identifier}></a>`
 
     backendStyle = ${StaticResource.content('Sitegeist.PaperTiger', 'Public/Styles/Backend.css')}
+    backendScript = ${StaticResource.content('Sitegeist.PaperTiger', 'Public/Scripts/Backend.js')}
 
     # we put class into the context to make in available insode the runtime form
     @context {
@@ -49,6 +50,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
             condition = ${node.context.inBackend}
             renderer = afx`
                 <style @if={props.backendStyle} data-slipstream>{props.backendStyle}</style>
+                <script @if={props.backendScript} data-slipstream>{props.backendScript}</script>
                 <div class="papertiger-form">
                     <div class="papertiger-form__header">
                         <span class="paper-tiger-form__header-number">1</span>
