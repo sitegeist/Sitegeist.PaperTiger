@@ -32,6 +32,11 @@
 	color: red;
 }
 
+.papertiger-action-email__list dt {
+	font-weight: bold;
+	margin-top: 1em;
+}
+
 /* Sitegeist.PaperTiger:ActionCollection.Preview */
 .papertiger-actioncollection {
 	margin: 20px 0;
@@ -52,7 +57,7 @@
 /* Sitegeist.PaperTiger:Action.Redirect.Preview */
 .papertiger-action-redirect--error {
 	color: red;
-	font-weight: strong;
+	font-weight: bold;
 }
 
 /* Sitegeist.PaperTiger:ActionCollection.Fieldnames */
