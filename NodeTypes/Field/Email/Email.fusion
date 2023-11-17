@@ -19,7 +19,7 @@ prototype(Sitegeist.PaperTiger:Field.Email) < prototype(Neos.Neos:ContentCompone
                 attributes.oninvalid.@if={props.customErrorMessageEnabled}
                 attributes.oninput={"this.setCustomValidity('')"}
                 attributes.oninput.@if={props.customErrorMessageEnabled}
-
+                attributes.id={'field_' + field.name}
             />
         </Sitegeist.PaperTiger:FieldContainer>
     `

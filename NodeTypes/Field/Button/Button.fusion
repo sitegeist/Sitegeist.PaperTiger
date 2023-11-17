@@ -7,7 +7,7 @@ prototype(Sitegeist.PaperTiger:Field.Button) < prototype(Neos.Neos:ContentCompon
         <Neos.Fusion.Form:FieldContainer
             field.name={props.name}
         >
-            <Neos.Fusion.Form:Button field.value={props.value}>{props.label}</Neos.Fusion.Form:Button>
+            <Neos.Fusion.Form:Button field.value={props.value} attributes.id={'field_' + field.name}>{props.label}</Neos.Fusion.Form:Button>
         </Neos.Fusion.Form:FieldContainer>
     `
 }
