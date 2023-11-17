@@ -4,6 +4,9 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
     action = ${'#form_' + node.identifier}
     anchor = afx`<a id={'form_' + node.identifier}></a>`
 
+    backendStyle = ${StaticResource.content('Sitegeist.PaperTiger', 'Public/Styles/Backend.css')}
+    backendScript = ${StaticResource.content('Sitegeist.PaperTiger', 'Public/Scripts/Backend.js')}
+
     # we put class into the context to make in available insode the runtime form
     @context {
         _formClass = ${this.class}
@@ -46,21 +49,19 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
         backend {
             condition = ${node.context.inBackend}
             renderer = afx`
-                <div>
-                    <div
-                        style="border-bottom: 1px solid black; margin-top: 2em; margin-bottom: 1em; padding-bottom: 1em; line-height:2em;">
-                        <span
-                            style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">1</span>
-                        <span style="color: black; font-size: 1.5em; position:relative; top: .1em; ">&nbsp;&nbsp;Form fields</span>
+                <style @if={props.backendStyle} data-slipstream>{props.backendStyle}</style>
+                <script @if={props.backendScript} data-slipstream>{props.backendScript}</script>
+                <div class="papertiger-form">
+                    <div class="papertiger-form__header">
+                        <span class="paper-tiger-form__header-number">1</span>
+                        <span class="paper-tiger-form__header-title">Form fields</span>
                     </div>
                     <form class={_formClass}>
-                        <Sitegeist.PaperTiger:FieldCollection.Renderer nodePath='fields'/>
+                        <Sitegeist.PaperTiger:FieldCollection.Renderer nodePath="fields"/>
                     </form>
-                    <div
-                        style="border-bottom: 1px solid black; margin-top: 2em; margin-bottom: 1em; padding-bottom: 1em; line-height:2em;">
-                        <span
-                            style="display: inline-block; background-color: black; color:white; border-radius: 50%; text-align: center; width: 2em; height: 2em;">2</span>
-                        <span style="color: black; font-size: 1.5em; position:relative; top: .1em; ">&nbsp;&nbsp;   Follow up actions</span>
+                    <div class="papertiger-form__header">
+                        <span class="paper-tiger-form__header-number">2</span>
+                        <span class="paper-tiger-form__header-title">Follow up actions</span>
                     </div>
                     <Sitegeist.PaperTiger:ActionCollection.Fieldnames nodePath="fields"/>
                     <Sitegeist.PaperTiger:ActionCollection.Preview nodePath="actions"/>

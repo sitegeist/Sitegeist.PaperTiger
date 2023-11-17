@@ -17,12 +17,9 @@ prototype(Sitegeist.PaperTiger:ActionCollection.Preview.ContentCase) < prototype
     }
 
     renderer = afx`
-        <div style="margin:20px 0">
-            <div><strong>{props.label}</strong></div>
-            <Neos.Fusion:Fragment @if={props.preview}>
-                <hr/>
-                <div>{props.preview}</div>
-            </Neos.Fusion:Fragment>
+        <div class="papertiger-actioncollection">
+            <h2 class="papertiger-actioncollection__label">{props.label}</h2>
+            <div @if={props.preview} class="papertiger-actioncollection__preview">{props.preview}</div>
         </div>
     `
 }

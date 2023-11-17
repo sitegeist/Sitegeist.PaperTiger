@@ -1,4 +1,5 @@
 const events = ["touchstart", "keydown", "mousemove", "touchmove"];
+// @ts-ignore
 const doc = document;
 const dataset: { name?: string; value?: string } =
 	doc.currentScript?.dataset || {};

@@ -1,6 +1,9 @@
 prototype(Sitegeist.PaperTiger:Field.Honeypot) < prototype(Neos.Neos:ContentComponent) {
     name = ${q(node).property('_identifier')}
 
+    style = 'display:none !important;'
+    class = null
+
     honeypotScript = afx`
         <script data-name={"field_" + q(node).property('_identifier')} data-value={PaperTiger.timestampWithHmac()}>
             {StaticResource.content('Sitegeist.PaperTiger', 'Public/Scripts/Honeypot.js')}
@@ -22,7 +25,7 @@ prototype(Sitegeist.PaperTiger:Field.Honeypot) < prototype(Neos.Neos:ContentComp
         default {
             condition = true
             renderer = afx`
-                <div style="display:none !important;">
+                <div class={props.class} style={props.style}>
                     <Neos.Fusion.Form:Input field.name={props.name + '[one]'} attributes.value="" attributes.autocomplete="off" attributes.tabindex="-1" />
                     <Neos.Fusion.Form:Input field.name={props.name + '[two]'} attributes.value={PaperTiger.timestampWithHmac()} attributes.autocomplete="off" attributes.tabindex="-1" />
                     <Neos.Fusion.Form:Input field.name={props.name + '[three]'} attributes.id={'field_' + props.name} attributes.value="" attributes.autocomplete="off" attributes.tabindex="-1" />

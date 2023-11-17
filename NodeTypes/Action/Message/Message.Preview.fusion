@@ -2,6 +2,8 @@ prototype(Sitegeist.PaperTiger:Action.Message.Preview) < prototype(Neos.Fusion:C
     message = ${q(node).property('message')}
 
     renderer = afx`
-        {props.message}
+        <div class="papertiger-action-message">
+            {props.message}
+        </div>
     `
 }
