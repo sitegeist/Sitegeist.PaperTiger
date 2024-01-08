@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="" product-name="Sitegeist.PaperTiger" source-language="en" datatype="plaintext" target-language="de">
+    <body>
+      <trans-unit id="properties.customErrorMessageEnabled" xml:space="preserve">
+        <source>Customize Error Message</source>
+        <target>Eigene Fehlermeldung verwenden</target>
+      </trans-unit>
+      <trans-unit id="properties.customErrorMessage" xml:space="preserve">
+        <source>Error Message</source>
+        <target>Fehlermeldung</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
