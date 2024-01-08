@@ -10,6 +10,22 @@
         <source>Special Form Elements</source>
         <target>Spezielle Formular-Elemente</target>
       </trans-unit>
+      <trans-unit id="form.formFields.header" xml:space="preserve">
+        <source>Form fields</source>
+        <target>Formularfelder</target>
+      </trans-unit>
+      <trans-unit id="form.followUpActions.header" xml:space="preserve">
+        <source>Follow up actions</source>
+        <target>Formular-Aktionen</target>
+      </trans-unit>
+      <trans-unit id="actionCollection.fieldNames.description" xml:space="preserve">
+        <source>Field names:</source>
+        <target>Feldnamen:</target>
+      </trans-unit>
+      <trans-unit id="actionCollection.fieldNames.copyToClipboard" xml:space="preserve">
+        <source>Copy to clipboard</source>
+        <target>In die Zwischenablage kopieren</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
