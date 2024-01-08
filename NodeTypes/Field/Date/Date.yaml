@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Date:
   ui:
-    label: "Date"
+    label: i18n
     icon: icon-calendar
     group: form.elements
     position: 500
@@ -15,7 +15,7 @@ Sitegeist.PaperTiger:Field.Date:
       type: DateTime
       defaultValue: null
       ui:
-        label: 'earliest Date'
+        label: i18n
         inspector:
           group: form
           editorOptions:
@@ -24,7 +24,7 @@ Sitegeist.PaperTiger:Field.Date:
       type: DateTime
       defaultValue: null
       ui:
-        label: 'latest Date'
+        label: i18n
         inspector:
           group: form
           editorOptions:

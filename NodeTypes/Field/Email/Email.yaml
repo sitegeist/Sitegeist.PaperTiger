@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Email:
   ui:
-    label: "E-Mail"
+    label: i18n
     icon: icon-paper-plane
     group: form.elements
     position: 300

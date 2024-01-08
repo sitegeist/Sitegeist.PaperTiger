@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Hidden:
   ui:
-    label: "Hidden"
+    label: i18n
     icon: eye-slash
     group: form.special
   superTypes:
@@ -9,7 +9,7 @@ Sitegeist.PaperTiger:Field.Hidden:
     value:
       type: string
       ui:
-        label: 'Value'
+        label: i18n
         showInCreationDialog: true
         inspector:
           group: form

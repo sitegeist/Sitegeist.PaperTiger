@@ -5,7 +5,7 @@ Sitegeist.PaperTiger:Mixin.IsRequired:
       type: boolean
       defaultValue: false
       ui:
-        label: "Required"
+        label: i18n
         reloadIfChanged: true
         showInCreationDialog: true
         inspector:

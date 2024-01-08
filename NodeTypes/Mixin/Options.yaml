@@ -4,7 +4,7 @@ Sitegeist.PaperTiger:Mixin.Options:
     options:
       type: array
       ui:
-        label: "Options"
+        label: i18n
         reloadIfChanged: true
         showInCreationDialog: true
         inspector:
@@ -15,4 +15,5 @@ Sitegeist.PaperTiger:Mixin.Options:
             isSortable: true
             itemType: Sitegeist\PaperTiger\Domain\OptionSpecification
             labels:
+              # TODO: Not translatable
               addItem: 'Create option'

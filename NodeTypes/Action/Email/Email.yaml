@@ -2,13 +2,13 @@ Sitegeist.PaperTiger:Action.Email:
   superTypes:
     'Sitegeist.PaperTiger:Action': true
   ui:
-    label: 'Send email'
+    label: i18n
     icon: 'icon-envelope-o'
   properties:
     'subject':
       type: string
       ui:
-        label: 'Subject'
+        label: i18n
         inspector:
           group: 'form'
           editorOptions:
@@ -19,47 +19,43 @@ Sitegeist.PaperTiger:Action.Email:
       type: string
       defaultValue: plaintext
       ui:
-        label: "Format"
+        label: i18n
         inspector:
           group: 'form'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
               'html':
-                label: "HTML"
+                label: i18n
                 icon: 'icon-code'
               'plaintext':
-                label: "Plaintext"
+                label: i18n
                 icon: 'icon-font'
               'multipart':
-                label: "Multipart"
+                label: i18n
                 icon: 'icon-puzzle-piece'
     'plaintext':
       type: string
       ui:
-        label: 'Plaintext'
+        label: i18n
         reloadIfChanged: true
         inspector:
           group: 'form'
           editor: 'Neos.Neos/Inspector/Editors/CodeEditor'
           hidden: 'ClientEval:node.properties.format == "html"'
-          editorOptions:
-            buttonLabel: "Plaintext"
     'html':
       type: string
       ui:
-        label: 'Html'
+        label: i18n
         reloadIfChanged: true
         inspector:
           group: 'form'
           editor: 'Neos.Neos/Inspector/Editors/RichTextEditor'
           hidden: 'ClientEval:node.properties.format == "plaintext"'
-          editorOptions:
-            buttonLabel: "Html"
     'recipientAddress':
       type: string
       ui:
-        label: 'Recipient address'
+        label: i18n
         inspector:
           group: 'form'
           editorOptions:
@@ -69,13 +65,13 @@ Sitegeist.PaperTiger:Action.Email:
     'recipientName':
       type: string
       ui:
-        label: 'Recipient name'
+        label: i18n
         inspector:
           group: 'form'
     'senderAddress':
       type: string
       ui:
-        label: 'Sender address'
+        label: i18n
         inspector:
           group: 'form'
           editorOptions:
@@ -85,37 +81,37 @@ Sitegeist.PaperTiger:Action.Email:
     'senderName':
       type: string
       ui:
-        label: 'Sender name'
+        label: i18n
         inspector:
           group: 'form'
     'replyToAddress':
       type: string
       ui:
-        label: 'Reply to address'
+        label: i18n
         inspector:
           group: 'form'
     'carbonCopyAddress':
       type: string
       ui:
-        label: 'Carbon copy address'
+        label: i18n
         inspector:
           group: 'form'
     'blindCarbonCopyAddress':
       type: string
       ui:
-        label: 'Blind carbon copy address'
+        label: i18n
         inspector:
           group: 'form'
     'attachUploads':
       type: boolean
       ui:
-        label: "Attach uploads"
+        label: i18n
         inspector:
           group: 'form'
     'testMode':
       type: boolean
       defaultValue: false
       ui:
-        label: "Test mode"
+        label: i18n
         inspector:
           group: 'form'

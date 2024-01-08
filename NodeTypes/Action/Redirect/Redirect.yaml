@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Action.Redirect:
   ui:
-    label: 'Redirect user'
+    label: i18n
     icon: 'icon-arrow-right'
   superTypes:
     'Sitegeist.PaperTiger:Action': true
@@ -8,7 +8,7 @@ Sitegeist.PaperTiger:Action.Redirect:
     uri:
       type: string
       ui:
-        label: "Weiterleitungs Ziel"
+        label: i18n
         reloadIfChanged: true
         inspector:
           group: 'form'

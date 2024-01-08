@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="" product-name="Sitegeist.PaperTiger" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="properties.name" xml:space="preserve">
+        <source>Name</source>
+      </trans-unit>
+      <trans-unit id="properties.name.ui.help.message" xml:space="preserve">
+        <source>A technical identifier for the field. Must only contain number and chars.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

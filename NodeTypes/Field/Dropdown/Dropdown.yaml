@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Dropdown:
   ui:
-    label: "Dropdown"
+    label: i18n
     icon: icon-list-ol
     group: form.elements
     position: 600
@@ -16,7 +16,7 @@ Sitegeist.PaperTiger:Field.Dropdown:
       type: boolean
       defaultValue: true
       ui:
-        label: "Add empty option"
+        label: i18n
         reloadIfChanged: true
         inspector:
           position: 'before options'
@@ -25,7 +25,7 @@ Sitegeist.PaperTiger:Field.Dropdown:
       type: string
       defaultValue: ""
       ui:
-        label: "Empty option label"
+        label: i18n
         reloadIfChanged: true
         inspector:
           position: 'after emptyOptionEnabled'

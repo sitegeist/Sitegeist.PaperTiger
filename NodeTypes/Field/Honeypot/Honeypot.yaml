@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Honeypot:
   ui:
-    label: "Honeypot"
+    label: i18n
     icon: resource://Sitegeist.PaperTiger/Icons/honey.svg
     group: form.special
   superTypes:

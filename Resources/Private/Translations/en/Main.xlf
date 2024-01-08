@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="" product-name="Sitegeist.PaperTiger" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="nodeTypes.groups.form.elements" xml:space="preserve">
+        <source>Form Elements</source>
+      </trans-unit>
+      <trans-unit id="nodeTypes.groups.form.special" xml:space="preserve">
+        <source>Special Form Elements</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

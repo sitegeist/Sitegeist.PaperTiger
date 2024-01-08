@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.CheckBoxes:
   ui:
-    label: "CheckBoxes"
+    label: i18n
     icon: icon-check-square
     group: form.elements
     position: 700

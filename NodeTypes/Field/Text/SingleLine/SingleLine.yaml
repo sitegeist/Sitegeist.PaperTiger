@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Text.SingleLine:
   ui:
-    label: "Text (single-line)"
+    label: i18n
     icon: icon-pencil-square-o
     group: form.elements
     position: 100
@@ -15,20 +15,20 @@ Sitegeist.PaperTiger:Field.Text.SingleLine:
       type: integer
       defaultValue: null
       ui:
-        label: "Min Length"
+        label: i18n
         inspector:
           group: form-validation
     maximumLength:
       type: integer
       defaultValue: null
       ui:
-        label: "Max Length"
+        label: i18n
         inspector:
           group: form-validation
     regularExpression:
       type: string
       defaultValue: null
       ui:
-        label: "Regular expression"
+        label: i18n
         inspector:
           group: form-validation

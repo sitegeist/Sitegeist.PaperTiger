@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Text.MultiLine:
   ui:
-    label: "Text (multiline)"
+    label: i18n
     icon: icon-pencil-square-o
     group: form.elements
     position: 200
@@ -15,7 +15,7 @@ Sitegeist.PaperTiger:Field.Text.MultiLine:
       type: integer
       defaultValue: null
       ui:
-        label: "Number of lines"
+        label: i18n
         reloadIfChanged: true
         inspector:
           group: form
@@ -43,20 +43,20 @@ Sitegeist.PaperTiger:Field.Text.MultiLine:
       type: integer
       defaultValue: null
       ui:
-        label: "Min Length"
+        label: i18n
         inspector:
           group: form-validation
     maximumLength:
       type: integer
       defaultValue: null
       ui:
-        label: "Max Length"
+        label: i18n
         inspector:
           group: form-validation
     regularExpression:
       type: string
       defaultValue: null
       ui:
-        label: "Regular expression"
+        label: i18n
         inspector:
           group: form-validation

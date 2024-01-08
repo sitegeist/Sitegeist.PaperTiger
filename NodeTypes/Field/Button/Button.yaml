@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Button:
   ui:
-    label: "Button"
+    label: i18n
     icon: square
     group: form.elements
     position: 1100
@@ -11,7 +11,7 @@ Sitegeist.PaperTiger:Field.Button:
     value:
       type: string
       ui:
-        label: 'Value'
+        label: i18n
         showInCreationDialog: false
         inspector:
           group: form

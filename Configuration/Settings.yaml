@@ -10,11 +10,18 @@ Neos:
     nodeTypes:
       groups:
         'form.elements':
-          label: 'Form Elements'
+          label: 'Sitegeist.PaperTiger:Main:nodeTypes.groups.form.elements'
           collapsed: false
         'form.special':
-          label: 'Special Form Elements'
+          label: 'Sitegeist.PaperTiger:Main:nodeTypes.groups.form.special'
           collapsed: false
+
+    userInterface:
+      translation:
+        autoInclude:
+          Sitegeist.PaperTiger:
+            - Main
+            - 'NodeTypes/*'
 
     Ui:
       resources:

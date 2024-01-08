@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Fieldset:
   ui:
-    label: "Fieldset"
+    label: i18n
     icon: window-maximize
     group: form.elements
     position: 1200
