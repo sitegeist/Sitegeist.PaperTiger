@@ -1,7 +1,8 @@
 prototype(Sitegeist.PaperTiger:ActionCollection.Fieldnames) < prototype(Neos.Fusion:Component) {
     nodePath = null
-    description = 'Fieldnames:'
-    buttonTitle = 'Copy to clipboard'
+    description = ${Translation.translate('actionCollection.fieldNames.description', 'Field names:', [], 'Main', 'Sitegeist.PaperTiger')}
+    buttonTitle = ${Translation.translate('actionCollection.fieldNames.copyToClipboard', 'Copy to clipboard', [], 'Main', 'Sitegeist.PaperTiger')}
+
     items = ${q(node).children(props.nodePath).find('[instanceof Sitegeist.PaperTiger:Field]').get()}
 
     @if.hasNodePathAndItems = ${this.nodePath && Type.isArray(this.items) && Array.length(this.items)}

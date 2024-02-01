@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Slider:
   ui:
-    label: "Slider"
+    label: i18n
     icon: icon-sliders-h
     group: form.elements
     position: 1000
@@ -14,7 +14,7 @@ Sitegeist.PaperTiger:Field.Slider:
       type: integer
       defaultValue: 0
       ui:
-        label: 'minimum Value'
+        label: i18n
         showInCreationDialog: true
         inspector:
           group: form
@@ -22,7 +22,7 @@ Sitegeist.PaperTiger:Field.Slider:
       type: integer
       defaultValue: 10
       ui:
-        label: 'maximum Value'
+        label: i18n
         showInCreationDialog: true
         inspector:
           group: form
@@ -30,6 +30,6 @@ Sitegeist.PaperTiger:Field.Slider:
       type: integer
       defaultValue: 1
       ui:
-        label: 'Distance between values'
+        label: i18n
         inspector:
           group: form

@@ -5,7 +5,7 @@ Sitegeist.PaperTiger:Mixin.IsMultiple:
       type: boolean
       defaultValue: false
       ui:
-        label: "Mehrfachauswahl erlauben"
+        label: i18n
         reloadIfChanged: true
         inspector:
           group: form

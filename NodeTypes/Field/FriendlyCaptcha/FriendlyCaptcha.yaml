@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.FriendlyCaptcha:
   ui:
-    label: "FriendlyCaptcha"
+    label: i18n
     icon: resource://Sitegeist.PaperTiger/Icons/friendlycapcha.svg
     group: form.special
   superTypes:

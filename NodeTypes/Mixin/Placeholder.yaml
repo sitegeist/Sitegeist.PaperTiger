@@ -4,7 +4,7 @@ Sitegeist.PaperTiger:Mixin.Placeholder:
     placeholder:
       type: string
       ui:
-        label: "Platzhalter"
+        label: i18n
         reloadIfChanged: true
         inspector:
           group: form

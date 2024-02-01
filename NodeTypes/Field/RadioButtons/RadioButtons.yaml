@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.RadioButtons:
   ui:
-    label: "RadioButtons"
+    label: i18n
     icon: icon-dot-circle
     group: form.elements
     position: 800

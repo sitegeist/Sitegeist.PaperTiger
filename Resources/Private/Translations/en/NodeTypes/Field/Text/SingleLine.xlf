@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="" product-name="Sitegeist.PaperTiger" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="ui.label" xml:space="preserve">
+        <source>Text (single-line)</source>
+      </trans-unit>
+      <trans-unit id="properties.minimumLength" xml:space="preserve">
+        <source>Minimum length</source>
+      </trans-unit>
+      <trans-unit id="properties.maximumLength" xml:space="preserve">
+        <source>Maximum length</source>
+      </trans-unit>
+      <trans-unit id="properties.regularExpression" xml:space="preserve">
+        <source>Regular expression</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

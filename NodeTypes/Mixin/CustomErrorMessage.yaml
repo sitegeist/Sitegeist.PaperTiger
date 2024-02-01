@@ -5,13 +5,13 @@ Sitegeist.PaperTiger:Mixin.CustomErrorMessage:
       type: boolean
       defaultValue: false
       ui:
-        label: "Customize Error Message"
+        label: i18n
         inspector:
           group: form-error
     customErrorMessage:
       type: string
       ui:
-        label: "Error Message"
+        label: i18n
         inspector:
           group: form-error
           editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'

@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Number:
   ui:
-    label: "Number"
+    label: i18n
     icon: icon-sort-numeric-up-alt
     group: form.elements
     position: 1100
@@ -14,13 +14,13 @@ Sitegeist.PaperTiger:Field.Number:
     minimumValue:
       type: integer
       ui:
-        label: 'minimum Value'
+        label: i18n
         inspector:
           group: form
 
     maximumValue:
       type: integer
       ui:
-        label: 'maximum Value'
+        label: i18n
         inspector:
           group: form

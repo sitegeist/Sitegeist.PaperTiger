@@ -4,9 +4,9 @@ Sitegeist.PaperTiger:Mixin.Name:
     name:
       type: string
       ui:
-        label: "Name"
+        label: i18n
         help:
-          message: "A technical identifier for the field. Must only contain number and chars."
+          message: i18n
         reloadIfChanged: false
         showInCreationDialog: true
         inspector:

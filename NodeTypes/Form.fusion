@@ -54,14 +54,14 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
                 <div class="papertiger-form">
                     <div class="papertiger-form__header">
                         <span class="paper-tiger-form__header-number">1</span>
-                        <span class="paper-tiger-form__header-title">Form fields</span>
+                        <span class="paper-tiger-form__header-title">{Translation.translate('form.formFields.header', 'Form fields', [], 'Main', 'Sitegeist.PaperTiger')}</span>
                     </div>
                     <form class={_formClass}>
                         <Sitegeist.PaperTiger:FieldCollection.Renderer nodePath="fields"/>
                     </form>
                     <div class="papertiger-form__header">
                         <span class="paper-tiger-form__header-number">2</span>
-                        <span class="paper-tiger-form__header-title">Follow up actions</span>
+                        <span class="paper-tiger-form__header-title">{Translation.translate('form.followUpActions.header', 'Follow up actions', [], 'Main', 'Sitegeist.PaperTiger')}</span>
                     </div>
                     <Sitegeist.PaperTiger:ActionCollection.Fieldnames nodePath="fields"/>
                     <Sitegeist.PaperTiger:ActionCollection.Preview nodePath="actions"/>

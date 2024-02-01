@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.TelephoneNumber:
   ui:
-    label: "Telephone number"
+    label: i18n
     icon: icon-phone
     group: form.elements
     position: 400

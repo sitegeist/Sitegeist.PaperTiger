@@ -1,12 +1,12 @@
 Sitegeist.PaperTiger:Form:
   ui:
-    label: "Form Builder"
+    label: i18n
     icon: 'icon-list-alt'
     inlineEditable: true
     inspector:
       groups:
         'form':
-          label: "Form"
+          label: i18n
           position: 30
           icon: 'icon-list-alt'
   superTypes:

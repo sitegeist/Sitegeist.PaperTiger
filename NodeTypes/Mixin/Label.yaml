@@ -4,7 +4,7 @@ Sitegeist.PaperTiger:Mixin.Label:
     label:
       type: string
       ui:
-        label: "Label"
+        label: i18n
         reloadIfChanged: true
         showInCreationDialog: true
         inspector:

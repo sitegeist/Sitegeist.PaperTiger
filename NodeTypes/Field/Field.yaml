@@ -9,14 +9,14 @@ Sitegeist.PaperTiger:Field:
     inspector:
       groups:
         'form':
-          label: "Form"
+          label: i18n
           position: 30
           icon: 'icon-list-alt'
         'form-validation':
-          label: "Validation"
+          label: i18n
           position: 30
           icon: 'check-double'
         'form-error':
-          label: "Error message"
+          label: i18n
           position: 30
           icon: 'icon-exclamation-triangle'

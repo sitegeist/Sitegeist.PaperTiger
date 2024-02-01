@@ -1,6 +1,6 @@
 Sitegeist.PaperTiger:Field.Upload:
   ui:
-    label: "File upload"
+    label: i18n
     icon: icon-upload
     group: form.elements
     position: 900
@@ -14,7 +14,7 @@ Sitegeist.PaperTiger:Field.Upload:
     allowedExtensions:
       type: array
       ui:
-        label: "Allowed File Extensions"
+        label: i18n
         reloadIfChanged: true
         inspector:
           group: form-validation
@@ -78,7 +78,7 @@ Sitegeist.PaperTiger:Field.Upload:
     allowedFilesize:
       type: integer
       ui:
-        label: "maximum Size (bytes)"
+        label: i18n
         reloadIfChanged: true
         inspector:
           group: form-validation

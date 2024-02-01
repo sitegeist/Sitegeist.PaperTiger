@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="" product-name="Sitegeist.PaperTiger" source-language="en" datatype="plaintext" target-language="de">
+    <body>
+      <trans-unit id="ui.label" xml:space="preserve">
+        <source>Send email</source>
+        <target>E-Mail senden</target>
+      </trans-unit>
+      <trans-unit id="properties.subject" xml:space="preserve">
+        <source>Subject</source>
+        <target>Betreff</target>
+      </trans-unit>
+      <trans-unit id="properties.format" xml:space="preserve">
+        <source>Format</source>
+        <target>Format</target>
+      </trans-unit>
+      <trans-unit id="properties.format.selectBoxEditor.values.html" xml:space="preserve">
+        <source>HTML</source>
+        <target>HTML</target>
+      </trans-unit>
+      <trans-unit id="properties.format.selectBoxEditor.values.plaintext" xml:space="preserve">
+        <source>Plaintext</source>
+        <target>Unformatierter Text</target>
+      </trans-unit>
+      <trans-unit id="properties.format.selectBoxEditor.values.multipart" xml:space="preserve">
+        <source>Multipart</source>
+        <target>Multipart</target>
+      </trans-unit>
+      <trans-unit id="properties.plaintext" xml:space="preserve">
+        <source>Plaintext</source>
+        <target>Unformatierter Text</target>
+      </trans-unit>
+      <trans-unit id="properties.html" xml:space="preserve">
+        <source>HTML</source>
+        <target>HTML</target>
+      </trans-unit>
+      <trans-unit id="properties.recipientAddress" xml:space="preserve">
+        <source>Recipient address</source>
+        <target>Empfängeradresse</target>
+      </trans-unit>
+      <trans-unit id="properties.recipientName" xml:space="preserve">
+        <source>Recipient name</source>
+        <target>Empfängername</target>
+      </trans-unit>
+      <trans-unit id="properties.senderAddress" xml:space="preserve">
+        <source>Sender address</source>
+        <target>Absenderadresse</target>
+      </trans-unit>
+      <trans-unit id="properties.senderName" xml:space="preserve">
+        <source>Sender name</source>
+        <target>Absendername</target>
+      </trans-unit>
+      <trans-unit id="properties.replyToAddress" xml:space="preserve">
+        <source>Reply to address</source>
+        <target>Antwortadresse</target>
+      </trans-unit>
+      <trans-unit id="properties.carbonCopyAddress" xml:space="preserve">
+        <source>Carbon copy address</source>
+        <target>CC-Adresse</target>
+      </trans-unit>
+      <trans-unit id="properties.blindCarbonCopyAddress" xml:space="preserve">
+        <source>Blind carbon copy address</source>
+        <target>BCC-Adresse</target>
+      </trans-unit>
+      <trans-unit id="properties.attachUploads" xml:space="preserve">
+        <source>Attach uploads</source>
+        <target>Uploads anhängen</target>
+      </trans-unit>
+      <trans-unit id="properties.testMode" xml:space="preserve">
+        <source>Test mode</source>
+        <target>Testmodus</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

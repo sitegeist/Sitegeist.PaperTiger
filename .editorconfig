@@ -11,6 +11,10 @@ indent_size = 4
 [*.{yaml,yml,yaml.example}]
 indent_size = 2
 
+[*.xlf]
+indent_style = space
+indent_size = 2
+
 [*.{css,js,ts}]
 indent_style = tab
 
