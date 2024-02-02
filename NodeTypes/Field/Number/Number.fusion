@@ -15,10 +15,11 @@ prototype(Sitegeist.PaperTiger:Field.Number) < prototype(Neos.Neos:ContentCompon
         >
             <Neos.Fusion.Form:Input
                 attributes.type="number"
+                attributes.inputmode="numeric"
                 attributes.required={props.isRequired}
                 attributes.placeholder={props.placeholder || false}
-                attributes.min={props.minimumValue ? props.minimumValue : false}
-                attributes.max={props.minimumValue ? props.maximumValue : false}
+                attributes.min={Type.isNumeric(props.minimumValue) ? props.minimumValue : false}
+                attributes.max={Type.isNumeric(props.maximumValue) ? props.maximumValue : false}
                 attributes.oninvalid={"this.setCustomValidity('" + props.customErrorMessage + "')"}
                 attributes.oninvalid.@if={props.customErrorMessageEnabled}
                 attributes.oninput={"this.setCustomValidity('')"}
