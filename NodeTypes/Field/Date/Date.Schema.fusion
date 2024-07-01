@@ -11,5 +11,5 @@ prototype(Sitegeist.PaperTiger:Field.Date.Schema) < prototype(Neos.Fusion:Compon
 
     renderer = ${Form.Schema.date()}
     renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
-    renderer.@process.addDateRangeValidator = ${props.dateRangeValidatorOptions ? value.validator('DateTimeRange', props.dateRangeValidatorOptions) : value}
+    renderer.@process.addDateRangeValidator = ${Array.length(props.dateRangeValidatorOptions) ? value.validator('DateTimeRange', props.dateRangeValidatorOptions) : value}
 }
