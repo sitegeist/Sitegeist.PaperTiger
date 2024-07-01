@@ -3,11 +3,13 @@ prototype(Sitegeist.PaperTiger:Field.Date.Schema) < prototype(Neos.Fusion:Compon
     dateRangeValidatorOptions = Neos.Fusion:DataStructure {
         earliestDate = ${q(node).property('earliestDate')}
         earliestDate.@if.isDefined = ${q(node).property('earliestDate')}
+        earliestDate.@process.asString = ${Date.format(value, 'Y-m-d')} 
         latestDate = ${q(node).property('latestDate')}
         latestDate.@if.isDefined = ${q(node).property('latestDate')}
+        latestDate.@process.asString = ${Date.format(value, 'Y-m-d')} 
     }
 
     renderer = ${Form.Schema.date()}
     renderer.@process.addIsRequired = ${props.isRequired ?  value.required : value}
-    renderer.@process.addDateRangeValidator = ${props.dateRangeValidatorOptions ? value.validator('NumberRange', props.dateRangeValidatorOptions) : value}
+    renderer.@process.addDateRangeValidator = ${props.dateRangeValidatorOptions ? value.validator('DateTimeRange', props.dateRangeValidatorOptions) : value}
 }
