@@ -78,9 +78,9 @@ The actions are configured in the inspector and show a preview in the backend.
 - `Sitegeist.PaperTiger:Action.Message` - Show a specified `message` while replacing `{identifier}` with submitted data.
 - `Sitegeist.PaperTiger:Action.Redirct` - Redirect the user to the specified Document afer submit.
 - `Sitegeist.PaperTiger:Action.Email` - Email action
-  using [Sitegeist.Neos.SymfonyMailer](https://github.com/sitegeist/Sitegeist.Neos.SymfonyMailer) 
+  using [Sitegeist.Neos.SymfonyMailer](https://github.com/sitegeist/Sitegeist.Neos.SymfonyMailer) ([see config below](#disable-symfonymailer))
   The properties `subject`, `text` and `html` will replace `{identifier}` with submitted data. Submitted files can be
-  added as attachments. ([see config below](#disable-symfonymailer))
+  added as attachments. 
 
 !!! During submission some properties will replace parts `{identifier}` with submitted data by applying the
 processor `Sitegeist.PaperTiger:Action.DataTemplate`. !!!
