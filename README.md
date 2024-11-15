@@ -78,9 +78,9 @@ The actions are configured in the inspector and show a preview in the backend.
 - `Sitegeist.PaperTiger:Action.Message` - Show a specified `message` while replacing `{identifier}` with submitted data.
 - `Sitegeist.PaperTiger:Action.Redirct` - Redirect the user to the specified Document afer submit.
 - `Sitegeist.PaperTiger:Action.Email` - Email action
-  using [Sitegeist.Neos.SymfonyMailer](https://github.com/sitegeist/Sitegeist.Neos.SymfonyMailer)  
+  using [Sitegeist.Neos.SymfonyMailer](https://github.com/sitegeist/Sitegeist.Neos.SymfonyMailer) 
   The properties `subject`, `text` and `html` will replace `{identifier}` with submitted data. Submitted files can be
-  added as attachments.
+  added as attachments. ([see config below](swiftmailer))
 
 !!! During submission some properties will replace parts `{identifier}` with submitted data by applying the
 processor `Sitegeist.PaperTiger:Action.DataTemplate`. !!!
@@ -88,6 +88,17 @@ processor `Sitegeist.PaperTiger:Action.DataTemplate`. !!!
 <img src="./Documentation/Screenshots/ActionNodeTypes.png" width="920" />
 
 ## Configuration
+
+### Disable SymfonyMailer
+
+If Swiftmailer doesn't work, change the configuration in your `settings.yaml` to disable the SymfonyMailer and use the default Neos `dsn`:
+
+```yaml
+Sitegeist:
+    Neos:
+        SymfonyMailer:
+        dsn: 'native://default'
+```
 
 ### Custom field NodeTypes
 
