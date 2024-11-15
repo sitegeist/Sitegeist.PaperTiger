@@ -91,7 +91,7 @@ processor `Sitegeist.PaperTiger:Action.DataTemplate`. !!!
 
 ### Disable SymfonyMailer
 
-If Swiftmailer doesn't work, change the configuration in your `settings.yaml` to disable the SymfonyMailer and use the default Neos `dsn`:
+If SymfonyMailer doesn't work, change the configuration in your `settings.yaml` to disable it and use the default Neos `dsn`:
 
 ```yaml
 Sitegeist:
