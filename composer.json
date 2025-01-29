@@ -13,6 +13,12 @@
         "sitegeist/fusionform-upload": "~1.0",
         "sitegeist/fusionform-friendlycaptcha": "~1.0"
     },
+    "repositories": {
+        "inspectorgadget": {
+            "type": "vcs",
+            "url": "https://github.com/robinroloff/Sitegeist.InspectorGadget"
+        }
+    },
     "require-dev": {
         "phpstan/phpstan": "~1.10.16",
         "phpunit/phpunit": "~9.6.8",
