@@ -12,7 +12,7 @@ prototype(Sitegeist.PaperTiger:ActionCollection.Preview.ContentCase) < prototype
         default {
             @position = 'end'
             condition = true
-            type = ${node.nodeType.name + '.Preview'}
+            type = ${node.nodeTypeName + '.Preview'}
         }
     }
 
