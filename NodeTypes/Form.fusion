@@ -15,7 +15,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
 
     renderer = Neos.Fusion:Case {
         runtimeForm {
-            condition = ${node.context.live}
+            condition = ${!renderingMode.isEdit}
 
             renderer = Neos.Fusion:Join {
                 anchor = ${props.anchor}
@@ -47,7 +47,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
         }
 
         backend {
-            condition = ${node.context.inBackend}
+            condition = ${renderingMode.isEdit}
             renderer = afx`
                 <style @if={props.backendStyle} data-slipstream>{props.backendStyle}</style>
                 <script @if={props.backendScript} data-slipstream>{props.backendScript}</script>
