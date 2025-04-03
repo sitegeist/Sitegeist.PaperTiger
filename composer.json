@@ -8,7 +8,7 @@
         "neos/neos": "~8.2 ||  ^9.0  ",
         "neos/fusion": "~8.2 ||  ^9.0 ",
         "neos/fusion-form": "~2.0 || dev-master",
-        "sitegeist/inspectorgadget": "*",
+        "sitegeist/inspectorgadget": "^v3.0.0",
         "sitegeist/neos-symfonymailer": "~1.1",
         "sitegeist/fusionform-upload": "~1.0",
         "sitegeist/fusionform-friendlycaptcha": "~1.0"
