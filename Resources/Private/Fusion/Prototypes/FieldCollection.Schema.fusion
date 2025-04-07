@@ -10,9 +10,9 @@ prototype(Sitegeist.PaperTiger:FieldCollection.Schema) < prototype(Neos.Fusion:C
                 name = ${q(node).is('[instanceof Sitegeist.PaperTiger:Mixin.Name]') ? q(node).property('name') : q(node).property('_identifier')}
                 schema = Neos.Fusion:Renderer {
                     @if.canRender = Neos.Fusion:CanRender {
-                        type = ${node.nodeType.name + '.Schema'}
+                        type = ${node.nodeTypeName + '.Schema'}
                     }
-                    type = ${node.nodeType.name + '.Schema'}
+                    type = ${node.nodeTypeName + '.Schema'}
                 }
                 value = ${(this.name && this.schema) ? Array.set(carry, this.name, this.schema) : carry}
             }

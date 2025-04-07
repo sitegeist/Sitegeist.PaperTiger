@@ -18,6 +18,6 @@ prototype(Sitegeist.PaperTiger:ActionCollection.Definition.ContentCase) < protot
     default {
         @position = 'end'
         condition = true
-        type = ${node.nodeType.name + '.Definition'}
+        type = ${node.nodeTypeName + '.Definition'}
     }
 }
