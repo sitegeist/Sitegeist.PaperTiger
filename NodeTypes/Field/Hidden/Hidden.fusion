@@ -6,7 +6,7 @@ prototype(Sitegeist.PaperTiger:Field.Hidden) < prototype(Neos.Neos:ContentCompon
 
     renderer = Neos.Fusion:Case {
         backend {
-            condition = ${node.context.inBackend}
+            condition = ${renderingMode.isEdit}
             renderer = afx`
                 <Sitegeist.PaperTiger:FieldContainer
                     field.name={props.name}
