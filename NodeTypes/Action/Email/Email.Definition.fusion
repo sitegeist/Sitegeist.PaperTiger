@@ -3,11 +3,15 @@ prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:
     subject.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
     format = ${q(node).property('format')}
     plaintext = ${q(node).property('plaintext')}
-    plaintext.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
+    plaintext.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate {
+        mode = 'plaintext'
+    }
     plaintext.@if.isPlaintextOrMultipart = ${this.format != 'html'}
     html = ${q(node).property('html')}
     html.@if.isHtmlOrMultipart = ${this.format != 'plaintext'}
-    html.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
+    html.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate {
+        mode = 'html'
+    }
     recipientAddress = ${q(node).property('recipientAddress')}
     recipientName = ${q(node).property('recipientName')}
     senderAddress = ${q(node).property('senderAddress')}

@@ -33,16 +33,29 @@ class DataTemplateImplementation extends AbstractFusionObject
         return $this->fusionValue('dateTimeFormat') ?? \DateTimeInterface::W3C;
     }
 
+    /**
+     * @return string "plaintext" or "html" are supported modes
+     */
+    public function getMode(): string
+    {
+        return $this->fusionValue('mode') ?? 'html';
+    }
+
     public function evaluate()
     {
         $template = $this->getTemplate();
         $data = $this->getData();
+        $mode = $this->getMode();
 
         return preg_replace_callback(
             '/{([a-z0-9\\-\\.]+)}/ium',
-            function (array $matches) use ($data) {
+            function (array $matches) use ($data, $mode) {
                 $value = Arrays::getValueByPath($data, $matches[1]);
-                return htmlspecialchars(strip_tags($this->stringify($value)));
+                return match ($mode) {
+                    'plaintext' => strip_tags($this->stringify($value)),
+                    'html' => htmlspecialchars(strip_tags($this->stringify($value))),
+                    default  => htmlspecialchars(strip_tags($this->stringify($value)))
+                };
             },
             $template
         );
