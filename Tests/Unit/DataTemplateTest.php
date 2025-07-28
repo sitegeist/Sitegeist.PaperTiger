@@ -13,8 +13,10 @@ class DataTemplateTest extends TestCase
 
     public function setUp(): void
     {
-        $this->dataTemplate = $this->createPartialMock(DataTemplateImplementation::class, ['getTemplate', 'getData', 'getDateTimeFormat']);
+        $this->dataTemplate = $this->createPartialMock(DataTemplateImplementation::class, ['getTemplate', 'getData', 'getMode', 'getDateTimeFormat']);
         $this->dataTemplate->expects($this->any())->method('getDateTimeFormat')->willReturn(\DateTimeImmutable::W3C);
+        $this->dataTemplate->expects($this->any())->method('getMode')->willReturn('html');
+
     }
 
     public function stringifyConvertsDataProvider(): \Generator
@@ -75,5 +77,34 @@ class DataTemplateTest extends TestCase
         $this->dataTemplate->expects($this->once())->method('getTemplate')->willReturn($template);
         $this->dataTemplate->expects($this->once())->method('getData')->willReturn($data);
         $this->assertSame($expectedString, $this->dataTemplate->evaluate());
+    }
+
+    public function modeControlsEntityEscapingDataProvider(): \Generator
+    {
+        yield 'string with ampersand' => ['foo & bar', 'foo &amp; bar', 'foo & bar'];
+        yield 'string with script' => ['foo <script>evil</script> bar', 'foo evil bar', 'foo evil bar'];
+    }
+
+    /**
+     * @test
+     * @dataProvider modeControlsEntityEscapingDataProvider
+     */
+    public function modeControlsEntityEscaping(mixed $data, string $expectedHtmlString, string $expectedPlaintextString): void
+    {
+
+        $htmlDataTemplate = $this->createPartialMock(DataTemplateImplementation::class, ['getTemplate', 'getData', 'getDateTimeFormat', 'getMode']);
+        $htmlDataTemplate->expects($this->any())->method('getDateTimeFormat')->willReturn(\DateTimeImmutable::W3C);
+        $htmlDataTemplate->expects($this->any())->method('getMode')->willReturn('html');
+        $htmlDataTemplate->expects($this->any())->method('getTemplate')->willReturn('{data}');
+        $htmlDataTemplate->expects($this->any())->method('getData')->willReturn(['data' => $data]);
+
+        $plaintextDataTemplate = $this->createPartialMock(DataTemplateImplementation::class, ['getTemplate', 'getData', 'getDateTimeFormat', 'getMode']);
+        $plaintextDataTemplate->expects($this->any())->method('getDateTimeFormat')->willReturn(\DateTimeImmutable::W3C);
+        $plaintextDataTemplate->expects($this->any())->method('getMode')->willReturn('plaintext');
+        $plaintextDataTemplate->expects($this->any())->method('getTemplate')->willReturn('{data}');
+        $plaintextDataTemplate->expects($this->any())->method('getData')->willReturn(['data' => $data]);
+
+        $this->assertSame($expectedHtmlString, $htmlDataTemplate->evaluate());
+        $this->assertSame($expectedPlaintextString, $plaintextDataTemplate->evaluate());
     }
 }
