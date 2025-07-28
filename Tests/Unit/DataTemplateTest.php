@@ -98,13 +98,13 @@ class DataTemplateTest extends TestCase
         $htmlDataTemplate->expects($this->any())->method('getTemplate')->willReturn('{data}');
         $htmlDataTemplate->expects($this->any())->method('getData')->willReturn(['data' => $data]);
 
-        $plainte = $this->createPartialMock(DataTemplateImplementation::class, ['getTemplate', 'getData', 'getDateTimeFormat', 'getMode']);
-        $plainte->expects($this->any())->method('getDateTimeFormat')->willReturn(\DateTimeImmutable::W3C);
-        $plainte->expects($this->any())->method('getMode')->willReturn('plaintext');
-        $plainte->expects($this->any())->method('getTemplate')->willReturn('{data}');
-        $plainte->expects($this->any())->method('getData')->willReturn(['data' => $data]);
+        $plaintextDataTemplate = $this->createPartialMock(DataTemplateImplementation::class, ['getTemplate', 'getData', 'getDateTimeFormat', 'getMode']);
+        $plaintextDataTemplate->expects($this->any())->method('getDateTimeFormat')->willReturn(\DateTimeImmutable::W3C);
+        $plaintextDataTemplate->expects($this->any())->method('getMode')->willReturn('plaintext');
+        $plaintextDataTemplate->expects($this->any())->method('getTemplate')->willReturn('{data}');
+        $plaintextDataTemplate->expects($this->any())->method('getData')->willReturn(['data' => $data]);
 
         $this->assertSame($expectedHtmlString, $htmlDataTemplate->evaluate());
-        $this->assertSame($expectedPlaintextString, $plainte->evaluate());
+        $this->assertSame($expectedPlaintextString, $plaintextDataTemplate->evaluate());
     }
 }
