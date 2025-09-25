@@ -9,9 +9,9 @@
         "neos/fusion": "^9.0 ",
         "neos/fusion-form": "~3.0 || dev-main",
         "sitegeist/inspectorgadget": "^v3.0.0",
-        "sitegeist/neos-symfonymailer": "~1.1",
+        "neos/symfonymailer": "^0.1 || ^1.0",
         "sitegeist/fusionform-upload": "~2.0",
-        "sitegeist/fusionform-friendlycaptcha": "~1.0"
+        "sitegeist/fusionform-friendlycaptcha": "~2.0"
     },
     "require-dev": {
         "phpstan/phpstan": "~1.10.16",
