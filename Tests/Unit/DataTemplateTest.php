@@ -3,13 +3,14 @@ declare(strict_types=1);
 
 namespace Sitegeist\PaperTiger\Tests\Unit;
 
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Sitegeist\PaperTiger\FusionObjects\DataTemplateImplementation;
 
 class DataTemplateTest extends TestCase
 {
 
-    protected DataTemplateImplementation $dataTemplate;
+    protected DataTemplateImplementation&MockObject $dataTemplate;
 
     public function setUp(): void
     {
