@@ -24,15 +24,15 @@ prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:
 
     renderer = Sitegeist.PaperTiger:Action {
         @if.minRequirementsAreMet = ${props.recipientAddress && props.senderAddress && props.subject && (props.plaintext || props.html)}
-        type = 'Sitegeist.Neos.SymfonyMailer:SendMail'
+        type = 'Neos.Fusion.Form.Runtime:Email'
         options {
             subject = ${props.subject}
             text = ${props.plaintext}
             html = ${props.html}
             recipientAddress = ${props.recipientAddress}
-            recipientName = ${props.recipientName}
+            recipientName = ${props.recipientName ? props.recipientName : ''}
             senderAddress = ${props.senderAddress}
-            senderName = ${props.senderName}
+            senderName = ${props.senderName ? props.senderName : ''}
             replyToAddress = ${props.replyToAddress}
             carbonCopyAddress = ${props.carbonCopyAddress}
             blindCarbonCopyAddress = ${props.blindCarbonCopyAddress}
@@ -40,9 +40,24 @@ prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:
                 @if.isEnabled = ${props.attachUploads}
                 items = ${data}
                 itemName = "item"
-                itemRenderer = ${item}
-                itemRenderer.@if.isUpload = ${Type.instance(item, '\\Neos\\Flow\\ResourceManagement\\PersistentResource') || Type.instance(item, '\\Psr\\Http\\Message\\UploadedFileInterface') || Type.instance(item, '\\Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFileCollection')}
+                itemRenderer = Neos.Fusion:Case {
+                    multipleUpload {
+                        condition = ${Type.instance(item, '\\Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFileCollection' )}
+                        renderer = Neos.Fusion:Map {
+                            items = ${item}
+                            itemName = 'uploadFile'
+                            itemRenderer = ${uploadFile}
+                        }
+                    }
+
+                    default {
+                        condition = true
+                        renderer = ${item}
+                    }
+                }
+                itemRenderer.@if.isUpload = ${Type.instance(item, '\\Neos\\Flow\\ResourceManagement\\PersistentResource') || Type.instance(item, '\\Psr\\Http\\Message\\UploadedFileInterface') || Type.instance(item, '\\Sitegeist\\FusionForm\\Upload\\Domain\\CachedUploadedFileCollection' )}
                 @process.filterEmpty = ${Array.filter(value)}
+                @process.flattenArray = ${PaperTiger.flattenArray(value)}
             }
             testMode = ${props.testMode}
         }
