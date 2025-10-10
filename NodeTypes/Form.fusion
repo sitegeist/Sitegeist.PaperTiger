@@ -1,8 +1,8 @@
 prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
 
     class = ''
-    action = ${'#form_' + node.identifier}
-    anchor = afx`<a id={'form_' + node.identifier}></a>`
+    action = ${'#form_' + node.aggregateId}
+    anchor = afx`<a id={'form_' + node.aggregateId}></a>`
 
     backendStyle = ${StaticResource.content('Sitegeist.PaperTiger', 'Public/Styles/Backend.css')}
     backendScript = ${StaticResource.content('Sitegeist.PaperTiger', 'Public/Scripts/Backend.js')}
