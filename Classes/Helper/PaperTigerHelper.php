@@ -18,7 +18,12 @@ class PaperTigerHelper implements ProtectedContextAwareInterface
         return $this->hashService->appendHmac((string) time());
     }
 
-    function flattenArray(array $array): array {
+    /**
+     * @param array<int|string, mixed|array<mixed>> $array
+     * @return array<int|string, mixed>
+     */
+    public function flattenArray(array $array): array
+    {
         $result = [];
 
         foreach ($array as $item) {
