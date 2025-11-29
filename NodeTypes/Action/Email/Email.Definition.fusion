@@ -16,9 +16,13 @@ prototype(Sitegeist.PaperTiger:Action.Email.Definition) < prototype(Neos.Fusion:
     recipientName = ${q(node).property('recipientName')}
     senderAddress = ${q(node).property('senderAddress')}
     senderName = ${q(node).property('senderName')}
+    senderName.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
     replyToAddress = ${q(node).property('replyToAddress')}
+    replyToAddress.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
     carbonCopyAddress = ${q(node).property('carbonCopyAddress')}
+    carbonCopyAddress.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
     blindCarbonCopyAddress = ${q(node).property('blindCarbonCopyAddress')}
+    blindCarbonCopyAddress.@process.asTemplate = Sitegeist.PaperTiger:Action.DataTemplate
     attachUploads = ${q(node).property('attachUploads')}
     testMode = ${q(node).property('testMode')}
 
