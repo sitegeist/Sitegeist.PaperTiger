@@ -1,11 +1,11 @@
 prototype(Sitegeist.PaperTiger:Field.Honeypot) < prototype(Neos.Neos:ContentComponent) {
-    name = ${q(node).property('_identifier')}
+    name = ${node.aggregateId}
 
     style = 'display:none !important;'
     class = null
 
     honeypotScript = afx`
-        <script data-name={"field_" + q(node).property('_identifier')} data-value={PaperTiger.timestampWithHmac()}>
+        <script data-name={"field_" + node.aggregateId} data-value={PaperTiger.timestampWithHmac()}>
             {StaticResource.content('Sitegeist.PaperTiger', 'Public/Scripts/Honeypot.js')}
         </script>
     `
