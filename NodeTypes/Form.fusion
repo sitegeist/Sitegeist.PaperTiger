@@ -26,7 +26,7 @@ prototype(Sitegeist.PaperTiger:Form) < prototype(Neos.Neos:ContentComponent) {
                         formAction = '_formAction'
                     }
 
-                    namespace = ${q(node).property('_identifier')}
+                    namespace = ${node.aggregateId}
                     attributes.class = ${_formClass}
                     attributes.action = ${_formAction}
 

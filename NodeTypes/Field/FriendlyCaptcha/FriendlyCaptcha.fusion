@@ -1,5 +1,5 @@
 prototype(Sitegeist.PaperTiger:Field.FriendlyCaptcha) < prototype(Neos.Neos:ContentComponent) {
-    name = ${q(node).property('_identifier')}
+    name = ${node.aggregateId}
 
     renderer = Neos.Fusion:Case {
         backend {
